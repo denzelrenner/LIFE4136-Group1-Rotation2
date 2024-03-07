@@ -48,10 +48,12 @@ brew install ffmpeg (Mac Intel i5)
 
 # THE BEGINNING 
 
+## Consensus Sequences (Nucleotide)
 The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.4. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by running the script below
 
 <insert_script>
 
+## Protein Sequences 
 Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. We then followed the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
 
 1)Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
