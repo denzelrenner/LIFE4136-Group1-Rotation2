@@ -35,6 +35,7 @@ ffmpeg version 6.1.1
 GATK verison 4.2.2.0, (HTSJDK version 2.24.1, Picard version 2.25.4)
 samtools version 1.19.2, (htslib version 1.19.1)
 RAxML-NG version 0.9.0
+InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
 
 ## Tool intallation 
 These scripts/commands should be ran to install all the tools necessary to reproduce results
@@ -45,11 +46,13 @@ raxml_install.sh
 
 On your local machine:
 brew install ffmpeg (Mac Intel i5)
+Navigate to the Jalview,PyMOL websites and follow the download link for your machine
+
 
 # THE BEGINNING 
 
 ## Consensus Sequences (Nucleotide)
-The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.4. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by running the script below
+The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.4. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by running the script below.
 
 <insert_script>
 
@@ -63,6 +66,33 @@ Amongst the resulting files there should be fasta files containing the entire co
 3)Input nucleotide sequence from g10577 diploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1). If you take only coding sequence is the tetraploid truncated?
 
 4)Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
+
+## Homolog identification
+In order to find homologs blastp search on the tair database and on the ncbi 
+
+
+## Domain identification
+So we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. 
+
+1)Follow the link to the InterPro website
+2)Input the protein sequences into the 
+
+## Multiple Sequence Allignments and Tree Building 
+
+## Protein Structure Modelling
+Say what you tried 
+
+## Image and Movie generation
+We have successfully modelled our proteins and now want to create good quality images to be used in our papers/presentations.
+
+We also want to have a short video showing some of our protein molecules rotating over time. This can be accomplished by running the scripts below.
+
+This script will produce a series of images
+<insert_script>
+
+These images are then stitched together to produce a movie of a rotating protein
+
+
 
 
 
