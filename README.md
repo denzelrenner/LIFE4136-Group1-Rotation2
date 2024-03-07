@@ -1,15 +1,16 @@
 # LIFE4136_Group1_Rotation2
 This repositry contained all the Scripts and data needed to reproduce results from group1 in rotation2 of the groupwork projects.
 
-# What is the problem we have been presented with?
+## What is the problem we have been presented with?
 We have been provided with some genes in cochaleria 
 
-# What are the aims of our analysis?
+## What are the aims of our analysis?
 
-# What are the expected outcomes?
+## What are the expected outcomes?
+We expect to 
 
 
-# Required files
+## Required files
 All these files should be downloaded into the same directory before following the rest of this document.
 
 For replicating results on the cloud :
