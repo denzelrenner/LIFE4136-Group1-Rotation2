@@ -10,7 +10,7 @@ We have been provided with some genes in cochaleria
 We expect to 
 
 # Prerequisites
-## Required files
+## Required files and data
 All these files should be downloaded into the same directory before following the rest of this document.
 
 For replicating results on the cloud :
@@ -19,6 +19,8 @@ For replicating results on the cloud :
 
 For replicating results from your local machine
 1)
+
+Explain what fai is and put a link as well
 
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable.
@@ -65,7 +67,8 @@ brew install ffmpeg (Mac Intel i5)
 Navigate to the Jalview,PyMOL websites and follow the download link for your machine
 
 ## Script description
-`raxml_install.sh ` - installs raxml-ng
+`raxml_install.sh` - installs raxml-ng
+
 `consenus.sh` - produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids.
 
 
@@ -106,17 +109,17 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
 2)Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
-3)On the results page, click on the 'download' option and choose FASTA format from the drop-down menu before downloading the allignment.
+3)On the results page, click on the `download` option and choose FASTA format from the drop-down menu before downloading the allignment.
 
-To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension '.besttree' which is a file that . 
+To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is a file that . 
 
 We will view the best tree file using the ITOL website. To do this the steps below were followed
 
 1)Follow the link provided to the ITOL website 
 
-2)Click on the 'Upload a tree' option
+2)Click on the `Upload a tree` option
 
-3)Navigate to the 'Tree file' field and select the choose file option. Navigate through your files to locate the raxml file with the '.besttree' extension and upload it.
+3)Navigate to the `Tree file` field and select the choose file option. Navigate through your files to locate the raxml file with the `.besttree` extension and upload it.
 
 ## Protein Structure Modelling
 Say what you tried
@@ -133,9 +136,9 @@ To obtain 3D strucutre models for our proteins we input the sequence .
 
 1)Follow the link to the alphafold collab website provided above
 
-2)Input the protein sequence for reference,diploid,and tetraploid sequences into the 'query sequence' field, and enter reference_g46214,diplpid_g46214,and tetraploid_g46214 in the 'job name' field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+2)Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and enter reference_g46214,diplpid_g46214,and tetraploid_g46214 in the `job name` field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
-3)Navigate to the options at the top of the page, select 'Runtime' and choose 'Run all'
+3)Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
 4)When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac)
 
