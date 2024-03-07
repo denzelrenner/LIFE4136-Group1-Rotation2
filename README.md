@@ -124,7 +124,7 @@ Say what you tried
 Create a directory in your home directory (on your local machine) to host all the protein stuctures and any modelling related output by following the command below
 
 ```bash
-mkdir ~/g46214_modelling_output
+mkdir ~/g46214_modelling_output```
 
 
 
