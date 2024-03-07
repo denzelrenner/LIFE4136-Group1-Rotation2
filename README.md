@@ -24,17 +24,29 @@ For replicating results from your local machine
 These are all the tools that were used in our analysis with versions and links provided where applicable.
 
 ncbi blast (https://blast.ncbi.nlm.nih.gov/)
+
 orf finder (https://www.ncbi.nlm.nih.gov/orffinder/)
+
 uniprot (https://www.uniprot.org/align), clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)
+
 jalview version 2.11.3.2
+
 alphafold collab (ColabFold v1.5.5: AlphaFold2 using MMseqs2
+
 (https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)
+
 PyMOL version 2.5.8
+
 Homebrew version 4.2.10 (Mac Intel i5)
+
 ffmpeg version 6.1.1 
+
 GATK verison 4.2.2.0, (HTSJDK version 2.24.1, Picard version 2.25.4)
+
 samtools version 1.19.2, (htslib version 1.19.1)
+
 RAxML-NG version 0.9.0
+
 InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
 
 ## Tool intallation 
