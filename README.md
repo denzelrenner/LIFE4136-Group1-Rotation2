@@ -51,6 +51,8 @@ InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
 
 ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
 
+Conda version 23.5.2
+
 ## Tool intallation 
 These scripts/commands should be ran to install all the tools necessary to reproduce results
 
@@ -61,6 +63,10 @@ raxml_install.sh
 On your local machine:
 brew install ffmpeg (Mac Intel i5)
 Navigate to the Jalview,PyMOL websites and follow the download link for your machine
+
+## Script description
+`raxml_install.sh ` - installs raxml-ng
+`consenus.sh` - produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids.
 
 
 # THE BEGINNING 
@@ -112,11 +118,14 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 3)Navigate to the 'Tree file' field and select the choose file option. Navigate through your files to locate the raxml file with the '.besttree' extension and upload it.
 
-
 ## Protein Structure Modelling
 Say what you tried
 
-Create a folder in your home directory (on your local machine) to 
+Create a directory in your home directory (on your local machine) to host all the protein stuctures and any modelling related output by following the command below
+
+mkdir ~/g46214_modelling_output
+
+
 To obtain 3D strucutre models for our proteins we input the sequence .
 
 1)Follow the link to the alphafold collab website provided above
