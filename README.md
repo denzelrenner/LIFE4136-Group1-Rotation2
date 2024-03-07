@@ -123,7 +123,7 @@ Say what you tried
 
 Create a directory in your home directory (on your local machine) to host all the protein stuctures and any modelling related output by following the command below
 
-mkdir ~/g46214_modelling_output
+```mkdir ~/g46214_modelling_output```
 
 
 To obtain 3D strucutre models for our proteins we input the sequence .
