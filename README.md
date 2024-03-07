@@ -102,9 +102,9 @@ For g46214, Homologous proteins to be used in pyhlogenetic tree building and mut
 
 By following the steps below, a multiple sequence allignment of the protein sequences was generated.
 
-1)Follow the link to the uniprot website and navigate to the tab labelled 'Align'
+1)Follow the link to the uniprot website and navigate to the tab labelled `Align`
 
-2)Copy and paste all the sequences from the fasta file you generated above into the query field then click the 'Run align' button
+2)Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
 3)On the results page, click on the 'download' option and choose FASTA format from the drop-down menu before downloading the allignment.
 
