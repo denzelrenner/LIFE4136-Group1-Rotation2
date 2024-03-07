@@ -49,6 +49,8 @@ RAxML-NG version 0.9.0
 
 InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
 
+ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
+
 ## Tool intallation 
 These scripts/commands should be ran to install all the tools necessary to reproduce results
 
@@ -69,7 +71,7 @@ The first thing we will do is get consensus sequences for our diploids and tetra
 <insert_script>
 
 ## Protein Sequences 
-Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. We then followed the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
+Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Follow the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
 
 1)Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
@@ -89,7 +91,27 @@ So we have found out the closest homologs for our proteins. We now want to verif
 1)Follow the link to the InterPro website
 2)Input the protein sequences into the 
 
-## Multiple Sequence Allignments and Tree Building 
+## Multiple Sequence Allignments and Phylogenetic Tree Building 
+For g46214, Homologous proteins to be used in pyhlogenetic tree building and mutliple sequence allignments were selected based on having 100% query cover and >40% percentage identity to our reference protein sequence. The protein sequences for the selected homologs were manually retrived by selecting their ncbi dataset accession code in the blastp results page, then selecting the 'FASTA' option at the top of the page, and finally copy and pasting the protein sequence into the fasta file. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to these files in fasta format.
+
+By following the steps below, a multiple sequence allignment of the protein sequences was generated.
+
+1)Follow the link to the uniprot website and navigate to the tab labelled 'Align'
+
+2)Copy and paste all the sequences from the fasta file you generated above into the query field then click the 'Run align' button
+
+3)On the results page, click on the 'download' option and choose FASTA format from the drop-down menu before downloading the allignment.
+
+To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension '.besttree' which is a file that . 
+
+We will view the best tree file using the ITOL website. To do this the steps below were followed
+
+1)Follow the link provided to the ITOL website 
+
+2)Click on the 'Upload a tree' option
+
+3)Navigate to the 'Tree file' field and select the choose file option. Navigate through your files to locate the raxml file with the '.besttree' extension and upload it.
+
 
 ## Protein Structure Modelling
 Say what you tried 
@@ -102,7 +124,7 @@ We also want to have a short video showing some of our protein molecules rotatin
 This script will produce a series of images
 <insert_script>
 
-These images are then stitched together to produce a movie of a rotating protein
+These series of images are then stitched together to produce a movie of a rotating protein
 
 
 
