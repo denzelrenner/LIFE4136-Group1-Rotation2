@@ -139,7 +139,12 @@ To obtain 3D strucutre models for our proteins we input the sequence .
 
 4)When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac)
 
-5)Move the zip file from your downloads folder
+5)Move the zip files from your downloads folder to the directory we created earlier for protein structures, and open the files following the command below
+
+```bash
+mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
+unzip *_g46214.zip
+```
 
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to create good quality images to be used in our papers/presentations.
