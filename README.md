@@ -114,7 +114,20 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 
 ## Protein Structure Modelling
-Say what you tried 
+Say what you tried
+
+Create a folder in your home directory (on your local machine) to 
+To obtain 3D strucutre models for our proteins we input the sequence .
+
+1)Follow the link to the alphafold collab website provided above
+
+2)Input the protein sequence for reference,diploid,and tetraploid sequences into the 'query sequence' field, and enter reference_g46214,diplpid_g46214,and tetraploid_g46214 in the 'job name' field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+
+3)Navigate to the options at the top of the page, select 'Runtime' and choose 'Run all'
+
+4)When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac)
+
+5)Move the zip file from your downloads folder
 
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to create good quality images to be used in our papers/presentations.
