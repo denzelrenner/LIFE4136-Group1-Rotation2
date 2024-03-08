@@ -55,6 +55,8 @@ ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
 
 Conda version 23.5.2
 
+all performed on mac intel i5
+
 ## Tool intallation 
 These scripts/commands should be ran to install all the tools necessary to reproduce results
 
