@@ -75,7 +75,7 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 `consenus.sh` - produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids.
 
 
-# THE BEGINNING 
+# THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
 The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.4. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by running the script below.
