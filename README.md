@@ -140,23 +140,23 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 4.Next, selected Data -> Phylogenetic Analysis from the tool bar then produced a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameters
   
-    1.Test of Phylogeny: Bootstrap method
-    
-    2.No. Bootstrap Replications: 500
-    
-    3.Substitutions type: Amino acid
-    
-    4.Model/Method: Poisson model
-    
-    5.Rates among Sites: Gamma Distributed (G)
-    
-    6.Gamma Parameter: 1.00
-    
-    7.Pattern among Lineages: Same (Homogeneous)
-    
-    8.Gaps/Missing Data Treatment: Pairwise Deletion
-    
-    9.Number of Threads: 3
+   1.Test of Phylogeny: Bootstrap method
+
+   2.No. Bootstrap Replications: 500
+
+3.Substitutions type: Amino acid
+
+4.Model/Method: Poisson model
+
+5.Rates among Sites: Gamma Distributed (G)
+
+6.Gamma Parameter: 1.00
+
+7.Pattern among Lineages: Same (Homogeneous)
+
+8.Gaps/Missing Data Treatment: Pairwise Deletion
+
+9.Number of Threads: 3
 
 5.This produced an NJ tree with default layout – I customised the tree with the following
   
