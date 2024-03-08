@@ -5,6 +5,7 @@ This repositry contained all the Scripts and data needed to reproduce results fr
 We have been provided with some genes in cochaleria 
 
 ## What are the aims of our analysis?
+We were aiming to look at the structure and function of different genes found in a selection scan
 
 ## What are the expected outcomes?
 We expect to 
@@ -79,7 +80,7 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 ## Consensus Sequences (Nucleotide)
 The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.4. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by running the script below.
 
-<insert_script>
+`<insert_script>`
 
 ## Protein Sequences 
 Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Follow the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
@@ -111,9 +112,11 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
 2)Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
-3)On the results page, click on the `download` option and choose FASTA format from the drop-down menu before downloading the allignment.
+3)On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment.
 
 To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is a file that . 
+
+`<insert_script>`
 
 We will view the best tree file using the ITOL website. To do this the steps below were followed
 
@@ -121,7 +124,7 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 2)Click on the `Upload a tree` option
 
-3)Navigate to the `Tree file` field and select the choose file option. Navigate through your files to locate the raxml file with the `.besttree` extension and upload it.
+3)Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
 
 ## Protein Structure Modelling
 Say what you tried
