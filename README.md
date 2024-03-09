@@ -201,17 +201,14 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 
 ## Protein Structure Modelling
-Say what you tried
 
-Create a directory in your home directory (on your local machine) to host all the protein stuctures and any modelling related output by following the command below
+We now want to visualise the three dimensional structure of our protein. Create a directory in your home directory (on your local machine) to host all the protein stuctures and any modelling related output by following the command below
 
 ```bash
 mkdir ~/g46214_modelling_output
 ```
 
-
-
-To obtain 3D strucutre models for our proteins we input the sequence .
+To obtain 3D structure models for our proteins we followed the steps below:
 
 1.Follow the link to the alphafold collab website provided above
 
@@ -229,7 +226,7 @@ unzip ~/g46214_modelling_output/*_g46214.zip
 ```
 
 ## Image and Movie generation
-We have successfully modelled our proteins and now want to create good quality images to be used in our papers/presentations.
+We have successfully modelled our proteins and now want to create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
 
 We also want to have a short video showing some of our protein molecules rotating over time. This can be accomplished by running the scripts below.
 
