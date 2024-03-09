@@ -17,6 +17,7 @@ We expect to
 All these files should be downloaded into the same directory before following the rest of this document.
 
 For replicating results on the cloud :
+
 1.VCFs directory containing `UK_scan_dips.vcf` and `UK_scan_tets.vcf`
 
 2.Reference_Genome directory containing `C_excelsa_V5_braker2_wRseq.gff3`, `C_excelsa_V5.fasta` and `C_excelsa_V5.fasta.fai`
