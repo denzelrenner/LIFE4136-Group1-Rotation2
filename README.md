@@ -106,13 +106,19 @@ Amongst the resulting files there should be fasta files containing the entire co
 4.Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
 ## Homolog identification
-In order to find homologs for g42614 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
+In order to find homologs for g46214 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
 
-1.Follow the link to the TAIR website
+1.Follow the link to the BLAST tool on the TAIR website
 
 2.Navigate to the `BLAST program` field, and select `BLASTP: AA query, AA db` from the drop down menu
 
-3.Input the protein sequence for 
+3.Input the protein sequence for the reference into the `query sequence` field and select `Run BLAST`
+
+For g10577, the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and using NCBI blast. To detect for further homologs for g46214 and g10577 we followed the stebs below
+
+1.Follow the link to the NCBI BLAST webpage
+
+
 We also wanted
 
 in blastp search on the tair database and on the ncbi 
