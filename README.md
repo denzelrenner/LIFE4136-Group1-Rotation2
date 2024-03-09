@@ -23,9 +23,10 @@ For replicating results on the cloud :
 2.Reference_Genome directory containing `C_excelsa_V5_braker2_wRseq.gff3`, `C_excelsa_V5.fasta` and `C_excelsa_V5.fasta.fai`
 
 For replicating results from your local machine
+
 1)
 
-Explain what fai is and put a link as well
+Explain what fai is and put a link as well, and also .dict A more detailed explanation can be found here: (https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable.
@@ -70,7 +71,11 @@ raxml_install.sh
 
 
 On your local machine:
-brew install ffmpeg (Mac Intel i5)
+
+how to install homebrew
+
+brew install ffmpeg 
+
 Navigate to the Jalview,PyMOL websites and follow the download link for your machine
 
 ## Script description
