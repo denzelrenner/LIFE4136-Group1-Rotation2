@@ -1,6 +1,8 @@
 # LIFE4136_Group1_Rotation2
 This repositry contained all the Scripts and data needed to reproduce results from group1 in rotation2 of the groupwork projects.
 
+Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
+
 ## What is the problem we have been presented with?
 We have been provided with some genes in cochaleria 
 
@@ -15,8 +17,9 @@ We expect to
 All these files should be downloaded into the same directory before following the rest of this document.
 
 For replicating results on the cloud :
-1)VCFs directory containing {UK_scan_dips.vcf and UK_scan_tets.vcf}
-2)Reference_Genome directory containing {C_excelsa_V5_braker2_wRseq.gff3, C_excelsa_V5.fasta and C_excelsa_V5.fasta.fai}
+1.VCFs directory containing `UK_scan_dips.vcf` and `UK_scan_tets.vcf`
+
+2.Reference_Genome directory containing `C_excelsa_V5_braker2_wRseq.gff3`, `C_excelsa_V5.fasta` and `C_excelsa_V5.fasta.fai`
 
 For replicating results from your local machine
 1)
@@ -104,7 +107,7 @@ Now we have found out the closest homologs for our proteins. We now want to veri
 
 2.Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
 
-3)
+3.Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
@@ -125,11 +128,11 @@ To build a phylogenetic tree from this allignment we will use raxml by running t
 
 We will view the best tree file using the ITOL website. To do this the steps below were followed
 
-1)Follow the link provided to the ITOL website 
+1.Follow the link provided to the ITOL website 
 
-2)Click on the `Upload a tree` option
+2.Click on the `Upload a tree` option
 
-3)Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
+3.Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
 
 ### g10577
 1.Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
@@ -188,7 +191,7 @@ To obtain 3D strucutre models for our proteins we input the sequence .
 
 1.Follow the link to the alphafold collab website provided above
 
-2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and enter reference_g46214,diplpid_g46214,and tetraploid_g46214 in the `job name` field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and enter `reference_g46214`,`diplpid_g46214`,and `tetraploid_g46214` in the `job name` field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
 3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
@@ -198,7 +201,7 @@ To obtain 3D strucutre models for our proteins we input the sequence .
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
-unzip *_g46214.zip
+unzip ~/g46214_modelling_output/*_g46214.zip
 ```
 
 ## Image and Movie generation
