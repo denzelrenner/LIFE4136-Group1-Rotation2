@@ -33,6 +33,8 @@ These are all the tools that were used in our analysis with versions and links p
 
 ncbi blast (https://blast.ncbi.nlm.nih.gov/)
 
+TAIR BLAST version 2.9.0+ (uses NCBI BLAST 2.9.0+) (https://www.arabidopsis.org/Blast/index.jsp)
+
 orf finder (https://www.ncbi.nlm.nih.gov/orffinder/)
 
 uniprot (https://www.uniprot.org/align), clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)
@@ -60,6 +62,7 @@ InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
 ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
 
 Conda version 23.5.2
+
 
 all performed on mac intel i5
 
@@ -103,7 +106,16 @@ Amongst the resulting files there should be fasta files containing the entire co
 4.Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
 ## Homolog identification
-In order to find homologs blastp search on the tair database and on the ncbi 
+In order to find homologs for g42614 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
+
+1.Follow the link to the TAIR website
+
+2.Navigate to the `BLAST program` field, and select `BLASTP: AA query, AA db` from the drop down menu
+
+3.Input the protein sequence for 
+We also wanted
+
+in blastp search on the tair database and on the ncbi 
 
 
 ## Domain identification
