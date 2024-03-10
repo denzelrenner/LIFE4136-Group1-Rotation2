@@ -215,6 +215,8 @@ We now want to visualise the three dimensional structure of our protein. Create 
 
 ```bash
 mkdir ~/g46214_modelling_output
+mkdir ~/g46214_modelling_output/tetraploid_g46214_protein_images
+
 mkdir ~/g10577_modelling_output
 ```
 
