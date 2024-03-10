@@ -97,7 +97,7 @@ The first thing we will do is get consensus sequences for our diploids and tetra
 ## Protein Sequences 
 Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Follow the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
 
-1.Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
+&nbsp;&nbsp;&nbsp;&nbsp;1.Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
 2.Input nucleotide sequence from g42614 tetraploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
