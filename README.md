@@ -106,7 +106,9 @@ Amongst the resulting files there should be fasta files containing the entire co
 4.Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
 ## Homolog identification
-In order to find homologs for g46214 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
+
+
+To find homologs for g46214 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
 
 1.Follow the link to the BLAST tool on the TAIR website
 
@@ -114,10 +116,22 @@ In order to find homologs for g46214 and g10577 in the model species Arabidopsis
 
 3.Input the protein sequence for the reference into the `query sequence` field and select `Run BLAST`
 
-For g10577, the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and using NCBI blast. To detect for further homologs for g46214 and g10577 we followed the stebs below
+4.Identify the result with the lowest E value and highest score
+
+To identify g46214 and g10577 homologs in other plants species we followed the steps below:
 
 1.Follow the link to the NCBI BLAST webpage
 
+2.Select `Protein BLAST` 
+
+3.Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+
+
+For g10577, homologous proteins were selected based on >70%
+
+the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
+
+For g46214, homologous proteins to be used in pyhlogenetic tree building and mutliple sequence allignments were selected based on having 100% query cover and >40% percentage identity to our reference protein sequence. The protein sequences for the selected homologs were manually retrived by selecting their ncbi dataset accession code in the blastp results page, then selecting the `FASTA` option at the top of the page, and finally copy and pasting the protein sequence into a new fasta file. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to these files in fasta format.
 
 We also wanted
 
@@ -131,7 +145,7 @@ Now we have found out the closest homologs for our proteins. We now want to veri
 
 2.Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
 
-3.Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing
+3.Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
