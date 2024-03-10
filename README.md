@@ -241,62 +241,14 @@ unzip ~/g46214_modelling_output/*reference*.result.zip
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to actually investigate the structure and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
 
-We only want to use the best model from the alphafold output, it should have rank_001 in its name. We will load that into pymol and change the name of the object following the command below:
+We only want to use the best model from the alphafold output, it should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below:
+
+`tetaploid_g46214_inital_commands.txt`
 
 Note all these commands should be entered into the pyMOL command line
 
-```bash
-load ~/g46214_modelling_output/your_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
-```
+Now that we have highlighted all our important functional domains we want to generate images of the protein. This can be acheieved 
 
-Now we want to highlight important domains/motifs we discovered through using interpro, reading the literature, and observing the multiple sequence allignments with close homologs. The names for the selection are self explanitory in the type of domains we are trying to highlight.
-
-```bash
-color red, tetraploid_g46214
-
-select tetraploid_bbox1_domain,tetraploid_g46214 and resi 5-42
-```
-
-Highlight the first bbox domain, highly conserved between all bbx21 homologs
-
-```bash
-select tetraploid_bbox1_domain,tetraploid_g46214 and resi 5-47
-
-color blue, tetraploid_bbox1_domain
-```
-
-We are saying the bbox2 domain in cochleria is theoretial because multiple sequence allignment and phylogeny building indicates high divergence from its closest homologs in that region but it still contains some conserved residues needed for specific interactions. Even interpro showed theres no evidence it is a bbox2 domain
-
-```bash
-select tetraploid_theoretical_bbox2_domain, tetraploid_g46214 and resi 66-90
-
-color white, tetraploid_theoretical_bbox2_domain
-```
-
-Highlight the m6 motif whose function is currently unknown 
-
-```bash
-select tetraploid_m6_motif, tetraploid_g46214 and resi 121-134
-
-color yellow, tetraploid_m6_motif
-```
-
-Highlight the VP pair near the C terminus, conserved in all bbox proteins and has been thought to be useful for their protein interactions (needs experimental validation)
-
-```bash
-select tetraploid_VP_pair, tetraploid_g46214 and resi 252-253
-
-color green, tetraploid_VP_pair
-```
-Highlight the non_classical nuclear localisation signal at the C-terminus. if it functions similar to bbx21 then it needs to be recognised by importins and sequestered to the nucleus to function (needs experimental validation to see if KKKT is a valid NLS)
-
-```bash
-# milk and cookies
-
-select non_classical_NLS, tetraploid_g46214 and resi 261-265
-
-color cyan , non_classical_NLS
-```
 
 
 We also want to have a short video showing some of our protein molecules rotating over time. This can be accomplished by running the scripts below.
