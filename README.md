@@ -97,13 +97,13 @@ The first thing we will do is get consensus sequences for our diploids and tetra
 ## Protein Sequences 
 Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Follow the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
+&nbsp;&nbsp;&nbsp;&nbsp;1. Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
-2.Input nucleotide sequence from g42614 tetraploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
+&nbsp;&nbsp;&nbsp;&nbsp;2. Input nucleotide sequence from g42614 tetraploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
-3.Input nucleotide sequence from g10577 diploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1). If you take only coding sequence is the tetraploid truncated?
+&nbsp;&nbsp;&nbsp;&nbsp;3. Input nucleotide sequence from g10577 diploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1). If you take only coding sequence is the tetraploid truncated?
 
-4.Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
+&nbsp;&nbsp;&nbsp;&nbsp;4. Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
 ## Homolog identification
 
@@ -112,18 +112,6 @@ You should create fasta files called `g10577_homologs.fasta` and `g46214_homolog
 For g46214, homologous proteins were selected based on having 100% query cover and >40% percentage identity to the reference protein sequence. 
 
 For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence
-
-the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
-
-To find homologs for g46214 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
-
-1.Follow the link to the BLAST tool on the TAIR website
-
-2.Navigate to the `BLAST program` field, and select `BLASTP: AA query, AA db` from the drop down menu
-
-3.Input the protein sequence for the reference into the `query sequence` field and select `Run BLAST`
-
-4.Identify the result with the lowest E value and highest score
 
 To identify g46214 and g10577 homologs in other plant species we followed the steps below:
 
@@ -138,6 +126,8 @@ To identify g46214 and g10577 homologs in other plant species we followed the st
 &nbsp;&nbsp;&nbsp;&nbsp;5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
 
 &nbsp;&nbsp;&nbsp;&nbsp;6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
+
+Note that the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
 
 ## Domain identification
 Now we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. To this we followed these steps 
