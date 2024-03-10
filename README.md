@@ -101,7 +101,7 @@ Amongst the resulting files there should be fasta files containing the entire co
 
 &nbsp;&nbsp;&nbsp;&nbsp;2. Input nucleotide sequence from g42614 tetraploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;3. Input nucleotide sequence from g10577 diploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1). If you take only coding sequence is the tetraploid truncated?
+&nbsp;&nbsp;&nbsp;&nbsp;3. Input nucleotide sequence from g10577 diploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1). If you take only coding sequence is the tetraploid truncated? using 0.75AF and not 0.5 caused a bilogically relevant mutation to be seen
 
 &nbsp;&nbsp;&nbsp;&nbsp;4. Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
@@ -127,7 +127,7 @@ To identify g46214 and g10577 homologs in other plant species we followed the st
 
 &nbsp;&nbsp;&nbsp;&nbsp;6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 
-Note that the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
+Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 it did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
 
 ## Domain identification
 Now we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. To this we followed these steps 
@@ -140,7 +140,7 @@ Now we have found out the closest homologs for our proteins. We now want to veri
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
-To identify conserved residues in our proteins 
+To identify conserved residues in our proteins between the homologs and notice any important mutations between our diploid, tetraploids,and references
 
 ### g46214
  
