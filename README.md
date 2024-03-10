@@ -222,13 +222,13 @@ To obtain 3D structure models for our proteins we followed the steps below:
 
 1.Follow the link to the alphafold collab website provided above
 
-2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and the job name should have some identifier they all share (i.e `diploid_g46214`)enter `reference_g46214`,`diplpid_g46214`,and `tetraploid_g46214` in the `job name` field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate genethe job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`,`reference_g46214`). Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
 3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
-4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac)
+4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
-5.Move the zip files from your downloads folder to the directory we created earlier for protein structures, and open the files following the command below
+5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the command below
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
@@ -236,7 +236,9 @@ unzip ~/g46214_modelling_output/*_g46214.zip
 ```
 
 ## Image and Movie generation
-We have successfully modelled our proteins and now want to create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
+We have successfully modelled our proteins and now want to actually investigate the structure and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
+
+
 
 We also want to have a short video showing some of our protein molecules rotating over time. This can be accomplished by running the scripts below.
 
