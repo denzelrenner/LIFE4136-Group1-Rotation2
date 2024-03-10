@@ -245,7 +245,18 @@ We have successfully modelled our proteins and now want to actually investigate 
 
 We only want to use the best model from the alphafold output, it should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below:
 
-`tetaploid_g46214_inital_commands.txt`
+The alphafold tetraploid directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model
+
+```bash
+load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
+```
+Now navigate to the header of pymol and select the plugin tab, select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. Now that you have done that you can run the `tetraploid_image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles
+
+In the pyMOL commmand line input
+
+```bash
+run ~/path/to/python/script/tetraploid_image_gen.py
+```
 
 Note all these commands should be entered into the pyMOL command line
 
