@@ -107,6 +107,13 @@ Amongst the resulting files there should be fasta files containing the entire co
 
 ## Homolog identification
 
+You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
+
+For g46214, homologous proteins were selected based on having 100% query cover and >40% percentage identity to the reference protein sequence. 
+
+For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence
+
+the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
 
 To find homologs for g46214 and g10577 in the model species Arabidopsis thaliana we followed the steps below:
 
@@ -118,7 +125,7 @@ To find homologs for g46214 and g10577 in the model species Arabidopsis thaliana
 
 4.Identify the result with the lowest E value and highest score
 
-To identify g46214 and g10577 homologs in other plants species we followed the steps below:
+To identify g46214 and g10577 homologs in other plant species we followed the steps below:
 
 1.Follow the link to the NCBI BLAST webpage
 
@@ -126,17 +133,11 @@ To identify g46214 and g10577 homologs in other plants species we followed the s
 
 3.Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
+4.Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
-For g10577, homologous proteins were selected based on >70%
+5.Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
 
-the homolog in Arabidopsis thaliana did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
-
-For g46214, homologous proteins to be used in pyhlogenetic tree building and mutliple sequence allignments were selected based on having 100% query cover and >40% percentage identity to our reference protein sequence. The protein sequences for the selected homologs were manually retrived by selecting their ncbi dataset accession code in the blastp results page, then selecting the `FASTA` option at the top of the page, and finally copy and pasting the protein sequence into a new fasta file. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to these files in fasta format.
-
-We also wanted
-
-in blastp search on the tair database and on the ncbi 
-
+6.The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to these files in fasta format.
 
 ## Domain identification
 Now we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. To this we followed these steps 
