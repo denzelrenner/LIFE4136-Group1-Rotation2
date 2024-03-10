@@ -107,6 +107,7 @@ Amongst the resulting files there should be fasta files containing the entire co
 
 &nbsp;&nbsp;&nbsp;&nbsp;4. Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
+Note, you can use the genomic coordinates in the gff to only get
 ## Homolog identification
 
 You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
