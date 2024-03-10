@@ -18,9 +18,9 @@ All these files should be downloaded into the same directory before following th
 
 For replicating results on the cloud :
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.VCFs directory containing `UK_scan_dips.vcf` and `UK_scan_tets.vcf`
+&nbsp;&nbsp;&nbsp;&nbsp;1. VCFs directory containing `UK_scan_dips.vcf` and `UK_scan_tets.vcf`
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.Reference_Genome directory containing `C_excelsa_V5_braker2_wRseq.gff3`, `C_excelsa_V5.fasta` and `C_excelsa_V5.fasta.fai`
+&nbsp;&nbsp;&nbsp;&nbsp;2. Reference_Genome directory containing `C_excelsa_V5_braker2_wRseq.gff3`, `C_excelsa_V5.fasta` and `C_excelsa_V5.fasta.fai`
 
 For replicating results from your local machine
 
@@ -127,26 +127,26 @@ To find homologs for g46214 and g10577 in the model species Arabidopsis thaliana
 
 To identify g46214 and g10577 homologs in other plant species we followed the steps below:
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.Follow the link to the NCBI BLAST webpage
+&nbsp;&nbsp;&nbsp;&nbsp;1. Follow the link to the NCBI BLAST webpage
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.Select `Protein BLAST` 
+&nbsp;&nbsp;&nbsp;&nbsp;2. Select `Protein BLAST` 
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+&nbsp;&nbsp;&nbsp;&nbsp;3. Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
-&nbsp;&nbsp;&nbsp;&nbsp;4.Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
+&nbsp;&nbsp;&nbsp;&nbsp;4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
-&nbsp;&nbsp;&nbsp;&nbsp;5.Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
+&nbsp;&nbsp;&nbsp;&nbsp;5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
 
-&nbsp;&nbsp;&nbsp;&nbsp;6.The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
+&nbsp;&nbsp;&nbsp;&nbsp;6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 
 ## Domain identification
 Now we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. To this we followed these steps 
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.Follow the link to the InterPro website
+&nbsp;&nbsp;&nbsp;&nbsp;1. Follow the link to the InterPro website
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
+&nbsp;&nbsp;&nbsp;&nbsp;2. Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
+&nbsp;&nbsp;&nbsp;&nbsp;3. Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
@@ -184,23 +184,23 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 4.Next, selected Data -> Phylogenetic Analysis from the tool bar then produced a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameters
 
 ```  
-1.Test of Phylogeny: Bootstrap method
+1. Test of Phylogeny: Bootstrap method
 
-2.No. Bootstrap Replications: 500
+2. No. Bootstrap Replications: 500
 
-3.Substitutions type: Amino acid
+3. Substitutions type: Amino acid
 
-4.Model/Method: Poisson model
+4. Model/Method: Poisson model
 
-5.Rates among Sites: Gamma Distributed (G)
+5. Rates among Sites: Gamma Distributed (G)
 
-6.Gamma Parameter: 1.00
+6. Gamma Parameter: 1.00
 
-7.Pattern among Lineages: Same (Homogeneous)
+7. Pattern among Lineages: Same (Homogeneous)
 
-8.Gaps/Missing Data Treatment: Pairwise Deletion
+8. Gaps/Missing Data Treatment: Pairwise Deletion
 
-9.Number of Threads: 3
+9. Number of Threads: 3
 ```
 
 5.This produced an NJ tree with default layout – I customised the tree with the following
