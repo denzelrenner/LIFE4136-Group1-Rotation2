@@ -63,6 +63,8 @@ ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
 
 Conda version 23.5.2
 
+MEGA version 11 (https://www.megasoftware.net/)
+
 
 all performed on mac intel i5
 
@@ -218,7 +220,7 @@ To obtain 3D structure models for our proteins we followed the steps below:
 
 1.Follow the link to the alphafold collab website provided above
 
-2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and enter `reference_g46214`,`diplpid_g46214`,and `tetraploid_g46214` in the `job name` field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and the job name should have some identifier they all share (i.e `diploid_g46214`)enter `reference_g46214`,`diplpid_g46214`,and `tetraploid_g46214` in the `job name` field respectively. Note it is very important these exact job names are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
 3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
