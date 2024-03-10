@@ -107,7 +107,7 @@ Amongst the resulting files there should be fasta files containing the entire co
 
 &nbsp;&nbsp;&nbsp;&nbsp;4. Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
-Note, you can use the genomic coordinates in the gff to only get
+Note, you can use the genomic coordinates in the gff to only get the coding sequences and skip the step of having to select open reading frames
 ## Homolog identification
 
 You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
@@ -222,17 +222,20 @@ To obtain 3D structure models for our proteins we followed the steps below:
 
 1.Follow the link to the alphafold collab website provided above
 
-2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate genethe job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`,`reference_g46214`). Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`,`reference_g46214`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
 3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
 4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
-5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the command below
+5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
 unzip ~/g46214_modelling_output/*_g46214.zip
+unzip ~/g46214_modelling_output/*tetraploid*.result.zip
+unzip ~/g46214_modelling_output/*diploid*.result.zip
+unzip ~/g46214_modelling_output/*reference*.result.zip
 ```
 
 ## Image and Movie generation
