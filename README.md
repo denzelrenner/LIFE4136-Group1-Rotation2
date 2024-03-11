@@ -251,19 +251,27 @@ The alphafold tetraploid directory has a different suffix for the directory name
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
 select tetraploid_g46214_bbox_domains,(tetraploid_g46214 and resi 5-42) or (tetraploid_g46214 and resi 66-90)
-```
-Now navigate to the header of pymol and select the plugin tab, select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. When that has completed a pop up will ask you to close something and you shoudl select yes. Now repeat the steps outlined before but now select `polymer & tetraploid_g46214_bbox_domains` to be able to produce an object showing the electrostatic potential across the bbox domains only. NOTE, if you do not have sufficient RAM the electrostatic potential will only be coloured across portions of the protein. If that occurs close all other running applications on your device and rereun the steps.
 
-Now we have everything we need to produce our images and you can run the `tetraploid_image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below"
+load load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
+
+select diploid_g46214_bbox_domains,(diploid_g46214 and resi 5-42) or (diploid_g46214 and resi 66-90)
+
+align tetraploid_g46214, diploid_g46214
+```
+
+Now the diploid and tetraploid g46214 proteins have been loaded into pymol. We alligned them so the rotations produce good output. Using your mouse or trackpad, manually adjust the orientation of either the diploid/tetraploid protein to a position you are happy with. Follow the next few steps:
+
+1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
+2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. When that has completed a pop up will ask you to close something and you shoudl select yes.
+3. Repeat steps 1 and 2 but select {`polymer & tetraploid_g46214_bbox_domains`,`polymer & tetraploid_g46214`,`polymer & diploid_g46214_bbox_domains`} to be able to produce an object showing the electrostatic potential across the bbox domains only.
+ 
+NOTE: if you do not have sufficient RAM the electrostatic potential will only be coloured across portions of the protein. If that occurs close all other running applications on your device and rereun the steps.
+
+Now we have everything we need to produce our images and you can run the `image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below"
 
 ```bash
-run ~/path/to/python/script/tetraploid_image_gen.py
+run ~/path/to/python/script/image_generation.py
 ```
-
-Note all these commands should be entered into the pyMOL command line
-
-Now that we have highlighted all our important functional domains we want to generate images of the protein. This can be acheieved 
-
 
 
 We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation This can be accomplished by running the scripts below.
