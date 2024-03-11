@@ -249,6 +249,8 @@ The alphafold tetraploid directory has a different suffix for the directory name
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
+
+select tetraploid_g46214_bbox_domains,(tetraploid_g46214 and resi 5-42) or (tetraploid_g46214 and resi 66-90)
 ```
 Now navigate to the header of pymol and select the plugin tab, select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. Now that you have done that you can run the `tetraploid_image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles
 
