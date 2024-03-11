@@ -252,9 +252,9 @@ load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_r
 
 select tetraploid_g46214_bbox_domains,(tetraploid_g46214 and resi 5-42) or (tetraploid_g46214 and resi 66-90)
 ```
-Now navigate to the header of pymol and select the plugin tab, select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. Now that you have done that you can run the `tetraploid_image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles
+Now navigate to the header of pymol and select the plugin tab, select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. When that has completed a pop up will ask you to close something and you shoudl select yes. Now repeat the steps outlined before but now select `polymer & tetraploid_g46214_bbox_domains` to be able to produce an object showing the electrostatic potential across the bbox domains only. NOTE, if you do not have sufficient RAM the electrostatic potential will only be coloured across portions of the protein. If that occurs close all other running applications on your device and rereun the steps.
 
-In the pyMOL commmand line input
+Now we have everything we need to produce our images and you can run the `tetraploid_image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below"
 
 ```bash
 run ~/path/to/python/script/tetraploid_image_gen.py
@@ -266,7 +266,7 @@ Now that we have highlighted all our important functional domains we want to gen
 
 
 
-We also want to have a short video showing some of our protein molecules rotating over time. This can be accomplished by running the scripts below.
+We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation This can be accomplished by running the scripts below.
 
 This script will produce a series of images
 <insert_script>
