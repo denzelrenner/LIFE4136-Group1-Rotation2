@@ -276,6 +276,25 @@ run ~/path/to/python/script/image_generation.py
 
 We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation This can be accomplished by running the scripts below.
 
+First follow these commands:
+
+```bash
+mkdir ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
+mkdir ~/g46214_modelling_output/diploid_g46214_protein_images/movie
+
+load ~/g46214_modelling_output/gatk_04AF_tetraploid_b50ff/gatk_04AF_tetraploid_b50ff_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb, tetraploid_g46214
+select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-90
+
+load ~/g46214_modelling_output/gatk_04AF_dip_29144/gatk_04AF_dip_29144_unrelaxed_rank_001_alphafold2_ptm_model_2_seed_000.pdb, diploid_g46214
+select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-90
+
+allign tetraploid_g46214, diploid_g46214
+```
+
+Now do the select thing
+
+Now rotate molecule to choose a good starting position that will show everything you want when it rotates. It will be rotating up to down
+
 This script will produce a series of images
 <insert_script>
 
