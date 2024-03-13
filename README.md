@@ -92,14 +92,21 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 # THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
-The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.4. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by running the script below.
+The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by following the steps below:
 
-`<insert_script>`
+```bash
+conda activate /shared/apps/conda/bio2
 
+bash `<insert_script>`
+```
 ## Protein Sequences 
-Amongst the resulting files there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Follow the link to the orf finder website and input the consensus sequences for each gene in the different contrasts.
+Amongst the files produced from running the <insert_script> there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;1. Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
+ 1.Follow the link to the orf finder website.
+
+ 2.Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 into a new fasta file.
+
+ 1. Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
 &nbsp;&nbsp;&nbsp;&nbsp;2. Input nucleotide sequence from g42614 tetraploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
 
@@ -107,28 +114,28 @@ Amongst the resulting files there should be fasta files containing the entire co
 
 &nbsp;&nbsp;&nbsp;&nbsp;4. Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
 
-Note, you can use the genomic coordinates in the gff to only get the coding sequences and skip the step of having to select open reading frames
+
 ## Homolog identification
 
 You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
 
-For g46214, homologous proteins were selected based on having 100% query cover and >40% percentage identity to the reference protein sequence. 
+For g46214, homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
 
 For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence
 
 To identify g46214 and g10577 homologs in other plant species we followed the steps below:
 
-&nbsp;&nbsp;&nbsp;&nbsp;1. Follow the link to the NCBI BLAST webpage
+ 1. Follow the link to the NCBI BLAST webpage
 
-&nbsp;&nbsp;&nbsp;&nbsp;2. Select `Protein BLAST` 
+ 2. Select `Protein BLAST` 
 
-&nbsp;&nbsp;&nbsp;&nbsp;3. Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
-&nbsp;&nbsp;&nbsp;&nbsp;4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
+ 4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
-&nbsp;&nbsp;&nbsp;&nbsp;5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
+ 5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
 
-&nbsp;&nbsp;&nbsp;&nbsp;6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 
 Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 it did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
 
