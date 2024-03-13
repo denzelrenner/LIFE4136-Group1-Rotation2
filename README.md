@@ -142,11 +142,11 @@ Note that we also searched for homologs in the model species Arabidopsis thalian
 ## Domain identification
 Now we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. To this we followed these steps 
 
-&nbsp;&nbsp;&nbsp;&nbsp;1. Follow the link to the InterPro website
+ 1. Follow the link to the InterPro website
 
-&nbsp;&nbsp;&nbsp;&nbsp;2. Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
+ 2. Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
 
-&nbsp;&nbsp;&nbsp;&nbsp;3. Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
