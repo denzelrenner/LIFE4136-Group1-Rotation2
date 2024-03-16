@@ -100,27 +100,18 @@ conda activate /shared/apps/conda/bio2
 bash `<insert_script>`
 ```
 ## Protein Sequences 
-Amongst the files produced from running the <insert_script> there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
+Amongst the files produced from running the <insert_script> there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
- 1.Follow the link to the orf finder website.
+  1.Follow the link to the orf finder website.
 
- 2.Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 into a new fasta file.
-
- 1. Input nucleotide sequence from g42614 diploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
-
-&nbsp;&nbsp;&nbsp;&nbsp;2. Input nucleotide sequence from g42614 tetraploid into the query sequence field and submit the job. From the resulting output stitch the protein sequence for the three longest open reading frames to form the full length protein(ORF1+ORF3+ORF4) (results can be achieved if only the coding sequence is taken and not the entire gene. Methodology not shown) 
-
-&nbsp;&nbsp;&nbsp;&nbsp;3. Input nucleotide sequence from g10577 diploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1). If you take only coding sequence is the tetraploid truncated? using 0.75AF and not 0.5 caused a bilogically relevant mutation to be seen
-
-&nbsp;&nbsp;&nbsp;&nbsp;4. Input nucleotide sequence from g10577 tetraploid into the query sequence field and submit the job. From the resulting output take the longest open reading frame which is the full length protein (ORF1).
+  2.Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer.
 
 
 ## Homolog identification
 
-You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
+Now that we have retrieved the sequences for our proteins, we want to figure out what they actually are, and what their closest homologs are in other plant or animal species. You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
 
 For g46214, homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
-
 For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence
 
 To identify g46214 and g10577 homologs in other plant species we followed the steps below:
@@ -137,10 +128,10 @@ To identify g46214 and g10577 homologs in other plant species we followed the st
 
  6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 
-Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 it did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that
+Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that.
 
 ## Domain identification
-Now we have found out the closest homologs for our proteins. We now want to verify the functional domains within our proteins. To this we followed these steps 
+We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains. We now want to verify the functional domains within our proteins. To this we followed these steps 
 
  1. Follow the link to the InterPro website
 
@@ -218,7 +209,7 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 ## Protein Structure Modelling
 
-We now want to visualise the three dimensional structure of our protein. Create a directory in your home directory (on your local machine) to host all the protein stuctures and any modelling related output by following the command below
+We now want to visualise the three dimensional structure of our protein. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
 mkdir ~/g46214_modelling_output
@@ -268,9 +259,11 @@ align tetraploid_g46214, diploid_g46214
 
 Now the diploid and tetraploid g46214 proteins have been loaded into pymol. We alligned them so the rotations produce good output. Using your mouse or trackpad, manually adjust the orientation of either the diploid/tetraploid protein to a position you are happy with. Follow the next few steps:
 
-1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
-2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential across the whole tetraploid protein only. When that has completed a pop up will ask you to close something and you shoudl select yes.
-3. Repeat steps 1 and 2 but select {`polymer & tetraploid_g46214_bbox_domains`,`polymer & tetraploid_g46214`,`polymer & diploid_g46214_bbox_domains`} to be able to produce an object showing the electrostatic potential across the bbox domains only.
+ 1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
+
+ 2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential  across the whole tetraploid protein only. When that has completed a pop up will ask you to close something and you shoudl select yes.
+
+ 3. Repeat steps 1 and 2 but select {`polymer & tetraploid_g46214_bbox_domains`,`polymer & tetraploid_g46214`,`polymer & diploid_g46214_bbox_domains`} to be able to produce an   object showing the electrostatic potential across the bbox domains only.
  
 NOTE: if you do not have sufficient RAM the electrostatic potential will only be coloured across portions of the protein. If that occurs close all other running applications on your device and rereun the steps.
 
