@@ -39,11 +39,17 @@ orf finder (https://www.ncbi.nlm.nih.gov/orffinder/)
 
 uniprot (https://www.uniprot.org/align), clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)
 
-jalview version 2.11.3.2
-
 alphafold collab (ColabFold v1.5.5: AlphaFold2 using MMseqs2
 
 (https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)
+
+InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
+
+ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
+
+MEGA version 11 (https://www.megasoftware.net/)
+
+jalview version 2.11.3.2
 
 PyMOL version 2.5.8
 
@@ -57,13 +63,8 @@ samtools version 1.19.2, (htslib version 1.19.1)
 
 RAxML-NG version 0.9.0
 
-InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
-
-ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
-
 Conda version 23.5.2
 
-MEGA version 11 (https://www.megasoftware.net/)
 
 
 all performed on mac intel i5
@@ -151,7 +152,7 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
 2.Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
-3.On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment.
+3.On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
 To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is a file that . 
 
