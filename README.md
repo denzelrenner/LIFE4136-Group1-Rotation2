@@ -160,11 +160,13 @@ To build a phylogenetic tree from this allignment we will use raxml by running t
 
 We will view the best tree file using the ITOL website. To do this the steps below were followed
 
-1.Follow the link provided to the ITOL website 
+  1.Follow the link provided to the ITOL website 
 
-2.Click on the `Upload a tree` option
+  2.Click on the `Upload a tree` option
 
-3.Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
+  3.Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
+
+  4.Replace the accession code names at the tip of the tree with the real thing
 
 ### g10577
 1.Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
