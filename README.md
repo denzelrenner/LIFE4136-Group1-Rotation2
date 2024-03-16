@@ -166,7 +166,7 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
   3.Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
 
-  4.Replace the accession code names at the tip of the tree with the real thing
+  4.Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with its Genus and Species
 
 ### g10577
 1.Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
