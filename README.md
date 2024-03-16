@@ -257,6 +257,10 @@ load load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your
 
 select diploid_g46214_bbox_domains,(diploid_g46214 and resi 5-42) or (diploid_g46214 and resi 66-90)
 
+run ~/g46214_modelling_output/colorh.py
+
+colorh diploid_g46214
+
 align tetraploid_g46214, diploid_g46214
 ```
 
