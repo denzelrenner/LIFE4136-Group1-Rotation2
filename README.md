@@ -92,7 +92,7 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 # THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
-The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest only and not the entire scaffold. This is accomplished by following the steps below:
+The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5) . The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest. This is accomplished by following the steps below:
 
 ```bash
 conda activate /shared/apps/conda/bio2
@@ -100,7 +100,7 @@ conda activate /shared/apps/conda/bio2
 bash `<insert_script>`
 ```
 ## Protein Sequences 
-Amongst the files produced from running the <insert_script> there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. 
+Amongst the files produced from running the <insert_script> there should be fasta files containing the entire consensus gene sequence for g46214 and g10577 in our diploids and tetraploids. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
  1.Follow the link to the orf finder website.
 
