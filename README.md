@@ -297,6 +297,9 @@ select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
 load ~/g46214_modelling_output/gatk_04AF_dip_29144/gatk_04AF_dip_29144_unrelaxed_rank_001_alphafold2_ptm_model_2_seed_000.pdb, diploid_g46214
 select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 
+run colorh
+
+colorh protein
 ```
 
 Now do the select thing
