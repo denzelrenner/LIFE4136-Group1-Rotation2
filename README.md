@@ -252,17 +252,18 @@ colourh more read on it here (https://pymolwiki.org/index.php/Color_h)
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
-select tetraploid_g46214_bbox_domains,(tetraploid_g46214 and resi 5-42) or (tetraploid_g46214 and resi 66-90)
+select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
 
 load load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
-select diploid_g46214_bbox_domains,(diploid_g46214 and resi 5-42) or (diploid_g46214 and resi 66-90)
+select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 
 run ~/g46214_modelling_output/colorh.py
 
-colorh diploid_g46214
+color_h diploid_g46214
 
-align tetraploid_g46214, diploid_g46214
+color_h tetraploid_g46214
+
 ```
 
 Now the diploid and tetraploid g46214 proteins have been loaded into pymol. We alligned them so the rotations produce good output. Using your mouse or trackpad, manually adjust the orientation of either the diploid/tetraploid protein to a position you are happy with. Follow the next few steps:
@@ -291,12 +292,11 @@ mkdir ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
 mkdir ~/g46214_modelling_output/diploid_g46214_protein_images/movie
 
 load ~/g46214_modelling_output/gatk_04AF_tetraploid_b50ff/gatk_04AF_tetraploid_b50ff_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb, tetraploid_g46214
-select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-90
+select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
 
 load ~/g46214_modelling_output/gatk_04AF_dip_29144/gatk_04AF_dip_29144_unrelaxed_rank_001_alphafold2_ptm_model_2_seed_000.pdb, diploid_g46214
-select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-90
+select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 
-allign tetraploid_g46214, diploid_g46214
 ```
 
 Now do the select thing
