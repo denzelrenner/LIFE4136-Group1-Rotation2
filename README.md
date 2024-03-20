@@ -1,5 +1,5 @@
 # LIFE4136_Group1_Rotation2
-This repositry contained all the Scripts and data needed to reproduce results from group1 in rotation2 of the groupwork projects.
+This repositry contains all the ccripts and data needed to reproduce results from group1 in rotation2 of the groupwork projects.
 
 Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
 
