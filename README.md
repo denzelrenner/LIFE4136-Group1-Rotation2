@@ -213,6 +213,8 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 ## Protein Structure Modelling
 
+### g46214
+
 We now want to visualise the three dimensional structure of our proteins. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
@@ -285,23 +287,19 @@ run ~/path/to/python/script/image_generation.py
 ```
 
 
-We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation This can be accomplished by running the scripts below.
+We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those together will make a movie. This can be accomplished by running the scripts below:
 
-First follow these commands:
 
 ```bash
-mkdir ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
-mkdir ~/g46214_modelling_output/diploid_g46214_protein_images/movie
-
 load ~/g46214_modelling_output/gatk_04AF_tetraploid_b50ff/gatk_04AF_tetraploid_b50ff_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb, tetraploid_g46214
 select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
 
 load ~/g46214_modelling_output/gatk_04AF_dip_29144/gatk_04AF_dip_29144_unrelaxed_rank_001_alphafold2_ptm_model_2_seed_000.pdb, diploid_g46214
 select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 
-run colorh
+run ~/g46214_modelling_output/colorh.py
 
-colorh protein
+colorh tetraploid_g46214
 ```
 
 Now do the select thing
