@@ -4,13 +4,13 @@ This repositry contains all the ccripts and data needed to reproduce results fro
 Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
 
 ## What is the problem we have been presented with?
-We have been provided with some genes in cochaleria 
+We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy where the plants are moving from having diploid genomes to tetraploid ones
 
 ## What are the aims of our analysis?
-We were aiming to generate the structural predictions for candidate genes found in a selection scan and investigate their function
+We were aiming to generate structural predictions for candidate genes (from the selection scan) in both diploids and tetraploids, then compare these structures as well as their primary sequences, to determine differences that might relate to differnet function in diploids and tetraploids.
 
 ## What are the expected outcomes?
-We expect to see mutations in the tetraploid that allow it to survive certain conditions better than the diploids 
+Depending on the gene, we expect to see mutations in the tetraploids that allow it to survive certain conditions better than the diploids 
 
 # Prerequisites
 ## Required files and data
