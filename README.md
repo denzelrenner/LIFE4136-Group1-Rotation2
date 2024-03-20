@@ -142,7 +142,7 @@ We have found out the closest homologs for our proteins in different species so 
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
-To identify conserved residues in our proteins between the homologs and notice any important mutations between our diploid, tetraploids,and references
+This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploids,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have deviated from their homologs, and also how much the tetraploids have deviated from the diploids 
 
 ### g46214
  
