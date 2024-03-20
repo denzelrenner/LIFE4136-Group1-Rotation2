@@ -244,6 +244,28 @@ unzip ~/g46214_modelling_output/*tetraploid*.result.zip
 unzip ~/g46214_modelling_output/*diploid*.result.zip
 unzip ~/g46214_modelling_output/*reference*.result.zip
 ```
+### g10577
+
+We now want to visualise the three dimensional structure of our proteins. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
+
+```bash
+mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
+mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
+```
+To obtain 3D structure models for our proteins we followed the steps below:
+
+1.Follow the link to the alphafold collab website provided above
+
+2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_domain1_g10577`,`tetraploid_domain1_g10577`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+
+3.Repeat step 2 for all other domains in g10577 that we idenetified in the domain identification step. Have to say that they grab the sequence 
+
+4.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
+
+4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
+
+5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
+
 
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to actually investigate the structure and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
@@ -311,6 +333,10 @@ This script will produce a series of images
 These series of images are then stitched together to produce a movie of a rotating protein
 m
 
+### g10577
+For 10577 we had to use a different approach due to limitations with alphafolds memory. Instead of putting the whole sequence
+
+We will have to load in the reference Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein
 
 
 
