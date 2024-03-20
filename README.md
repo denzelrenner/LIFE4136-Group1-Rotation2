@@ -154,7 +154,7 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
 3.On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
-To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is a file that . 
+To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree.  
 
 `<insert_script>`
 
@@ -169,9 +169,10 @@ We will view the best tree file using the ITOL website. To do this the steps bel
   4.Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with its Genus and Species
 
 ### g10577
+
 1.Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
 
-2.Uploaded the fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `input.fasta`
+2.Uploaded the fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
 3.Produced a multiple sequence alignment by navigating to the tool bar and selecting Alignment: Alignment -> Align by ClustalW -> select all -> used default parameters except for Delay Divergent Cutoff (%) and selected 45%.
 
@@ -212,13 +213,14 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 ## Protein Structure Modelling
 
-We now want to visualise the three dimensional structure of our protein. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
+We now want to visualise the three dimensional structure of our proteins. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
-mkdir ~/g46214_modelling_output
-mkdir ~/g46214_modelling_output/tetraploid_g46214_protein_images
+mkdir -p ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
+mkdir -p ~/g46214_modelling_output/diploid_g46214_protein_images/movie
 
-mkdir ~/g10577_modelling_output
+mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
+mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
 
 To obtain 3D structure models for our proteins we followed the steps below:
