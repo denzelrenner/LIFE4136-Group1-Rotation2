@@ -87,10 +87,13 @@ The first thing we will do is get consensus sequences for our diploids and tetra
 ```bash
 conda activate /shared/apps/conda/bio2
 
-bash `<insert_script>`
+bash ~/generate_reference_sequences.sh
+bash ~/g46214_gatk_consensus_final.sh
+bash ~/g10577_gatk_consensus_final.sh
 ```
+
 ## Protein Sequences 
-Amongst the files produced from running the <insert_script> there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
+Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
   1.Follow the link to the orf finder website.
 
