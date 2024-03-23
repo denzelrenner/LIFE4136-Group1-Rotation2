@@ -16,6 +16,11 @@ Depending on the gene and given our understanding of the system, we expect to se
 ## Required files and data
 All these files should be downloaded into the same directory before following the rest of this document.
 
+|Directory|Files|
+|---------|-----|
+|VCFs|UK_scan_dips.vcf<br>UK_scan_tets.vcf|
+|Reference_Genome|C_excelsa_V5_braker2_wRseq.gff3<br>C_excelsa_V5.fasta<br>C_excelsa_V5.fasta.fai|
+
 For replicating results on the cloud :
 
 * `VCFs` directory containing `UK_scan_dips.vcf` and `UK_scan_tets.vcf`
