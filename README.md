@@ -140,11 +140,11 @@ This is the last step where we remain at the primary sequence level. We have suc
  
 By following the steps below, a multiple sequence allignment of the protein sequences was generated.
 
- 1.Follow the link to the uniprot website and navigate to the tab labelled `Align`
+ 1. Follow the link to the uniprot website and navigate to the tab labelled `Align`
 
- 2.Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
+ 2. Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
- 3.On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
+ 3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
 To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree.  
 
