@@ -85,11 +85,12 @@ brew install ffmpeg
 Navigate to the Jalview,PyMOL websites and follow the download link for your machine
 
 ## Script description
-`raxml_install.sh` - installs raxml-ng
 
-`consenus.sh` - produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids.
-
-`colorh.py` - colours proteins by hydrophobicity. You will also to copy and paste or download the code from the PyMOL wiki. Read more about it here. (https://pymolwiki.org/index.php/Color_h)
+| Script Name | Description |
+|-------------|-------------|
+| `raxml_install.sh` | installs raxml-ng |
+| `consenus.sh` | produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids |
+| `colorh.py` | colours proteins by hydrophobicity. You will also to copy and paste or download the code from the PyMOL wiki. Read more about it here. (https://pymolwiki.org/index.php/Color_h) |
 
 # THE ANALYSIS
 
