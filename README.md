@@ -128,7 +128,7 @@ We have found out the closest homologs for our proteins in different species so 
 
  1. Follow the link to the InterPro website
 
- 2. Input the protein sequences (in fasta format) into the query field labelled `Enter your sequence` and choose `search`
+ 2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 and g10577 into the query field labelled `Enter your sequence` and choose `search`
 
  3. Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
 
@@ -150,7 +150,7 @@ To build a phylogenetic tree from this allignment we will use raxml by running t
 
 `<insert_script>`
 
-We will view the best tree file using the ITOL website. To do this the steps below were followed
+We will view the best tree file using the ITOL website. To do this the steps below were followed:
 
   1.Follow the link provided to the ITOL website 
 
@@ -161,6 +161,8 @@ We will view the best tree file using the ITOL website. To do this the steps bel
   4.Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with its Genus and Species
 
 ### g10577
+
+Note: attributing This code explanation was written by Luke
 
 1.Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
 
@@ -229,7 +231,6 @@ To obtain 3D structure models for our proteins we followed the steps below:
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
-
 for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
 
@@ -242,7 +243,7 @@ mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
 
-For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to get a full reference protein using swissmodel. The analysis can be performed by following the steps below:
+For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to get a complete reference protein model using swissmodel so we can essentially 'map' the domains onto the reference protein. The analysis can be performed by following the steps below:
 
  1.Follow the link to the alphafold collab website provided above
 
@@ -261,7 +262,6 @@ For g10577 we had to use a different approach due to limitations with alphafold'
 ```bash
 mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
 mv ~/Downloads/model_01.pdb ~/g10577_modelling_output/reference_g10577.pdb
-
 for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 ## Image and Movie generation
