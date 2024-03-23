@@ -89,6 +89,7 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 
 `consenus.sh` - produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids.
 
+`colorh.py` - colours proteins by hydrophobicity. You will also to copy and paste or download the code from the PyMOL wiki. Read more about it here. (https://pymolwiki.org/index.php/Color_h)
 
 # THE ANALYSIS
 
@@ -282,7 +283,7 @@ We have successfully modelled our proteins and now want to actually investigate 
 
 We only want to use the best model from the alphafold output, it should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below:
 
-The alphafold tetraploid directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. You will also need to copy and paste or download the code for a script to colour proteins by hydrophobicity on the PyMOL wiki. Read more about it here (https://pymolwiki.org/index.php/Color_h)
+The alphafold tetraploid directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. 
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
