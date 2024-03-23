@@ -31,42 +31,27 @@ Explain what fai is and put a link as well, and also .dict A more detailed expla
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable.
 
-ncbi blast (https://blast.ncbi.nlm.nih.gov/)
-
-TAIR BLAST version 2.9.0+ (uses NCBI BLAST 2.9.0+) (https://www.arabidopsis.org/Blast/index.jsp)
-
-orf finder (https://www.ncbi.nlm.nih.gov/orffinder/)
-
-uniprot (https://www.uniprot.org/align), clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)
-
-alphafold collab (ColabFold v1.5.5: AlphaFold2 using MMseqs2
-
-(https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)
-
-InterPro version 98.0 (https://www.ebi.ac.uk/interpro/)
-
-ITOL:Interactive Tree Of Life version 6.8.2 (https://itol.embl.de/)
-
-MEGA version 11 (https://www.megasoftware.net/)
-
-jalview version 2.11.3.2
-
-PyMOL version 2.5.8
-
-Homebrew version 4.2.10 (Mac Intel i5)
-
-ffmpeg version 6.1.1 
-
-GATK verison 4.2.2.0, (HTSJDK version 2.24.1, Picard version 2.25.4)
-
-samtools version 1.19.2, (htslib version 1.19.1)
-
-RAxML-NG version 0.9.0
-
-Conda version 23.5.2
+| Tool | Version |
+|------|---------|
+|[ncbi blast](https://blast.ncbi.nlm.nih.gov/)|NA|
+|[TAIR BLAST](https://www.arabidopsis.org/Blast/index.jsp)|version 2.9.0+ (uses NCBI BLAST 2.9.0+)|
+|[orf finder](https://www.ncbi.nlm.nih.gov/orffinder/)|NA|
+|[uniprot](https://www.uniprot.org/align)|clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)|
+|[alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)|(ColabFold v1.5.5: AlphaFold2 using MMseqs2|
+|[InterPro](https://www.ebi.ac.uk/interpro/)|version 98.0| 
+|[ITOL:Interactive Tree Of Life](https://itol.embl.de/)|version 6.8.2|
+|[MEGA](https://www.megasoftware.net/)|version 11|
+|jalview|version 2.11.3.2|
+|PyMOL|version 2.5.8|
+|Homebrew|version 4.2.10| 
+|ffmpeg|version 6.1.1| 
+|GATK (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|
+|samtools (htslib)|version 1.19.2 (version 1.19.1)|
+|RAxML-NG|version 0.9.0|
+|Conda|version 23.5.2|
 
 
-
+(Mac Intel i5))write about how to sintall homebrew
 all performed on mac intel i5
 
 ## Tool intallation 
@@ -90,7 +75,7 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 |-------------|-------------|
 | `raxml_install.sh` | installs raxml-ng |
 | `consenus.sh` | produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids |
-| `colorh.py` | colours proteins by hydrophobicity. You will also to copy and paste or download the code from the PyMOL wiki. Read more about it here. (https://pymolwiki.org/index.php/Color_h) |
+| `colorh.py` | colours proteins by hydrophobicity. You will also to copy and paste or download the code from the [PyMOL wiki](https://pymolwiki.org/index.php/Color_h) |
 
 # THE ANALYSIS
 
