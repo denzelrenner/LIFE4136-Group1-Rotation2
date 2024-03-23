@@ -1,5 +1,5 @@
 # LIFE4136_Group1_Rotation2
-This repositry contains all the ccripts and data needed to reproduce results from group1 in rotation2 of the groupwork projects.
+This repositry contains all the scripts and data files needed to reproduce results from group1 in rotation2 of the groupwork projects.
 
 Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
 
@@ -55,7 +55,7 @@ These are all the tools that were used in our analysis with versions and links p
 all performed on mac intel i5
 
 ## Tool intallation 
-These scripts/commands should be ran to install all the tools necessary to reproduce results
+These scripts/commands should be ran to install some of the tools necessary to reproduce results
 
 On the cloud:
 raxml_install.sh
@@ -64,8 +64,9 @@ raxml_install.sh
 On your local machine:
 
 how to install homebrew
-
-brew install ffmpeg 
+```bash
+brew install ffmpeg
+``` 
 
 Navigate to the Jalview,PyMOL websites and follow the download link for your machine
 
