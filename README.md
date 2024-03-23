@@ -21,17 +21,9 @@ All these files should be downloaded into the same directory before following th
 |VCFs|UK_scan_dips.vcf<br>UK_scan_tets.vcf|
 |Reference_Genome|C_excelsa_V5_braker2_wRseq.gff3<br>C_excelsa_V5.fasta<br>C_excelsa_V5.fasta.fai|
 
-For replicating results on the cloud :
+Explain what fai is and put a link as well, and also .dict A more detailed explanation on these file types can be found on the [gatk website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
-* `VCFs` directory containing `UK_scan_dips.vcf` and `UK_scan_tets.vcf`
-
-* `Reference_Genome` directory containing `C_excelsa_V5_braker2_wRseq.gff3`, `C_excelsa_V5.fasta` and `C_excelsa_V5.fasta.fai`
-
-For replicating results from your local machine
-
-1)
-
-Explain what fai is and put a link as well, and also .dict A more detailed explanation can be found here: (https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+Check i there are other files they might need 
 
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable.
