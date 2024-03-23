@@ -266,17 +266,17 @@ For g10577 we had to use a different approach due to limitations with alphafold'
 
  5.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
- 6.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
+ 6.Follow the link to the SWISS-MODEL website, select `Start Modelling`, input the reference g10577 sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format.
+
+ 7.Move the zip files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
 
 ```bash
 mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
+mv ~/Downloads/model_01.pdb ~/g10577_modelling_output/reference_g10577.pdb
 
 unzip ~/g10577_modelling_output/*tetraploid*.result.zip
 unzip ~/g10577_modelling_output/*diploid*.result.zip
 ```
-
- 7.Follow the link to the SWISS-MODEL website, select `Start Modelling`, input the reference g10577 sequence into the `Target Sequence` field and select `Build Model`
-
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to actually investigate the structure and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
 
