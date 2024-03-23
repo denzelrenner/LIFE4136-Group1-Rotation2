@@ -272,11 +272,19 @@ We only want to use the best model from the alphafold output, it should have ran
 
 The alphafold tetraploid directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. 
 
+For tetraploids:
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
 select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
 
+run ~/g46214_modelling_output/colorh.py
+
+color_h tetraploid_g46214
+```
+
+For diploids:
+```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
 select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
@@ -284,9 +292,6 @@ select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 run ~/g46214_modelling_output/colorh.py
 
 color_h diploid_g46214
-
-color_h tetraploid_g46214
-
 ```
 
 Now the diploid or tetraploid g46214 proteins have been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of either the diploid/tetraploid protein to a position you are happy with. Follow the next few steps:
