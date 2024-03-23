@@ -148,11 +148,11 @@ This is the last step where we remain at the primary sequence level. We have suc
  
 By following the steps below, a multiple sequence allignment of the protein sequences was generated.
 
-1.Follow the link to the uniprot website and navigate to the tab labelled `Align`
+ 1.Follow the link to the uniprot website and navigate to the tab labelled `Align`
 
-2.Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
+ 2.Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
-3.On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
+ 3.On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
 To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree.  
 
@@ -210,6 +210,7 @@ We will view the best tree file using the ITOL website. To do this the steps bel
 
 6.To save a PNG file of the tree I selected Image from the toolbar: Image -> Save a PNG file  then gave the file path to my Desktop with an appropriate file name.
 
+Note, after performing multiple sequence allignments and reading through papers the positions of domains in the g10577 diploid and tetraploid were manually adjusted to better reflect the real positions of functional domains
 
 ## Protein Structure Modelling
 
@@ -227,15 +228,15 @@ mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 
 To obtain 3D structure models for our proteins we followed the steps below:
 
-1.Follow the link to the alphafold collab website provided above
+ 1.Follow the link to the alphafold collab website provided above
 
-2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`,`reference_g46214`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+ 2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`,`reference_g46214`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
-3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
+ 3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
-4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
+ 4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
-5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
+ 5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
@@ -246,26 +247,35 @@ unzip ~/g46214_modelling_output/*reference*.result.zip
 ```
 ### g10577
 
-We now want to visualise the three dimensional structure of our proteins. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
+We now want to visualise the three dimensional structure of the g10577 protein in diploids and tetraploids. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
 mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
-To obtain 3D structure models for our proteins we followed the steps below:
 
-1.Follow the link to the alphafold collab website provided above
+For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000 amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to get a full protein using swissmodel. This analysis can be accomplished by following the steps below:
 
-2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_domain1_g10577`,`tetraploid_domain1_g10577`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+ 1.Follow the link to the alphafold collab website provided above
 
-3.Repeat step 2 for all other domains in g10577 that we idenetified in the domain identification step. Have to say that they grab the sequence 
+ 2.Input the protein sequence for a given domain in the diploid and tetraploid sequences into the `query sequence` field, and the job name should have some identifier they all share (i.e `diploid_domain1_g10577`,`tetraploid_domain1_g10577`). It is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
-4.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
+ 3.Repeat step 2 for all other domains in g10577 that we idenetified in the domain identification step. Have to say that they grab the sequence 
 
-4.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
+ 4.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
-5.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
+ 5.When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
+ 6.Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below
+
+```bash
+mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
+
+unzip ~/g10577_modelling_output/*tetraploid*.result.zip
+unzip ~/g10577_modelling_output/*diploid*.result.zip
+```
+
+ 7.Follow the link to the SWISS-MODEL website, select `Start Modelling`, input the reference g10577 sequence into the `Target Sequence` field and select `Build Model`
 
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to actually investigate the structure and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
@@ -334,7 +344,7 @@ These series of images are then stitched together to produce a movie of a rotati
 m
 
 ### g10577
-For 10577 we had to use a different approach due to limitations with alphafolds memory. Instead of putting the whole sequence
+Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
 
 We will have to load in the reference Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein
 
