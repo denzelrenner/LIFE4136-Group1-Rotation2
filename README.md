@@ -10,7 +10,7 @@ We have been provided with some genes in Cochaleria that are under selection dur
 We were aiming to generate structural predictions for candidate genes (from the selection scan) in both diploids and tetraploids, then compare these structures as well as their primary sequences, to determine differences that might relate to differnet function in diploids and tetraploids.
 
 ## What are the expected outcomes?
-Depending on the gene and given our understanding of the system, we expect to see mutations in the tetraploids that allow it to survive certain conditions better than the diploids 
+Depending on the gene and given our understanding of the system, we expect to see mutations in the tetraploids that allow it to survive certain conditions better than the diploids, or mutations in the tetraploid that reduce the function of a protein so that it does not disrupt the survival of the plant
 
 # Prerequisites
 ## Required files and data
