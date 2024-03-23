@@ -95,7 +95,7 @@ bash ~/g10577_gatk_consensus_final.sh
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
-  1.Follow the link to the orf finder website.
+  1.Follow the link to the [orf finder](https://www.ncbi.nlm.nih.gov/orffinder/) website.
 
   2.Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer.
 
@@ -109,7 +109,7 @@ For g10577, homologous proteins were selected based on >70% query cover and >40%
 
 To identify g46214 and g10577 homologs in other plant species we followed the steps below:
 
- 1. Follow the link to the NCBI BLAST webpage
+ 1. Follow the link to the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/) webpage
 
  2. Select `Protein BLAST` 
 
@@ -126,7 +126,7 @@ Note that we also searched for homologs in the model species Arabidopsis thalian
 ## Domain identification
 We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains. We now want to verify the functional domains within our proteins. To this we followed these steps 
 
- 1. Follow the link to the InterPro website
+ 1. Follow the link to the [InterPro website](https://www.ebi.ac.uk/interpro/)
 
  2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 and g10577 into the query field labelled `Enter your sequence` and choose `search`
 
@@ -219,7 +219,7 @@ mkdir -p ~/g46214_modelling_output/diploid_g46214_protein_images/movie
 
 To obtain 3D structure models for our proteins we followed the steps below:
  
- 1. Follow the link to the alphafold collab website provided above
+ 1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website 
  
  2. Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
@@ -245,7 +245,7 @@ mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 
 For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to get a complete reference protein model using swissmodel so we can essentially 'map' the domains onto the reference protein. The analysis can be performed by following the steps below:
 
- 1. Follow the link to the alphafold collab website provided above
+ 1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website
 
  2. Input the protein sequence for a given domain in the diploid and tetraploid sequences into the `query sequence` field, and the job name should have some identifier they all share (i.e `diploid_domain1_g10577`,`tetraploid_domain1_g10577`). It is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
