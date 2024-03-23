@@ -41,8 +41,8 @@ These are all the tools that were used in our analysis with versions and links p
 |[InterPro](https://www.ebi.ac.uk/interpro/)|version 98.0| 
 |[ITOL:Interactive Tree Of Life](https://itol.embl.de/)|version 6.8.2|
 |[MEGA](https://www.megasoftware.net/)|version 11|
-|jalview|version 2.11.3.2|
-|PyMOL|version 2.5.8|
+|[jalview](https://www.jalview.org/)|version 2.11.3.2|
+|[PyMOL](https://pymol.org/)|version 2.5.8|
 |Homebrew|version 4.2.10| 
 |ffmpeg|version 6.1.1| 
 |GATK (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|
