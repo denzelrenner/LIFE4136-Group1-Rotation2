@@ -222,16 +222,13 @@ We now want to visualise the three dimensional structure of our proteins. We wil
 ```bash
 mkdir -p ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
 mkdir -p ~/g46214_modelling_output/diploid_g46214_protein_images/movie
-
-mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
-mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
 
 To obtain 3D structure models for our proteins we followed the steps below:
-
+ 
  1.Follow the link to the alphafold collab website provided above
-
- 2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`,`reference_g46214`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
+ 
+ 2.Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`) where the `*` is any extra information you want to add. Note it is very important that common identifiers are given due to naming requirements in subsequent scripts, and only a single protein sequence can be modelled at a time.
 
  3.Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
@@ -241,11 +238,10 @@ To obtain 3D structure models for our proteins we followed the steps below:
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
-unzip ~/g46214_modelling_output/*_g46214.zip
-unzip ~/g46214_modelling_output/*tetraploid*.result.zip
-unzip ~/g46214_modelling_output/*diploid*.result.zip
-unzip ~/g46214_modelling_output/*reference*.result.zip
+
+for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
+
 ### g10577
 
 We now want to visualise the three dimensional structure of the g10577 protein in diploids and tetraploids. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
@@ -255,7 +251,7 @@ mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
 
-For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000 amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to get a full protein using swissmodel. This analysis can be accomplished by following the steps below:
+For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to get a full reference protein using swissmodel. The analysis can be performed by following the steps below:
 
  1.Follow the link to the alphafold collab website provided above
 
@@ -275,8 +271,7 @@ For g10577 we had to use a different approach due to limitations with alphafold'
 mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
 mv ~/Downloads/model_01.pdb ~/g10577_modelling_output/reference_g10577.pdb
 
-unzip ~/g10577_modelling_output/*tetraploid*.result.zip
-unzip ~/g10577_modelling_output/*diploid*.result.zip
+for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 ## Image and Movie generation
 We have successfully modelled our proteins and now want to actually investigate the structure and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
@@ -302,13 +297,13 @@ color_h tetraploid_g46214
 
 ```
 
-Now the diploid and tetraploid g46214 proteins have been loaded into pymol. We alligned them so the rotations produce good output. Using your mouse or trackpad, manually adjust the orientation of either the diploid/tetraploid protein to a position you are happy with. Follow the next few steps:
+Now the diploid or tetraploid g46214 proteins have been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of either the diploid/tetraploid protein to a position you are happy with. Follow the next few steps:
 
  1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
 
  2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` to produce an object showing the electrostatic potential  across the whole tetraploid protein only. When that has completed a pop up will ask you to close something and you shoudl select yes.
 
- 3. Repeat steps 1 and 2 but select {`polymer & tetraploid_g46214_bbox_domains`,`polymer & tetraploid_g46214`,`polymer & diploid_g46214_bbox_domains`} to be able to produce an   object showing the electrostatic potential across the bbox domains only.
+ 3. Repeat steps 1 and 2 but select {`polymer & tetraploid_g46214_bbox_domains`} to be able to produce an   object showing the electrostatic potential across the bbox domains only.
  
 NOTE: if you do not have sufficient RAM the electrostatic potential will only be coloured across portions of the protein. If that occurs close all other running applications on your device and rereun the steps.
 
