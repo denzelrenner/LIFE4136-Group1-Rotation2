@@ -151,7 +151,7 @@ To build a phylogenetic tree from this allignment we will use raxml by running t
 
 `<insert_script>`
 
-We will view the best tree file using the ITOL website. To do this the steps below were followed:
+We will view the `.besttree` file using the ITOL website. To do this the steps below were followed:
 
   1. Follow the link provided to the [ITOL website](https://itol.embl.de/)
 
@@ -244,7 +244,7 @@ mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
 
-For g10577 we had to use a different approach due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the domains onto the reference protein to re-build our diploid and tetraploid proteins. The analysis can be performed by following the steps below:
+For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the domains onto the reference protein to re-build our diploid and tetraploid proteins. The analysis can be performed by following the steps below:
 
  1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website
 
@@ -318,7 +318,7 @@ select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 
 run ~/g46214_modelling_output/colorh.py
 
-colorh tetraploid_g46214
+color_h tetraploid_g46214
 ```
 
 Now do the select thing
