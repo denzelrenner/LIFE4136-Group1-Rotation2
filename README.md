@@ -74,8 +74,10 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 | Script Name | Description |
 |-------------|-------------|
 | `raxml_install.sh` | installs raxml-ng |
-| `consenus.sh` | produces a consensus nucleotide sequence (in fasta format) for the reference, diploid, and tetraploids |
-| `colorh.py` | colours proteins by hydrophobicity. You will also to copy and paste or download the code from the [PyMOL wiki](https://pymolwiki.org/index.php/Color_h) |
+| `generate_reference_sequences.sh` | produces a nucleotide sequence (in fasta format) for the g10577 and g46214 reference genes |
+| `g46214_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g46214 diploid and tetraploid genes |
+| `g10577_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g10577 diploid and tetraploid genes |
+| `colorh.py` | colours proteins by hydrophobicity. You need to copy and paste or download the code from the [PyMOL wiki](https://pymolwiki.org/index.php/Color_h) |
 
 # THE ANALYSIS
 
