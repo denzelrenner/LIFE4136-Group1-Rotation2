@@ -156,9 +156,11 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
  3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
-To build a phylogenetic tree from this allignment we will use raxml by running the script below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree.  
+ 4. To build a phylogenetic tree from this allignment we will use raxml by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree.  
 
-`<insert_script>`
+```bash
+sbatch ~/phylogenetic_tree_g46214.sh
+```
 
 We will view the `.besttree` file using the ITOL website. To do this the steps below were followed:
 
