@@ -78,6 +78,12 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 | `g46214_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g46214 diploid and tetraploid genes |
 | `g10577_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g10577 diploid and tetraploid genes |
 | `colorh.py` | colours proteins by hydrophobicity. You need to create a file on your local machine called colorh.py and copy and paste the code from the [PyMOL wiki](https://pymolwiki.org/index.php/Color_h) into the file|
+| `tetraploid_domain_highlight.py`| produces a series of images (rotated by 90 degrees) of the tetraploid g46214 protein with its domains coloured and highlighted, the electrostatic potential of the whole protein, and the hydrophobicity of the whole protein |
+| `diploid_domain_highlight.py`| produces a series of images (rotated by 90 degrees) of the diploid g46214 protein with its domains coloured and highlighted, the electrostatic potential of the whole protein, and the hydrophobicity of the whole protein |
+| `tetraploid_temporary_image_generation.py` | prdocues a series of images rotated by 1 degree across 360 degrees for the tetraploid g46214 protein |
+| `diploid_temporary_image_generation.py` | prdocues a series of images rotated by 1 degree across 360 degrees for the diploid g46214 protein |
+| `make_protein_rotation_movie.sh` | stitches together the 360 diploid and tetraploid g46214 protein images to make a short movie of the protein rotating and showing all domains/faces of the protein |
+
 
 # THE ANALYSIS
 
@@ -342,11 +348,34 @@ This script will produce a series of images
 These series of images are then stitched together to produce a movie of a rotating protein
 m
 
+Why did you choose that reference model?
 ### g10577
 Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
 
-We will have to load in the reference Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein
+We will have to load in the reference Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. This can be achieved by following the steps outlined below:
 
+ 1. Load the reference SWISSMODEL protein into PyMOL using the commands below
+
+    ```bash
+    load /path/to/your/reference/protein, reference_g10577
+    ```
+2. For each domain you have modelled in the Protein Structure Modelling step run these commands in the PyMOL command line to load them into PyMOL and change the colour to something you prefer. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domain nomeclature. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
+   ```bash
+   load /path/to/your/diploid/or/tetraploid/domain, domain_object
+   color color_of_your_choice, domain_object
+   ```
+3. Repeat step 2 until all the domains for the diploid or tetraploid have been loaded into PyMOL. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
+
+   ```bash
+   allign domain_object, reference_g10577
+   ```
+4. Hide the reference protein following the command below
+
+5. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
+   ```bash
+   png ~/path/to/ouput_image/directory/alphafold_tet_g10577_pink_GAG_blue_INT_green_RT.png, 3500, 3500, -1, ray=0, dpi=500
+   ```
+  
 
 
 
