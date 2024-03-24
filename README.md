@@ -107,7 +107,7 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
  1. Follow the link to the [orf finder](https://www.ncbi.nlm.nih.gov/orffinder/) website.
 
- 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer.
+ 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214`).
 
 
 ## Homolog identification
