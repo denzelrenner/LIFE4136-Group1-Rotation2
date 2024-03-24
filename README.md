@@ -273,7 +273,8 @@ We only want to use the best model from the alphafold output, which should have 
 
 The alphafold output directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. For the sake of running the scripts below you can only use one protein at a time. Either you are investigating the tetraploid sturcture or the diploid structure.
 
-If you are investigating tetraploids:
+### g46214
+For investigating tetraploids:
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
@@ -284,7 +285,7 @@ run ~/g46214_modelling_output/colorh.py
 color_h tetraploid_g46214
 ```
 
-If you are investigating diploids:
+For investigating diploids:
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
@@ -295,24 +296,28 @@ run ~/g46214_modelling_output/colorh.py
 color_h diploid_g46214
 ```
 
-Now that either diploid or tetraploid g46214 proteins have been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of either the diploid or the tetraploid protein to a position you are happy with. Follow the next few steps:
+Now that the diploid or tetraploid g46214 proteins have been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of the diploid or the tetraploid protein to a position you are happy with. Follow the next few steps:
 
  1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
 
- 2. Select the drop down menu in the selection entry field (selection:[       ]) and select {`polymer & tetraploid_g46214` or `polymer & diploid_g46214`} (depending on which protein you are investigating) to produce an object showing the electrostatic potential across the whole protein only. When that has completed a pop up will ask you to close something and you shoudl select yes.
+ 2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` or `polymer & diploid_g46214` depending on which protein you are investigating. This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
- 3. Repeat steps 1 and 2 but select {`polymer & tetraploid_g46214_bbox_domains` or `polymer & tetraploid_g46214_bbox_domains`} (depending on which protein you are investigating) to be able to produce an object showing the electrostatic potential across the bbox domains only.
+ 3. Repeat steps 1 and 2 but select `polymer & tetraploid_g46214_bbox_domains` or `polymer & diploid_g46214_bbox_domains` depending on which protein you are investigating. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on.
  
 NOTE: if you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the ste[s.
 
-Now we have everything we need to produce our images and you can run the `image_generation.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below"
+Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py` or `tetraploid_domain_highlight.py` script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below"
 
+For diploids:
 ```bash
-run ~/path/to/python/script/image_generation.py
+run ~/path/to/python/script/diploid_domain_highlight.py
+```
+For tetraploids
+```bash
+run ~/path/to/python/script/tetraploid_domain_highlight.py
 ```
 
-
-We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those together will make a movie. This can be accomplished by running the scripts below:
+We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those together will make a movie. This can be accomplished by running the scripts below: You will have to open a new pymol window
 
 
 ```bash
