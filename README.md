@@ -140,7 +140,7 @@ We have found out the closest homologs for our proteins in different species so 
 
  2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 and g10577 into the query field labelled `Enter your sequence` and choose `search`
 
- 3. Manually insert the positions of the domains, and any other relevant information, into a txt file of your choosing so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains, and any other relevant information, into a txt file (i.e `g10577_tetraploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
