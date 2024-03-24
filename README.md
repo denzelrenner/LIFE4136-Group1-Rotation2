@@ -24,6 +24,7 @@ All these files should be downloaded into the same directory before following th
 Explain what fai is and put a link as well, and also .dict A more detailed explanation on these file types can be found on the [gatk website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 Check i there are other files they might need 
+Say what the VCf file contains and the gff as well
 
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable.
@@ -74,6 +75,7 @@ Navigate to the Jalview,PyMOL websites and follow the download link for your mac
 | Script Name | Description |
 |-------------|-------------|
 | `raxml_install.sh` | installs raxml-ng |
+| `phylogenetic_tree_g46214.sh` | runs raxml-ng to build a maximum likelihood tree using the allignment for g46214 in tetraploid and diploid and the homologs |
 | `generate_reference_sequences.sh` | produces a nucleotide sequence (in fasta format) for the g10577 and g46214 reference genes |
 | `g46214_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g46214 diploid and tetraploid genes |
 | `g10577_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g10577 diploid and tetraploid genes |
