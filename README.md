@@ -41,12 +41,12 @@ These are all the tools that were used in our analysis with versions and links p
 |[MEGA](https://www.megasoftware.net/)|version 11|Tamura, K., Dudley, J., Nei, M. and Kumar, S., 2007. MEGA4: molecular evolutionary genetics analysis (MEGA) software version 4.0. Molecular biology and evolution, 24(8), pp.1596-1599.|
 |[jalview](https://www.jalview.org/)|version 2.11.3.2|Waterhouse, A.M., Procter, J.B., Martin, D.M., Clamp, M. and Barton, G.J., 2009. Jalview Version 2—a multiple sequence alignment editor and analysis workbench. Bioinformatics, 25(9), pp.1189-1191.|
 |[PyMOL](https://pymol.org/)|version 2.5.8|The PyMOL Molecular Graphics System, Version 2.0 Schrödinger, LLC.|
-|Homebrew|version 4.2.10|NA|
+|[Homebrew](https://brew.sh/)|version 4.2.10|NA|
 |ffmpeg|version 6.1.1|NA|
-|GATK (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|Van der Auwera GA & O'Connor BD. (2020). Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1st Edition). O'Reilly Media.|
+|[GATK](https://github.com/broadinstitute/gatk) (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|Van der Auwera GA & O'Connor BD. (2020). Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1st Edition). O'Reilly Media.|
 |samtools (htslib)|version 1.19.2 (version 1.19.1)|Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth, G., Abecasis, G., Durbin, R. and 1000 Genome Project Data Processing Subgroup, 2009. The sequence alignment/map format and SAMtools. bioinformatics, 25(16), pp.2078-2079.|
-|RAxML-NG|version 0.9.0|Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.|
-|Conda|version 23.5.2|NA|
+|[RAxML-NG](https://github.com/amkozlov/raxml-ng)|version 0.9.0|Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.|
+|[Conda](https://github.com/conda/conda)|version 23.5.2|NA|
 
 
 (Mac Intel i5))write about how to sintall homebrew
@@ -54,6 +54,8 @@ all performed on mac intel i5
 
 ## Tool intallation 
 These scripts/commands should be ran to install some of the tools necessary to reproduce results
+
+Install the package manager conda by following the guidance on the [conda github page](https://github.com/conda/conda)
 
 On the cloud:
 ```bash
@@ -63,7 +65,9 @@ bash ~/raxml_install.sh
 
 On your local machine:
 
-how to install homebrew
+how to install homebrew:
+Install the homebrew package manager following the steps on the [homebrew website](https://brew.sh/)
+
 ```bash
 brew install ffmpeg
 ``` 
