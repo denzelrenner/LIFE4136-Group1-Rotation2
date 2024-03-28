@@ -29,10 +29,10 @@ Say what the VCf file contains and the gff as well
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable.
 
-| Tool | Version |
-|------|---------|
+| Tool | Version | Reference |
+|------|---------|-----------|
 |[ncbi blast](https://blast.ncbi.nlm.nih.gov/)|NA|
-|[TAIR BLAST](https://www.arabidopsis.org/Blast/index.jsp)|version 2.9.0+ (uses NCBI BLAST 2.9.0+)|
+|[TAIR BLAST](https://www.arabidopsis.org/Blast/index.jsp)|version 2.9.0+ (uses NCBI BLAST 2.9.0+)| Johnson, M., Zaretskaya, I., Raytselis, Y., Merezhuk, Y., McGinnis, S. and Madden, T.L., 2008. NCBI BLAST: a better web interface. Nucleic acids research, 36(suppl_2), pp.W5-W9.|
 |[orf finder](https://www.ncbi.nlm.nih.gov/orffinder/)|NA|
 |[uniprot](https://www.uniprot.org/align)|clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)|
 |[alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)|(ColabFold v1.5.5: AlphaFold2 using MMseqs2|
