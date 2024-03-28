@@ -27,26 +27,26 @@ Check i there are other files they might need
 Say what the VCf file contains and the gff as well
 
 ## Tool versions and links
-These are all the tools that were used in our analysis with versions and links provided where applicable.
+These are all the tools that were used in our analysis with versions and links provided where applicable. Some references were chosen based on what was recommended on the tools online help page
 
-| Tool | Version | Reference |
+| Tool | Version | Reference(Harvard Style) |
 |------|---------|-----------|
-|[ncbi blast](https://blast.ncbi.nlm.nih.gov/)|NA|
-|[TAIR BLAST](https://www.arabidopsis.org/Blast/index.jsp)|version 2.9.0+ (uses NCBI BLAST 2.9.0+)| Johnson, M., Zaretskaya, I., Raytselis, Y., Merezhuk, Y., McGinnis, S. and Madden, T.L., 2008. NCBI BLAST: a better web interface. Nucleic acids research, 36(suppl_2), pp.W5-W9.|
-|[orf finder](https://www.ncbi.nlm.nih.gov/orffinder/)|NA|
-|[uniprot](https://www.uniprot.org/align)|clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)|
+|[ncbi blast](https://blast.ncbi.nlm.nih.gov/)|NA| Johnson, M., Zaretskaya, I., Raytselis, Y., Merezhuk, Y., McGinnis, S. and Madden, T.L., 2008. NCBI BLAST: a better web interface. Nucleic acids research, 36(suppl_2), pp.W5-W9.|
+|[TAIR BLAST](https://www.arabidopsis.org/Blast/index.jsp)|version 2.9.0+ (uses NCBI BLAST 2.9.0+)| Garcia-Hernandez, M., Berardini, T., Chen, G., Crist, D., Doyle, A., Huala, E., Knee, E., Lambrecht, M., Miller, N., Mueller, L.A. and Mundodi, S., 2002. TAIR: a resource for integrated Arabidopsis data. Functional & integrative genomics, 2, pp.239-253.|
+|[orf finder](https://www.ncbi.nlm.nih.gov/orffinder/)|NA| NA|
+|[uniprot](https://www.uniprot.org/align)|clustalO version 1.2.4 (clustal was ran through the align function on the uniprot website)|UniProt Consortium, 2019. UniProt: a worldwide hub of protein knowledge. Nucleic acids research, 47(D1), pp.D506-D515.|Mirdita, M., Schütze, K., Moriwaki, Y., Heo, L., Ovchinnikov, S. and Steinegger, M., 2022. ColabFold: making protein folding accessible to all. Nature methods, 19(6), pp.679-682.|
 |[alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)|(ColabFold v1.5.5: AlphaFold2 using MMseqs2|
-|[InterPro](https://www.ebi.ac.uk/interpro/)|version 98.0| 
-|[ITOL:Interactive Tree Of Life](https://itol.embl.de/)|version 6.8.2|
-|[MEGA](https://www.megasoftware.net/)|version 11|
-|[jalview](https://www.jalview.org/)|version 2.11.3.2|
-|[PyMOL](https://pymol.org/)|version 2.5.8|
-|Homebrew|version 4.2.10| 
-|ffmpeg|version 6.1.1| 
-|GATK (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|
-|samtools (htslib)|version 1.19.2 (version 1.19.1)|
-|RAxML-NG|version 0.9.0|
-|Conda|version 23.5.2|
+|[InterPro](https://www.ebi.ac.uk/interpro/)|version 98.0|Hunter, S., Apweiler, R., Attwood, T.K., Bairoch, A., Bateman, A., Binns, D., Bork, P., Das, U., Daugherty, L., Duquenne, L. and Finn, R.D., 2009. InterPro: the integrative protein signature database. Nucleic acids research, 37(suppl_1), pp.D211-D215.|
+|[ITOL:Interactive Tree Of Life](https://itol.embl.de/)|version 6.8.2|Letunic, I. and Bork, P., 2021. Interactive Tree Of Life (iTOL) v5: an online tool for phylogenetic tree display and annotation. Nucleic acids research, 49(W1), pp.W293-W296.|
+|[MEGA](https://www.megasoftware.net/)|version 11|Tamura, K., Dudley, J., Nei, M. and Kumar, S., 2007. MEGA4: molecular evolutionary genetics analysis (MEGA) software version 4.0. Molecular biology and evolution, 24(8), pp.1596-1599.|
+|[jalview](https://www.jalview.org/)|version 2.11.3.2|Waterhouse, A.M., Procter, J.B., Martin, D.M., Clamp, M. and Barton, G.J., 2009. Jalview Version 2—a multiple sequence alignment editor and analysis workbench. Bioinformatics, 25(9), pp.1189-1191.|
+|[PyMOL](https://pymol.org/)|version 2.5.8|The PyMOL Molecular Graphics System, Version 2.0 Schrödinger, LLC.|
+|Homebrew|version 4.2.10|NA|
+|ffmpeg|version 6.1.1|NA|
+|GATK (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|Van der Auwera GA & O'Connor BD. (2020). Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1st Edition). O'Reilly Media.|
+|samtools (htslib)|version 1.19.2 (version 1.19.1)|Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth, G., Abecasis, G., Durbin, R. and 1000 Genome Project Data Processing Subgroup, 2009. The sequence alignment/map format and SAMtools. bioinformatics, 25(16), pp.2078-2079.|
+|RAxML-NG|version 0.9.0|Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.|
+|Conda|version 23.5.2|NA|
 
 
 (Mac Intel i5))write about how to sintall homebrew
