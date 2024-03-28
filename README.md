@@ -144,7 +144,7 @@ We have found out the closest homologs for our proteins in different species so 
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
-This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploids,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have deviated from their homologs, and also how much the tetraploids have deviated from the diploids 
+This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploids,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploids have diverged from the diploids.
 
 ### g46214
  
@@ -174,9 +174,11 @@ We will view the `.besttree` file using the ITOL website. To do this the steps b
 
   5. Capture the screen using CMD+SHIFT+4 and adjusting the size to have the whole phylogenetic tree inside it.
 
+Based on the results from the allignment and a [paper detailing different bbox proteins](Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), new domains were documented for the bbox proteins, and the positions for some of the interpro domains were altered. The exact residues are detailed in scripts mentioned below and as such will not be repeated in this statement.
+
 ### g10577
 
-Note: attributing This code explanation was written by Luke
+Note: attributing This code explanation was written by Luke, a group member
 
 1. Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
 
@@ -218,7 +220,7 @@ Note: attributing This code explanation was written by Luke
 
 6. To save a PNG file of the tree I selected Image from the toolbar: Image -> Save a PNG file, then gave the file path to my Desktop with an appropriate file name.
 
-Note, after performing multiple sequence allignments and reading through papers the positions of domains in the g10577 diploid and tetraploid were manually adjusted to better reflect the real positions of functional domains
+Note, after performing multiple sequence allignments and reading through papers (which papers?) the positions of domains in the g10577 diploid and tetraploid were manually adjusted to better reflect the real positions of functional domains
 
 ## Protein Structure Modelling
 
