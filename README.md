@@ -346,14 +346,11 @@ Now we have everything we need to produce our images and you can run the `diploi
 run ~/path/to/python/script/diploid_domain_highlight.py
 ```
 
-
-
-
 Why did you choose that reference model?
 ### g10577
 Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
 
-We will have to load in the reference Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. This can be achieved by following the steps outlined below:
+We will have to load in the reference g10577 Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. This can be achieved by following the steps outlined below:
 
  1. Load the reference SWISSMODEL protein into PyMOL using the commands below
 
@@ -378,9 +375,10 @@ We will have to load in the reference Cochleria protein which was retrieved from
    ```
 
 ## Movie Generation
-We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those together will make a movie. This can be accomplished by running the scripts below: You will have to open a new pymol window
+We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those individuals together will make a movie. This can be accomplished by running the scripts below: 
 
 ### g46214
+You will have to open a new PyMol window and then run the commands below
 
 ### Tetraploids:
 ```bash
@@ -406,6 +404,7 @@ In the pymol command line run the code below to produce a directory with a colle
 run ~/tetraploid_temporary_image_generation.py 
 ```
 
+You will have to open a new PyMol window again and run the commands below
 
 ### Diploids
 ```bash
