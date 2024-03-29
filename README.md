@@ -53,7 +53,7 @@ These are all the tools that were used in our analysis with versions and links p
 all performed on mac intel i5
 
 ## Tool intallation 
-These scripts/commands should be ran to install some of the tools necessary to reproduce results
+The guidance below outlines the necessary scripts,steps or commands that need to be ran to install some of the tools necessary to reproduce our results.
 
 Install the package manager conda by following the guidance on the [conda github page](https://github.com/conda/conda)
 
