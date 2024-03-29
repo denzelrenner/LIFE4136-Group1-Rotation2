@@ -7,10 +7,10 @@ Note: Unless on the cloud or stated otherwise, all command line code was ran on 
 We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy, a process involving the adaptation of polyploid organisms that have arised due to genome duplication events or hybridisation between species. We have to investigte these genes in diploids and tetraploids through looking at the amino acid sequences and 3D structures of their proteins to determine the consequence of any genetic variants.
 
 ## What are the aims of our analysis?
-We were aiming to generate structural predictions for the diploid and tetraploid alleles, and compare their 3Dstructure. We were also aiming to investigate the primary sequences of the proteins in diploids and tetraploids to determine differences that might cause altered function of the protein in diploids and tetraploids.
+We were aiming to generate structural predictions for the diploid and tetraploid alleles which would allow us to compare their 3D structures. We were also aiming to investigate the primary sequences of the proteins in diploids and tetraploids to identify differences that might result in altered function of the protein in diploids and tetraploids. 
 
 ## What are the expected outcomes?
-Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them. That could either be in reducing function of a given protein, or improving the strength of its interaction with other proteins to improve function.
+Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them. That could either be in reducing function of a given protein, or improving the strength of its interaction with other proteins which could improve function
 
 # Prerequisites
 ## Required files and data
