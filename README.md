@@ -10,7 +10,7 @@ We have been provided with some genes in Cochaleria that are under selection dur
 We were aiming to generate structural predictions for the diploid and tetraploid alleles which would allow us to compare their 3D structures. We were also aiming to investigate the primary sequences of the proteins in diploids and tetraploids to identify differences that might result in altered function of the protein in diploids and tetraploids. 
 
 ## What are the expected outcomes?
-Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them. That could either be in reducing function of a given protein, or improving the strength of its interaction with other proteins which could improve function
+Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them. That could either be in reducing function of a given protein, or increasing the strength of its interaction with other proteins which could improve overall function of the protein.
 
 # Prerequisites
 ## Required files and data
