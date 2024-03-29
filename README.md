@@ -4,13 +4,13 @@ This repositry contains all the scripts and data files needed to reproduce resul
 Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
 
 ## What is the problem we have been presented with?
-We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy where the plants are moving from having diploid genomes to tetraploid ones
+We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy, a process involving the adaptation of polyploid organisms that have arised due to genome duplication events or hybridisation between species. We have to investigte these genes in diploids and tetraploids through looking at the 3D structures of their proteins, and amino acid sequences to determine the consequence of any genetic variants.
 
 ## What are the aims of our analysis?
-We were aiming to generate structural predictions for candidate genes (from the selection scan) in both diploids and tetraploids, then compare these structures as well as their primary sequences, to determine differences that might relate to differnet function in diploids and tetraploids.
+We were aiming to generate structural predictions for the diploid and tetraploid alleles, and compare their 3-Dimensional structure. We were also aiming to investigate the primary sequences of the proteins in diploids and tetraploids to determine differences that might cause altered function of the protein in diploids and tetraploids.
 
 ## What are the expected outcomes?
-Depending on the gene and given our understanding of the system, we expect to see mutations in the tetraploids that allow it to survive certain conditions better than the diploids, or mutations in the tetraploid that reduce the function of a protein so that it does not disrupt the survival of the plant
+Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them. That could either be in reducing function of a given protein, or improving the strength of its interaction with other proteins to improve function.
 
 # Prerequisites
 ## Required files and data
