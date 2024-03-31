@@ -113,7 +113,7 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
  1. Follow the link to the [orf finder](https://www.ncbi.nlm.nih.gov/orffinder/) website.
 
- 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214`).
+ 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214` or `tetraploid_g10577`).
 
 
 ## Homolog identification
@@ -292,6 +292,8 @@ We have successfully modelled our proteins and now want to actually investigate 
 We only want to use the best model from the alphafold output, which should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below: Say what a pdb is?
 
 The alphafold output directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. For the sake of running the scripts below you can only use one protein at a time. Either you are investigating the tetraploid sturcture or the diploid structure.
+
+The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands is generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005 based on SOMETHING IDK. We will alwyas be using the rank 001 model for the purposes of investigating our protein structure and mutations.
 
 ### g46214
 
