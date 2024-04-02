@@ -140,13 +140,18 @@ To identify g46214 and g10577 homologs in other plant species we followed the st
 Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that.
 
 ## Domain identification
-We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains. We now want to verify the functional domains within our proteins. To this we followed these steps 
+We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains.
+
+###g46214
+To verify the functional domains within the g46214 proteins we followed these steps:
 
  1. Follow the link to the [InterPro website](https://www.ebi.ac.uk/interpro/)
 
- 2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 and g10577 into the query field labelled `Enter your sequence` and choose `search`
+ 2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 into the query field labelled `Enter your sequence` and choose `search`
 
- 3. Manually insert the positions of the domains, and any other relevant information, into a txt file (i.e `g10577_tetraploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains, and any other relevant information, into a txt file called (i.e `g46214_tetraploid_domains.txt` and `g46214_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+
+Note: Using the domain information from following the steps above, the multiple sequence allignment step below, and these papers/experiments (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the final list of domains and their position in the tetraploid/diploid protein is highlighted in the table below
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
@@ -158,6 +163,24 @@ We have found out the closest homologs for our proteins in different species so 
 | Mutation 1 | 150 | 153 |
 | Mutation 2 | 204 | 207 |
 
+###g10577
+To verify the functional domains within the g10577 proteins we followed these steps:
+
+ 1. Follow the link to the [InterPro website](https://www.ebi.ac.uk/interpro/)
+
+ 2. Input the diploid and tetraploid protein sequences (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
+
+ 3. Manually insert the positions of the domains, and any other relevant information, into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+
+| Domain | Diploid Position | Tetraploid Position |
+|--------|------------------|---------------------|
+| Bbox domains | 5-105 | 5-108 |
+| Non Classical Nuclear Localisation Signal | 309-312 | 312-315 |
+| C-Terminus VP pair | 300-301 | 303-304 |
+| M6 Motif | 173-186 | 176-189 |
+| M7 Motif | 100-111 | 103-114 |
+| Mutation 1 | 150 | 153 |
+| Mutation 2 | 204 | 207 |
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
