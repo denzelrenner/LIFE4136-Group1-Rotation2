@@ -148,6 +148,16 @@ We have found out the closest homologs for our proteins in different species so 
 
  3. Manually insert the positions of the domains, and any other relevant information, into a txt file (i.e `g10577_tetraploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
+| Domain | Diploid Position | Tetraploid Position |
+| Bbox domains | 5-105 | 5-108 |
+| Non Classical Nuclear Localisation Signal | 309-312 | 312-315 |
+| C-Terminus VP pair | 300-301 | 303-304 |
+| M6 Motif | 173-186 | 176-189 |
+| M7 Motif | 100-111 | 103-114 |
+| Mutation 1 | 150 | 153 |
+| Mutation 2 | 204 | 207 |
+
+
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
 This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploids,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploids have diverged from the diploids.
@@ -184,7 +194,7 @@ Based on the results from the allignment and a [paper detailing different bbox p
 
 ### g10577
 
-Note: attributing This code explanation was written by Luke, a group member
+Note: This step was written and explained by a group member, Luke.
 
 1. Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
 
