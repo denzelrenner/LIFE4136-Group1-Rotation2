@@ -149,6 +149,7 @@ We have found out the closest homologs for our proteins in different species so 
  3. Manually insert the positions of the domains, and any other relevant information, into a txt file (i.e `g10577_tetraploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
 | Domain | Diploid Position | Tetraploid Position |
+|--------|------------------|---------------------|
 | Bbox domains | 5-105 | 5-108 |
 | Non Classical Nuclear Localisation Signal | 309-312 | 312-315 |
 | C-Terminus VP pair | 300-301 | 303-304 |
