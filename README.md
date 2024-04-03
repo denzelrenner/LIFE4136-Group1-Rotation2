@@ -174,11 +174,11 @@ To verify the functional domains within the g10577 proteins we followed these st
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
-| Bbox domains | 5-105 | 5-108 |
-| Non Classical Nuclear Localisation Signal | 309-312 | 312-315 |
-| C-Terminus VP pair | 300-301 | 303-304 |
-| M6 Motif | 173-186 | 176-189 |
-| M7 Motif | 100-111 | 103-114 |
+| GAG pre-integrase | 5-105 | 5-108 |
+| Integrase | 309-312 | 312-315 |
+| Reverse Transcriptase | 300-301 | 303-304 |
+| RNAse | 173-186 | 176-189 |
+| CCHC type zinc finger | 100-111 | 103-114 |
 | Mutation 1 | 150 | 153 |
 | Mutation 2 | 204 | 207 |
 
