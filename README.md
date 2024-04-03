@@ -57,7 +57,7 @@ The guidance below outlines the necessary scripts,steps or commands that need to
 
 Install the package manager conda by following the guidance on the [conda github page](https://github.com/conda/conda)
 
-## On the cloud:
+### On the cloud HPC:
 To install raxml-ng run the script below in the command line.
 ```bash
 bash ~/raxml_install.sh
@@ -66,7 +66,7 @@ bash ~/raxml_install.sh
 To install `GATK`, `samtools`, and `conda` follow the guidance on their respective github pages as those tools were installed by a bioinformatics technician and code to install them was not generated from scratch in our analysis. 
 
 
-## On your local machine:
+### On your local machine:
 To install the `homebrew` package manager follow the steps outlined on the [homebrew website](https://brew.sh/)
 
 To install the video formatting tool `ffmpeg` input the command below into the command line once `homebrew` has been installed
