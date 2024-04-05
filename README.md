@@ -151,7 +151,7 @@ To verify the functional domains within the g46214 proteins we followed these st
 
  3. Manually insert the positions of the domains, and any other relevant information, into a txt file called (i.e `g46214_tetraploid_domains.txt` and `g46214_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
-Note: Using the domain information from following the steps above, the multiple sequence allignment step below, and these papers/experiments (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the final list of domains and their position in the tetraploid/diploid protein is highlighted in the table below
+Note: Using the domain information from following the steps above and this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the  domains and their position in the tetraploid/diploid protein found on interpro was adjusted. A final list of all the domains, motifs, and mutations in our protein are highlighted in the table below.
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
