@@ -105,15 +105,14 @@ bash ~/generate_reference_sequences.sh
 bash ~/g46214_gatk_consensus_final.sh
 bash ~/g10577_gatk_consensus_final.sh
 ```
-One of the files produced from running the gatk_consensus_final scripts will produce a .dict file
-Note the conda environment used here was created and maintained by the Bioinformatics technician, as such I do not have the code ran to install the packages in that environment
+Running these scripts will produce a `C_excelsa_V5.fasta.dict` and `C_excelsa_V5.fasta.fai` file for our reference fasta file which is required by GATK tools to access specified regions of the reference genome. The `.dict` file describes the contents of our fasta file, and the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
  1. Follow the link to the [orf finder](https://www.ncbi.nlm.nih.gov/orffinder/) website.
 
- 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214` or `tetraploid_g10577`).
+ 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214` or `>tetraploid_g10577`).
 
 
 ## Homolog identification
