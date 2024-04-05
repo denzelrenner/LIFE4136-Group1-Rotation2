@@ -265,9 +265,11 @@ Note, after performing multiple sequence allignments and reading through papers 
 
 ## Protein Structure Modelling
 
+We now want to visualise the three dimensional structure of our proteins. The proteins we will be loaded into visualisation tools and files are in the PDB format. PDB files contain information about the protein such as the atoms in the protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
+
 ### g46214
 
-We now want to visualise the three dimensional structure of our proteins. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
+We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
 mkdir -p ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
