@@ -178,8 +178,8 @@ To verify the functional domains within the g10577 proteins we followed these st
 | GAG pre-integrase | 5-105 | 5-108 |
 | Integrase | 309-312 | 312-315 |
 | Reverse Transcriptase | 300-301 | 303-304 |
-| RNAse | 173-186 | 176-189 |
-| CCHC type zinc finger | 100-111 | 103-114 |
+| RNAse | 173-186 | NA |
+| CCHC type zinc finger | 100-111 | NA |
 | Mutation 1 | 150 | 153 |
 | Mutation 2 | 204 | 207 |
 
