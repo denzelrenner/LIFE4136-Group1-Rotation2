@@ -302,13 +302,13 @@ mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
 ```
 
-For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the domains onto the reference protein to re-build our diploid and tetraploid proteins. The analysis can be performed by following the steps below:
+For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole sequence into alphafold, we used the domain positions we identified in the domain identification step above (adjusted based on the literature and multiple sequence allignments) to obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the domains onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID Q9LPK1 and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. The analysis can be performed by following the steps below:
 
  1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website
 
  2. Input the protein sequence for a given domain in the diploid and tetraploid sequences into the `query sequence` field, and the job name should have some identifier they all share (i.e `diploid_domain1_g10577`,`tetraploid_domain1_g10577`). It is very important that common identifiers are given due to naming requirements in subsequent commands. Only a single domain from a single protein can be modelled at a time, and alphafold collab can run out of memory, so you may need multiple google accounts or use a colleagues machine to get all the domains done.
 
- 3. Repeat step 2 for all other domains in g10577 that we idenetified in the domain identification step. Have to say that they grab the sequence 
+ 3. Repeat step 2 for all other domains in g10577 that we idenetified in the domain identification step.  
 
  4. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
@@ -394,7 +394,9 @@ Why did you choose that reference model?
 ### g10577
 Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
 
-We will have to load in the reference g10577 Cochleria protein which was retrieved from SWISS-MODEL, then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. This can be achieved by following the steps outlined below:
+We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
+
+This can be achieved by following the steps outlined below:
 
  1. Load the reference SWISSMODEL protein into PyMOL using the commands below
 
