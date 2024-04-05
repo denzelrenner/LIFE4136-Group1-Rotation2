@@ -265,7 +265,7 @@ Note, after performing multiple sequence allignments and reading through papers 
 
 ## Protein Structure Modelling
 
-We now want to visualise the three dimensional structure of our proteins. The proteins we will be loaded into visualisation tools and files are in the PDB format. PDB files contain information about the protein such as the atoms in the protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
+We now want to visualise the three dimensional structure of our proteins. The proteins we will be loaded into visualisation tools and files are in the PDB format. PDB files contain information about the atoms in the protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
 
 ### g46214
 
@@ -324,6 +324,7 @@ mv ~/Downloads/model_01.pdb ~/g10577_modelling_output/reference_g10577.pdb
 for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 ## Image and Movie generation
+
 We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
 
 We only want to use the best model from the alphafold output, which should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below: Say what a pdb is?
@@ -334,7 +335,8 @@ The alphafold output directory is named with unique identifiers such that the di
 
 ### g46214
 
-### Tetraploids:
+### Tetraploids
+
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
@@ -354,13 +356,14 @@ Now that the tetraploid g46214 protein has been loaded into pymol, Using your mo
  
 NOTE: If you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the ste[s.
 
-Now you can get images for your protein
-For tetraploids
+Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below:
+
 ```bash
 run ~/path/to/python/script/tetraploid_domain_highlight.py
 ```
 
-### Diploids:
+### Diploids
+
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
@@ -381,7 +384,7 @@ Now that the diploid g46214 protein has been loaded into pymol, Using your mouse
  
 NOTE: if you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the steps.
 
-Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below"
+Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below:
 
 ```bash
 run ~/path/to/python/script/diploid_domain_highlight.py
@@ -421,7 +424,7 @@ We also want to have a short video showing some of our protein molecules rotatin
 ### g46214
 You will have to open a new PyMol window and then run the commands below
 
-### Tetraploids:
+### Tetraploids
 ```bash
 load ~/g46214_modelling_output/gatk_04AF_tetraploid_b50ff/gatk_04AF_tetraploid_b50ff_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb, tetraploid_g46214
 
