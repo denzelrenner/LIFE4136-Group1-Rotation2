@@ -149,7 +149,7 @@ To verify the functional domains within the g46214 proteins we followed these st
 
  2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 into the query field labelled `Enter your sequence` and choose `search`
 
- 3. Manually insert the positions of the domains, and any other relevant information, into a txt file called (i.e `g46214_tetraploid_domains.txt` and `g46214_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains into a txt file called (i.e `g46214_tetraploid_domains.txt` and `g46214_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
 Note: Using the domain information from following the steps above and this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the  domains and their position in the tetraploid/diploid protein found on interpro was adjusted. A final list of all the domains, motifs, and mutations in our protein are highlighted in the table below.
 
@@ -171,7 +171,7 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  2. Input the diploid and tetraploid protein sequences (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
 
- 3. Manually insert the positions of the domains, and any other relevant information, into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
@@ -185,7 +185,7 @@ To verify the functional domains within the g10577 proteins we followed these st
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
-This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploids,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploids have diverged from the diploids.
+This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploid,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid have diverged from the diploids.
 
 ### g46214
  
