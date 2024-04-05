@@ -27,7 +27,7 @@ Check i there are other files they might need
 Say what the VCf file contains and the gff as well
 
 ## Tool versions and links
-These are all the tools that were used in our analysis with versions and links provided where applicable. Some references were chosen based on what was recommended on the tools online help page
+These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tools online help page.
 
 | Tool | Version | Reference(Harvard Style) |
 |------|---------|-----------|
