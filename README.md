@@ -15,14 +15,14 @@ Depending on the gene and given our understanding of the system, we expect to se
 # Prerequisites
 ## Required files and data
 All these files should be downloaded into the same directory before following the rest of this document.
+The vcf file contains variants. 
+The gff contains annotations for the reference genome, and the fasta is of the reference and has been indexed to produce a .fai compatible with many tools like samtools and GATK
 
 |Directory|Files|
 |---------|-----|
 |VCFs|UK_scan_dips.vcf<br>UK_scan_tets.vcf|
 |Reference_Genome|C_excelsa_V5_braker2_wRseq.gff3<br>C_excelsa_V5.fasta<br>C_excelsa_V5.fasta.fai|
 
-The vcf file contains variants. 
-The gff contains annotations for the reference genome, and the fasta is of the reference and has been indexed to produce a .fai compatible with many tools like samtools and GATK
 
 Explain what fai is and put a link as well, and also .dict A more detailed explanation on these file types can be found on the [gatk website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
