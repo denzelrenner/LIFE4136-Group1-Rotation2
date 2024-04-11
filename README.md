@@ -1,16 +1,16 @@
 # LIFE4136_Group1_Rotation2
-This repositry contains all the scripts and data files needed to reproduce results from group1 in rotation2 of the groupwork projects.
+This repository contains all the scripts and lists of data files needed to reproduce results from group1 in rotation2 of the groupwork projects.
 
 Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
 
 ## What is the problem we have been presented with?
-We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy, a process involving the adaptation of polyploid organisms that have arised due to genome duplication events or hybridisation between species. We have to investigte these genes in diploids and tetraploids through looking at the amino acid sequences and 3D structures of their proteins to determine the consequence of any genetic variants.
+We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy,. Polyploids are individuals that arise from a whole genome duplication (WGD) event, a process that results in multiple sets of chromosomes within an individual, and they must adapat/evolve mechanisms to handle the harsdhips that come with WGD a process involving the adaptation of polyploid organisms that have arised due to genome duplication events or hybridisation between species. We have to investigte these genes in diploids and tetraploids through looking at the amino acid sequences and 3D structures of their proteins to determine the consequence of any genetic variants.
 
 ## What are the aims of our analysis?
 We were aiming to generate structural predictions for the diploid and tetraploid alleles which would allow us to compare the tetriary structures of the different proteins. Another objective of the analysis was to investigate the primary sequences of the proteins in diploids and tetraploids to identify any mutations that might result in altered function of the protein in diploids and tetraploids. 
 
 ## What are the expected outcomes?
-Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them. That could either be in reducing function of a given protein, or increasing the strength of its interaction with other proteins which could improve overall function of the protein.
+Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids and provide survival benefits to them by helping them manage the multiple stresses that come with polyploidy like managing gene expression, and stabilising the genome , as well as genes that confer supeiror ecological tolerance. That could either be in reducing function of a given protein, or increasing the strength of its interaction with other proteins which could improve overall function of the protein.
 
 # Prerequisites
 ## Required files and data
