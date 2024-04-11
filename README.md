@@ -21,10 +21,10 @@ All these files should be downloaded into the same directory before following th
 |VCFs|UK_scan_dips.vcf<br>UK_scan_tets.vcf|
 |Reference_Genome|C_excelsa_V5_braker2_wRseq.gff3<br>C_excelsa_V5.fasta<br>C_excelsa_V5.fasta.fai|
 
-Explain what fai is and put a link as well, and also .dict A more detailed explanation on these file types can be found on the [gatk website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+The vcf file contains variants. 
+The gff contains annotations for the reference genome, and the fasta is of the reference and has been indexed to produce a .fai compatible with many tools like samtools and GATK
 
-Check i there are other files they might need 
-Say what the VCf file contains and the gff as well
+Explain what fai is and put a link as well, and also .dict A more detailed explanation on these file types can be found on the [gatk website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tools online help page.
@@ -48,10 +48,6 @@ These are all the tools that were used in our analysis with versions and links p
 |[Homebrew](https://brew.sh/)|version 4.2.10|NA|
 |ffmpeg|version 6.1.1|NA|
 
-
-(Mac Intel i5))write about how to sintall homebrew
-all performed on mac intel i5
-
 ## Tool intallation 
 The guidance below outlines the necessary scripts,steps or commands that need to be ran to install some of the tools necessary to reproduce our results.
 
@@ -74,7 +70,7 @@ To install the video formatting tool `ffmpeg` input the command below into the c
 brew install ffmpeg
 ``` 
 
-Navigate to the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),and [MEGA](https://www.megasoftware.net/) websites and follow the download guidance for your machine.
+To install [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),and [MEGA](https://www.megasoftware.net/) software, navigate to their respective websites and follow the download guidance for your machine.
 
 ## Script description
 
@@ -105,7 +101,7 @@ bash ~/generate_reference_sequences.sh
 bash ~/g46214_gatk_consensus_final.sh
 bash ~/g10577_gatk_consensus_final.sh
 ```
-Running these scripts will produce a `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` file is required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+Running these scripts will produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
