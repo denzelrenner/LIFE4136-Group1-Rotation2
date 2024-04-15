@@ -388,11 +388,11 @@ run ~/path/to/python/script/diploid_domain_highlight.py
 
 ### g10577
 
-
-### Tetraploid
-Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
+Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein.
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
+
+### Tetraploid
 
 This can be achieved by following the steps outlined below:
 
@@ -419,11 +419,9 @@ This can be achieved by following the steps outlined below:
    allign reverse_transcriptase, reference_g10577
    allign RNaseH, reference_g10577
    ```
-4. Hide the reference protein following the command below
+4. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Select the `H` and then select `everything` from the drop down menu.
 
-   ```bash
-
-   ```
+5. Colour 
 
 6. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
    ```bash
