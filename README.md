@@ -389,7 +389,7 @@ run ~/path/to/python/script/diploid_domain_highlight.py
 ### g10577
 
 
-# Tetraploid
+### Tetraploid
 Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
@@ -430,6 +430,47 @@ This can be achieved by following the steps outlined below:
    png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
 
+   
+### Diploid
+Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
+
+We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
+
+This can be achieved by following the steps outlined below:
+
+ 1. Load the reference SWISSMODEL protein into PyMOL using the commands below
+
+    ```bash
+    load /path/to/your/reference/protein.pdb, reference_g10577
+    ```
+2. For each domain you have modelled in the Protein Structure Modelling step run these commands in the PyMOL command line to load them into PyMOL and change the colour to something you prefer. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
+   ```bash
+   load /path/to/your/diploid/Gag_domain.pdb, GAG_domain
+   load /path/to/your/diploid/integrase_domain.pdb, integrase
+   load /path/to/your/diploid/protease_domain.pdb, protease
+   load /path/to/your/diploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
+   load /path/to/your/diploid/rnaseh_domain.pdb, RNaseH
+   color color_of_your_choice, integrase
+   ```
+3. Repeat step 2 until all the domains for the diploid or tetraploid have been loaded into PyMOL. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
+
+   ```bash
+   allign GAG_domain, reference_g10577
+   allign integrase, reference_g10577
+   allign protease, reference_g10577
+   allign reverse_transcriptase, reference_g10577
+   allign RNaseH, reference_g10577
+   ```
+4. Hide the reference protein following the command below
+
+   ```bash
+
+   ```
+
+6. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
+   ```bash
+   png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
+   ```
 ## Movie Generation
 We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those individuals together will make a movie. This can be accomplished by running the scripts below: 
 
