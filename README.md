@@ -7,7 +7,7 @@ Note: Unless on the cloud or stated otherwise, all command line code was ran on 
 We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy. Polyploids are individuals that arise from a whole genome duplication (WGD) event, a process that results in multiple sets of chromosomes within an individual. These polyploids evolve mechanisms to handle the hardships that come with WGD, such as meiotic instability and regulation of gene expression, as well as develop adaptations to tolerate the harsh environmental conditions that can sometimes lead to polyploidy. In this project we have been provided with two genes caught in the selection scan, g46214 and g10577, and we are to investigate each gene in diploids and tetraploids through studying the amino acid sequences and tetriary structures of their proteins to determine the consequence of any genetic variants.
 
 ## What are the aims of our analysis?
-We were aiming to translate the genes and investigate the primary sequences of the proteins in diploids and tetraploids to first identify important domains and predict the function of the protein. We also aimed to identify any mutations that might result in altered function of the protein (or a specific domain within the protein) in diploids or tetraploids by comparing the primary sequences with that of close homologs. Another objective of the analysis was to generate structural predictions for the diploid and tetraploid alleles for each of our candidate genes which would allow us to compare the tetriary structures of the proteins at the different ploidy levels, and observe the impact of the different mutations on the tertiary structure. 
+We were aiming to translate the genes and investigate the primary sequences of the proteins in diploids and tetraploids to first identify important domains and predict the function of the protein. We also aimed to identify any mutations that might result in altered function of the protein (or a specific domain within the protein) in diploids or tetraploids by comparing the primary sequences with that of close homologs. Another objective of the analysis was to generate structural predictions for the diploid and tetraploid alleles for each of our candidate genes which would allow us to compare the tetriary structures of the proteins at the different ploidy levels, and observe the impact of the different mutations on the tertiary structure and other protein properties like hydrophobicity or electric charge. 
 
 ## What are the expected outcomes?
 Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids by helping to manage some of the stresses that come with polyploidy, such as controlling gene expression, as well as mutations that confer enhanced ecological tolerance. The altered function of the proteins could result from the mutation of a conserved, functional residue which enhances or reduces the interaction with other ions and proteins, whilst in some cases a mutation can be deleterious and remove an entire functional domain.
@@ -23,11 +23,10 @@ The gff contains annotations for the reference genome, and the fasta is of the r
 |VCFs|UK_scan_dips.vcf<br>UK_scan_tets.vcf|
 |Reference_Genome|C_excelsa_V5_braker2_wRseq.gff3<br>C_excelsa_V5.fasta<br>C_excelsa_V5.fasta.fai|
 
-
-Explain what fai is and put a link as well, and also .dict A more detailed explanation on these file types can be found on the [gatk website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+The `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Tool versions and links
-These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tools online help page.
+These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tool's online help page.
 
 | Tool | Version | Reference(Harvard Style) |
 |------|---------|-----------|
@@ -66,11 +65,12 @@ To install `GATK`, `samtools`, and `conda` follow the guidance on their respecti
 To install the `homebrew` package manager follow the steps outlined on the [homebrew website](https://brew.sh/)
 
 To install the video formatting tool `ffmpeg` input the command below into the command line once `homebrew` has been installed
+
 ```bash
 brew install ffmpeg
 ``` 
 
-To install [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),and [MEGA](https://www.megasoftware.net/) software, navigate to their respective websites and follow the download guidance for your machine.
+To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),and [MEGA](https://www.megasoftware.net/) softwares, navigate to their respective websites and follow the download guidance for your machine.
 
 ## Script description
 
@@ -92,7 +92,7 @@ To install [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),and [
 # THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
-The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5) . The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest. This is accomplished by following the steps below:
+The first thing we will do is get consensus sequences for our diploids and tetraploids. We will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5) in the case of g46214, and greater than 0.6 in the case of g10577. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest. This is accomplished by following the steps below:
 
 ```bash
 conda activate /shared/apps/conda/bio2
@@ -101,7 +101,7 @@ bash ~/generate_reference_sequences.sh
 bash ~/g46214_gatk_consensus_final.sh
 bash ~/g10577_gatk_consensus_final.sh
 ```
-Running these scripts will produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+Running these scripts will produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
@@ -386,8 +386,10 @@ Now we have everything we need to produce our images and you can run the `diploi
 run ~/path/to/python/script/diploid_domain_highlight.py
 ```
 
-Why did you choose that reference model?
 ### g10577
+
+
+# Tetraploid
 Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
@@ -397,23 +399,35 @@ This can be achieved by following the steps outlined below:
  1. Load the reference SWISSMODEL protein into PyMOL using the commands below
 
     ```bash
-    load /path/to/your/reference/protein, reference_g10577
+    load /path/to/your/reference/protein.pdb, reference_g10577
     ```
-2. For each domain you have modelled in the Protein Structure Modelling step run these commands in the PyMOL command line to load them into PyMOL and change the colour to something you prefer. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domain nomeclature. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
+2. For each domain you have modelled in the Protein Structure Modelling step run these commands in the PyMOL command line to load them into PyMOL and change the colour to something you prefer. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
    ```bash
-   load /path/to/your/diploid/or/tetraploid/domain, domain_object
-   color color_of_your_choice, domain_object
+   load /path/to/your/diploid/or/tetraploid/Gag_domain.pdb, GAG_domain
+   load /path/to/your/diploid/or/tetraploid/integrase_domain.pdb, integrase
+   load /path/to/your/diploid/or/tetraploid/protease_domain.pdb, protease
+   load /path/to/your/diploid/or/tetraploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
+   load /path/to/your/diploid/or/tetraploid/rnaseh_domain.pdb, RNaseH
+   color color_of_your_choice, integrase
    ```
 3. Repeat step 2 until all the domains for the diploid or tetraploid have been loaded into PyMOL. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
 
    ```bash
-   allign domain_object, reference_g10577
+   allign GAG_domain, reference_g10577
+   allign integrase, reference_g10577
+   allign protease, reference_g10577
+   allign reverse_transcriptase, reference_g10577
+   allign RNaseH, reference_g10577
    ```
 4. Hide the reference protein following the command below
 
-5. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
    ```bash
-   png ~/path/to/ouput_image/directory/alphafold_tet_g10577_pink_GAG_blue_INT_green_RT.png, 3500, 3500, -1, ray=0, dpi=500
+
+   ```
+
+6. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
+   ```bash
+   png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
 
 ## Movie Generation
