@@ -396,7 +396,7 @@ We will have to load in the reference protein which was retrieved from SWISS-MOD
 
 This can be achieved by following the steps outlined below:
 
- 1. Load the reference SWISSMODEL protein into PyMOL using the commands below
+ 1. Open a new PyMOL window and load the reference SWISSMODEL protein into PyMOL using the commands below
 
     ```bash
     load /path/to/your/reference/protein.pdb, reference_g10577
@@ -408,9 +408,8 @@ This can be achieved by following the steps outlined below:
    load /path/to/your/diploid/or/tetraploid/protease_domain.pdb, protease
    load /path/to/your/diploid/or/tetraploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
    load /path/to/your/diploid/or/tetraploid/rnaseh_domain.pdb, RNaseH
-   color color_of_your_choice, integrase
    ```
-3. Repeat step 2 until all the domains for the diploid or tetraploid have been loaded into PyMOL. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
+3. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
 
    ```bash
    allign GAG_domain, reference_g10577
@@ -419,14 +418,21 @@ This can be achieved by following the steps outlined below:
    allign reverse_transcriptase, reference_g10577
    allign RNaseH, reference_g10577
    ```
-4. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Select the `H` and then select `everything` from the drop down menu.
+4. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Look for the name of the reference protein which should be `reference_g10577`, select the `H` and then select `everything` from the drop down menu.
 
-5. Colour 
+5. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
-6. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
+   GAG_domain -> sky blue
+   integrase -> orange
+   protease -> yellow
+   reverse_transcriptase -> green
+   RNaseH -> purple
+
+6. Manually rotate the protein how you like and take a picture of the assembled protein using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
+7. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` depending on which domain . This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
    
 ### Diploid
@@ -436,7 +442,7 @@ We will have to load in the reference protein which was retrieved from SWISS-MOD
 
 This can be achieved by following the steps outlined below:
 
- 1. Load the reference SWISSMODEL protein into PyMOL using the commands below
+ 1. Open a new PyMOL window and load the reference SWISSMODEL protein into PyMOL using the commands below
 
     ```bash
     load /path/to/your/reference/protein.pdb, reference_g10577
@@ -448,9 +454,8 @@ This can be achieved by following the steps outlined below:
    load /path/to/your/diploid/protease_domain.pdb, protease
    load /path/to/your/diploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
    load /path/to/your/diploid/rnaseh_domain.pdb, RNaseH
-   color color_of_your_choice, integrase
    ```
-3. Repeat step 2 until all the domains for the diploid or tetraploid have been loaded into PyMOL. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
+3. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
 
    ```bash
    allign GAG_domain, reference_g10577
@@ -459,15 +464,19 @@ This can be achieved by following the steps outlined below:
    allign reverse_transcriptase, reference_g10577
    allign RNaseH, reference_g10577
    ```
-4. Hide the reference protein following the command below
+4. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Look for the name of the reference protein which should be `reference_g10577`, select the `H` and then select `everything` from the drop down menu.
+  
+5. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
-   ```bash
-
-   ```
-
+   GAG_domain -> sky blue
+   integrase -> orange
+   protease -> yellow
+   reverse_transcriptase -> green
+   RNaseH -> purple
+   
 6. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
    ```bash
-   png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
+   png ~/path/to/ouput_image/directory/diploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
 ## Movie Generation
 We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those individuals together will make a movie. This can be accomplished by running the scripts below: 
