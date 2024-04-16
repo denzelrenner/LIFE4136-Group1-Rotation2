@@ -433,11 +433,11 @@ This can be achieved by following the steps outlined below:
     ```
 2. For each domain you have modelled in the Protein Structure Modelling step run these commands in the PyMOL command line to load them into PyMOL. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
    ```bash
-   load /path/to/your/diploid/or/tetraploid/Gag_domain.pdb, GAG_domain
-   load /path/to/your/diploid/or/tetraploid/integrase_domain.pdb, integrase
-   load /path/to/your/diploid/or/tetraploid/protease_domain.pdb, protease
-   load /path/to/your/diploid/or/tetraploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
-   load /path/to/your/diploid/or/tetraploid/rnaseh_domain.pdb, RNaseH
+   load /path/to/your/tetraploid/GAG_domain.pdb, GAG_domain
+   load /path/to/your/tetraploid/integrase_domain.pdb, integrase
+   load /path/to/your/tetraploid/protease_domain.pdb, protease
+   load /path/to/your/tetraploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
+   load /path/to/your/tetraploid/rnaseh_domain.pdb, RNaseH
    ```
 3. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
 
@@ -490,7 +490,7 @@ This can be achieved by following the steps outlined below:
     ```
 2. For each domain you have modelled in the `Protein Structure Modelling` step run these commands in the PyMOL command line to load them into PyMOL. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
    ```bash
-   load /path/to/your/diploid/Gag_domain.pdb, GAG_domain
+   load /path/to/your/diploid/GAG_domain.pdb, GAG_domain
    load /path/to/your/diploid/integrase_domain.pdb, integrase
    load /path/to/your/diploid/protease_domain.pdb, protease
    load /path/to/your/diploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
