@@ -50,8 +50,6 @@ These are all the tools that were used in our analysis with versions and links p
 ## Tool intallation 
 The guidance below outlines the necessary scripts,steps or commands that need to be ran to install some of the tools necessary to reproduce our results.
 
-Install the package manager conda by following the guidance on the [conda github page](https://github.com/conda/conda)
-
 ### On the cloud HPC:
 To install raxml-ng run the script below in the command line.
 ```bash
@@ -130,7 +128,7 @@ To identify g46214 homologs:
 
  6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 
-The accession codes for the homologs used in subsequent steps of the analysis is outlined below
+The accession codes for the homologs used in subsequent steps of the analysis is outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
 |  | KAJ0255869.1 |
@@ -160,7 +158,7 @@ To identify g10577 homologs in other plant species we followed the steps below:
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
  6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
-Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that.
+Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so it was not we suspect it was not that.
 
 ## Domain identification
 We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains.
