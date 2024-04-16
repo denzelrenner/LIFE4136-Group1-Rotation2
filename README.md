@@ -160,6 +160,21 @@ To identify g10577 homologs in other plant species we followed the steps below:
  6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so it was not we suspect it was not that.
 
+| Homolog | Accession Code | 
+|--------|------------------|
+||CAA7027704.1|
+||KAG7542151.1|
+||KAK2377062.1|
+||PNX95763.1|
+||RVW62496.1|
+||XP_033145473.1|
+||XP_042756658.2|
+||XP_021629864.2|
+||XP_022570911.2|
+||XP_022003179.2|
+||XP_027612870.1|
+
+
 ## Domain identification
 We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains.
 
