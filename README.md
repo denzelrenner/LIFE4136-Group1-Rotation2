@@ -114,23 +114,34 @@ Amongst the files produced from running the gatk consensus scripts there should 
 ## Homolog identification
 
 ### g46214
-Now that we have retrieved the sequences for our proteins, we want to figure out what they actually are, and what their closest homologs are in other plant or animal species. You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
+Now that we have retrieved the sequences for our proteins, we want to figure out what they actually are, and what their closest homologs are in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
 
-For g46214, homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
-
-To identify g46214 and g10577 homologs in other plant species we followed the steps below:
+To identify g46214 homologs:
 
  1. Follow the link to the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/) webpage
 
  2. Select `Protein BLAST` 
 
- 3. Input the protein sequence for the g10577 and g46214 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the protein sequence for the g46214 reference protein sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g46214_homologs.fasta` fasta file
 
  6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
+
+The accession codes for the homologs used in subsequent steps of the analysis is outlined below
+| Homolog | Accession Code | 
+|--------|------------------|
+|  | KAJ0255869.1 |
+| | XP_009106205.1 |
+| | XP_018447019.1 |
+|  | XP_013648757.1 |
+|  | NP_177686.1 |
+|  | KAG7659674.1 |
+|  | KAG7651806.1 |
+|  | XP_006390294.1 |
+|  | XP_006302550.1 |
 
 #### g10577
 
