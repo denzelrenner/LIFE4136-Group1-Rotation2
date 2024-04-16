@@ -195,7 +195,11 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  3. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
-Note that domains and domain positions were introduced and adjusted based on information in these papers.(Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.). (Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). (Heslop-Harrison, J.S., Schwarzacher, T. and Liu, Q., 2023. Polyploidy: its consequences and enabling role in plant diversification and evolution. Annals of Botany, 131(1), pp.1-10.)
+Note that domains and domain positions were introduced and adjusted based on information in these papers.
+(Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
+(Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.).
+(Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). 
+(Heslop-Harrison, J.S., Schwarzacher, T. and Liu, Q., 2023. Polyploidy: its consequences and enabling role in plant diversification and evolution. Annals of Botany, 131(1), pp.1-10.)
 
 | Domain |
 |--------|
@@ -241,7 +245,7 @@ We will view the `.besttree` file using the ITOL website. To do this the steps b
 
 Based on the results from the allignment and a [paper detailing different bbox proteins](Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), new domains were documented for the bbox proteins, and the positions for some of the interpro domains were altered. The exact residues are detailed in scripts mentioned below and as such will not be repeated in this statement.
 
-To read more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
+To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
 
 ### g10577
 
