@@ -363,9 +363,7 @@ The alphafold output directory has a different suffix for the directory name (i.
 
 The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands is generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005 based on SOMETHING IDK. We will alwyas be using the rank 001 model for the purposes of investigating our protein structure and mutations.
 
-### g46214
-
-### Tetraploids
+### g46214 Tetraploids
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
@@ -392,7 +390,7 @@ Now we have everything we need to produce our images and you can run the `diploi
 run ~/path/to/python/script/tetraploid_domain_highlight.py
 ```
 
-### Diploids
+### g46214 Diploids
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
@@ -420,13 +418,11 @@ Now we have everything we need to produce our images and you can run the `diploi
 run ~/path/to/python/script/diploid_domain_highlight.py
 ```
 
-### g10577
+### g10577 Tetraploids
 
 Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein.
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
-
-### Tetraploid
 
 This can be achieved by following the steps outlined below:
 
@@ -480,7 +476,7 @@ This can be achieved by following the steps outlined below:
    ```
 
    
-### Diploid
+### g10577 Diploids
 Due to the limitations with alphafold's memory we have modelled domains/chunks of our g10577 protein and not the whole protein.
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the diploid protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
@@ -514,21 +510,25 @@ This can be achieved by following the steps outlined below:
 5. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
    GAG_domain -> sky blue
+   
    integrase -> orange
+
    protease -> yellow
+
    reverse_transcriptase -> green
+
    RNaseH -> purple
    
-6. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
+7. When you have manually rotated the protein how you like you take a picture of the protein or domain using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/diploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
    
-7. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
+8. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
 
-8. Repeat step 7 for all the domains we have outlined
+9. Repeat step 7 for all the domains we have outlined
 
-9. Manually rotate the protein how you like and take a picture of the electrostatic potential of the domains using the command below in the PyMOL command line
+10. Manually rotate the protein how you like and take a picture of the electrostatic potential of the domains using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/diploid_electrostatic_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
