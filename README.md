@@ -195,13 +195,17 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  3. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
-| Domain | Diploid Position | Tetraploid Position |
-|--------|------------------|---------------------|
-| GAG domain| 5-105 | 5-108 |
-| Integrase | 309-312 | 312-315 |
-| Reverse Transcriptase | 300-301 | 303-304 |
-| RNaseH | 173-186 | NA |
-| Protease | 100-111 | NA |
+Note that domains and domain positions were introduced and adjusted based on information in these papers.(Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.). (Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). (Heslop-Harrison, J.S., Schwarzacher, T. and Liu, Q., 2023. Polyploidy: its consequences and enabling role in plant diversification and evolution. Annals of Botany, 131(1), pp.1-10.)
+
+| Domain |
+|--------|
+| GAG domain|
+| Integrase | 
+| Reverse Transcriptase |
+| RNaseH |
+| Protease | 
+
+
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
@@ -467,7 +471,7 @@ This can be achieved by following the steps outlined below:
 
    
 ### Diploid
-Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein
+Due to the limitations with alphafold's memory we have modelled domains/chunks of our g10577 protein and not the whole protein.
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the diploid protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
 
