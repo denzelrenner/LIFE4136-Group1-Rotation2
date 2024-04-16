@@ -457,20 +457,24 @@ This can be achieved by following the steps outlined below:
 5. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
    GAG_domain -> sky blue
+   
    integrase -> orange
+
    protease -> yellow
+
    reverse_transcriptase -> green
+
    RNaseH -> purple
 
-6. Manually rotate the protein based on personal preference and take a picture of the assembled protein using the command below in the PyMOL command line
+7. Manually rotate the protein based on personal preference and take a picture of the assembled protein using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
-7. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
+8. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
 
-8. Repeat step 7 for all the domains we have outlined in step 2.
+9. Repeat step 7 for all the domains we have outlined in step 2.
 
-9. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
+10. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/tetraploid_electrostatic_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
