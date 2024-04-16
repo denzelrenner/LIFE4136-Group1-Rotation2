@@ -113,10 +113,10 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
 ## Homolog identification
 
+### g46214
 Now that we have retrieved the sequences for our proteins, we want to figure out what they actually are, and what their closest homologs are in other plant or animal species. You should create fasta files called `g10577_homologs.fasta` and `g46214_homologs.fasta` to store all homologs selected based on a given criteria outlined below.
 
 For g46214, homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
-For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence
 
 To identify g46214 and g10577 homologs in other plant species we followed the steps below:
 
@@ -128,10 +128,27 @@ To identify g46214 and g10577 homologs in other plant species we followed the st
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
- 5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` or `g46214_homologs.fasta` fasta files
+ 5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g46214_homologs.fasta` fasta file
 
  6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 
+#### g10577
+
+For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence.
+
+To identify g10577 homologs in other plant species we followed the steps below:
+
+ 1. Follow the link to the [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/) webpage
+
+ 2. Select `Protein BLAST` 
+
+ 3. Input the protein sequence for the g10577 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+
+ 4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
+
+ 5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
+
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
 Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and was not we suspect it was not that.
 
 ## Domain identification
@@ -171,13 +188,11 @@ To verify the functional domains within the g10577 proteins we followed these st
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
-| GAG pre-integrase | 5-105 | 5-108 |
+| GAG domain| 5-105 | 5-108 |
 | Integrase | 309-312 | 312-315 |
 | Reverse Transcriptase | 300-301 | 303-304 |
-| RNAse | 173-186 | NA |
-| CCHC type zinc finger | 100-111 | NA |
-| Mutation 1 | 150 | 153 |
-| Mutation 2 | 204 | 207 |
+| RNaseH | 173-186 | NA |
+| Protease | 100-111 | NA |
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
@@ -319,7 +334,7 @@ mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
 mv ~/Downloads/model_01.pdb ~/g10577_modelling_output/reference_g10577.pdb
 for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
-## Image and Movie generation
+## Image Generation
 
 We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
 
