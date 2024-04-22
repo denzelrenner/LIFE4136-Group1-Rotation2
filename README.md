@@ -99,20 +99,23 @@ conda activate /shared/apps/conda/bio2
 bash ~/generate_reference_sequences.sh
 ```
 
-# g46214
+### g46214
 We will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by following the steps below:
 
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
 ```
+The important output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The  
 
-# g10577
+### g10577
 For g10577 we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by following the steps below
 
 
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
+The script should produce output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
+
 Running these scripts will produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
@@ -167,7 +170,7 @@ To identify g10577 homologs in other plant species we followed the steps below:
 
  3. Input the protein sequence for the g10577 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
- 4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
+ 4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their NCBI dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
