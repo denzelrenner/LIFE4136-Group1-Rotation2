@@ -358,8 +358,8 @@ for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 We now want to visualise the three dimensional structure of the g10577 protein in diploids and tetraploids. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
-mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images/movie
-mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images/movie
+mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images
+mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images
 ```
 
 For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was broken up into pieces such that the sequence covered as much of the protein as poissible without cause issues with alphafold tto obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. The analysis can be performed by following the steps below:
@@ -385,7 +385,7 @@ for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 ## Image Generation
 
-We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains/motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
+We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
 
 We only want to use the best model from the alphafold output, which should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below: Say what a pdb is?
 
