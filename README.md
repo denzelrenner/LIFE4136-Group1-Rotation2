@@ -372,7 +372,7 @@ To obtain 3D structure models for our proteins we followed the steps below:
  
  1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website 
  
- 2. Input the protein sequence for reference,diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`). It is very important that common identifiers are given due to naming requirements in subsequent commands. Only a single protein sequence can be modelled at a time.
+ 2. Input the protein sequence for diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`). It is very important that common identifiers are given due to naming requirements in subsequent commands. Only a single protein sequence can be modelled at a time.
 
  3. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
@@ -421,9 +421,11 @@ We have successfully modelled our proteins and now want to actually investigate 
 
 The alphafold output directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. For running the scripts below you can only have one protein at a time in a PyMOL window. Either you are investigating the tetraploid sturcture or the diploid structure.
 
-The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands is generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations.
+The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations.
 
 ### g46214 Tetraploids
+
+To load the tetraploid g46214 protein into PyMOL and colour the whole protein by hydrophibicity you need to enter the commands below into the PyMOL command line.
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
@@ -434,7 +436,7 @@ run ~/g46214_modelling_output/colorh.py
 
 color_h tetraploid_g46214
 ```
-Now that the tetraploid g46214 protein has been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of the tetraploid protein to a position you are happy with. Follow the next few steps:
+Now that the tetraploid g46214 protein has been loaded into PyMOL, Using your mouse or trackpad, manually adjust the orientation of the tetraploid protein to a position you are happy with. Follow the next few steps:
 
  1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
 
@@ -442,7 +444,9 @@ Now that the tetraploid g46214 protein has been loaded into pymol, Using your mo
 
  3. Repeat steps 1 and 2 but select `polymer & tetraploid_g46214_bbox_domains`. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on.
  
-NOTE: If you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the ste[s.
+NOTE: If you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the steps. Also you should not select or deselect any of the objects on the right hand side of the PyMOL window as this causes scripts that generate images to not function correctly.
+
+
 
 Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below:
 
@@ -451,6 +455,8 @@ run ~/path/to/python/script/tetraploid_domain_highlight.py
 ```
 
 ### g46214 Diploids
+
+To load the diploid g46214 protein into PyMOL and colour the whole protein by hydrophibicity you need to enter the commands below into the PyMOL command line.
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
@@ -468,11 +474,11 @@ Now that the diploid g46214 protein has been loaded into pymol, Using your mouse
 
  2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & diploid_g46214` depending on which protein you are investigating. This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
- 3. Repeat steps 1 and 2 but select `polymer & diploid_g46214_bbox_domains` depending on which protein you are investigating. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on.
+ 3. Repeat steps 1 and 2 but select `polymer & diploid_g46214_bbox_domains`. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on.
  
 NOTE: if you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the steps.
 
-Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below:
+Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the PyMOL commmand line you can should enter the command below:
 
 ```bash
 run ~/path/to/python/script/diploid_domain_highlight.py
