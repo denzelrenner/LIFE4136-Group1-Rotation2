@@ -105,7 +105,7 @@ We will now filter the vcfs we have to only include biallelic variants with an a
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
 ```
-The important output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The  
+The important output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. This file is used to manually insert the most common site a multitallelic site into the `g46214_diploid_coding_sequence.fasta`
 
 ### g10577
 For g10577 we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by following the steps below
