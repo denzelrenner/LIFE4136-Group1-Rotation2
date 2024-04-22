@@ -201,7 +201,7 @@ To identify g10577 homologs in other plant species we followed the steps below:
 The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
-|Microthiasmi erraticum|CAA7027704.1|
+|Microthlasmi erraticum|CAA7027704.1|
 |A thaliana x A arenosa|KAG7542151.1|
 |Trifolium repens|KAK2377062.1|
 |Trifolium pratense|PNX95763.1|
@@ -231,7 +231,7 @@ To verify the functional domains within the g46214 proteins we followed these st
 
  5. Manually insert the positions of the domains into a txt file called `g46214_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
 
-Note: Using the domain information from following the steps above and this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the  domains and their position in the tetraploid/diploid protein found on interpro was adjusted. A final list of all the domains, motifs, and mutations in our protein are highlighted in the table below.
+Note: Using the domain information from following the steps above and this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the domains and their position in the tetraploid/diploid protein found on interpro was adjusted. A final list of all the domains, motifs, and relevant mutations in our protein are highlighted in the table below.
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
@@ -277,7 +277,7 @@ Note that domains and domain positions were introduced and adjusted based on inf
 
 Code in this section should be ran on the cloud HPC
 
-This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploid,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid have diverged from the diploids.
+This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid and tetraploid proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid have diverged from the diploids.
 
 ### g46214
  
@@ -313,7 +313,7 @@ To find out more about the `.besttree` extension, you can read through this pape
 
 Note: This step was written and explained by a group member, Luke.
 
-1. Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.75 amino acid sequence
+1. Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.6 amino acid sequence
 
 2. Uploaded the fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
@@ -353,11 +353,11 @@ Note: This step was written and explained by a group member, Luke.
 
 6. To save a PNG file of the tree I selected Image from the toolbar: Image -> Save a PNG file, then gave the file path to my Desktop with an appropriate file name.
 
-Note, after performing multiple sequence allignments and reading through papers (which papers?) the positions of domains in the g10577 diploid and tetraploid were manually adjusted to better reflect the real positions of functional domains
-
 ## Protein Structure Modelling
 
-We now want to visualise the three dimensional structure of our proteins. The proteins we will be loaded into visualisation tools and files are in the PDB format. PDB files contain information about the atoms in the protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
+All code in this section is ran from the command line on your local machine
+
+We now want to visualise the three dimensional structure of our proteins. The proteins will be loaded into visualisation tools and the files are in the PDB format. PDB files contain information about the atoms in the protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
 
 ### g46214
 
@@ -376,7 +376,7 @@ To obtain 3D structure models for our proteins we followed the steps below:
 
  3. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
- 4. When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
+ 4. When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting `allow` will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this analysis.
 
  5. Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
 
@@ -417,13 +417,11 @@ for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 ## Image Generation
 
-We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdbs in pyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. This can be acheived following the steps outlined below.
+We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdb files in pyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
 
-We only want to use the best model from the alphafold output, which should have rank_001 in its name. We will load that into pymol and change the name of the object following the command in the file named below: Say what a pdb is?
+The alphafold output directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. For running the scripts below you can only have one protein at a time in a PyMOL window. Either you are investigating the tetraploid sturcture or the diploid structure.
 
-The alphafold output directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. For the sake of running the scripts below you can only use one protein at a time. Either you are investigating the tetraploid sturcture or the diploid structure.
-
-The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands is generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005 based on SOMETHING IDK. We will alwyas be using the rank 001 model for the purposes of investigating our protein structure and mutations.
+The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands is generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations.
 
 ### g46214 Tetraploids
 
