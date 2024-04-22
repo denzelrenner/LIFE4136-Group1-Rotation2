@@ -417,11 +417,9 @@ for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 ## Image Generation
 
-We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will open the different pdb files in pyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
+We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will load the different pdb files into pyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
 
-The alphafold output directory has a different suffix for the directory name (i.e eebdh) so use whichever youve been given and choose your rank001 model. For running the scripts below you can only have one protein at a time in a PyMOL window. Either you are investigating the tetraploid sturcture or the diploid structure.
-
-The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations.
+The alphafold output directory is named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations, and take it as our best estimate of the true protein structure.
 
 ### g46214 Tetraploids
 
