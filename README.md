@@ -92,9 +92,9 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 # THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
-All code in this section to be ran on the cloud HPC. 
+All code in this section needs to be ran on the cloud HPC. 
 
-The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis create a consensus sequence for the tetraploid and diploid. This can be accomplished by entering the command below into the command line.
+The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis. This can be accomplished by entering the command below into the command line.
 
 ```bash
 conda activate /shared/apps/conda/bio2
@@ -102,12 +102,14 @@ bash ~/generate_reference_sequences.sh
 ```
 
 ### g46214
-With the conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by following the steps below:
+With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by following the steps below:
 
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
 ```
-The important output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. This file is used to manually insert the most common site a multitallelic site into the `g46214_diploid_coding_sequence.fasta`. For tetraploids it is `g46214_tetraploid_coding_sequence.fasta` and `final_multiallelic_tetraploid.vcf`
+The important output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. This file is used to manually insert the most common site a multitallelic site into the `g46214_diploid_coding_sequence.fasta`. 
+
+For g46214 tetraploids the most important files are `g46214_tetraploid_coding_sequence.fasta` and `final_multiallelic_tetraploid.vcf`. The most common allele at multiallelic sites in the `final_multiallelic_tetraploid.vcf`
 
 ### g10577
 For g10577 we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by following the steps below
@@ -116,9 +118,9 @@ For g10577 we will filter the vcfs we have to only include biallelic variants wi
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
-The script should produce output files in a directory caled? are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
+The script should produce output files in a directory called? are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
 
-Running these scripts will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
