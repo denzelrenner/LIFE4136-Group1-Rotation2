@@ -175,7 +175,7 @@ The accession codes for the homologs used in subsequent steps of the analysis is
 |  | XP_006390294.1 |
 |  | XP_006302550.1 |
 
-#### g10577
+### g10577
 
 For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence.
 
