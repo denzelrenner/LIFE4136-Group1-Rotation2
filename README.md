@@ -121,9 +121,26 @@ Running these scripts will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fa
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
+### g46214
+
  1. Follow the link to the [orf finder](https://www.ncbi.nlm.nih.gov/orffinder/) website.
 
- 2. Input the nucleotide seqeunce into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214` or `>tetraploid_g10577`).
+ 2. For the diploid protein, input the nucleotide seqeunce from the `g46214_diploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214`).
+
+ 3. For the tetraploid protein, input the nucleotide seqeunce from the `g46214_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g46214`.
+
+ 4. For the reference protein, input the nucleotide seqeunce from the `g46214_reference_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g46214`.
+
+### g10577
+
+ 1. Follow the link to the [orf finder](https://www.ncbi.nlm.nih.gov/orffinder/) website.
+
+ 2. For the diploid protein, input the nucleotide seqeunce from the `g10577_diploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_10577`).
+
+ 3. For the tetraploid protein, input the nucleotide seqeunce from the `g10577_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g10577`.
+
+ 4. For the reference protein, input the nucleotide seqeunce from the `g10577_reference_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`.
+
 
 
 ## Homolog identification
