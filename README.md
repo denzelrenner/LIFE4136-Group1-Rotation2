@@ -118,14 +118,14 @@ For g10577 we will filter the vcfs we have to only include biallelic variants wi
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
-For g10577 diploids, the most important output files created are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploidss.
+For g10577 diploids, the most important output files created are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploids.
 
-For g10577 tetraploids, the most important output files created are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for diploidss.
+For g10577 tetraploids, the most important output files created are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
-Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
+Amongst the output files produced from running the gatk consensus scripts in the step above, there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
 ### g46214
 
@@ -133,9 +133,9 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
  2. For the diploid protein, input the nucleotide seqeunce from the `g46214_diploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_g46214`).
 
- 3. For the tetraploid protein, input the nucleotide seqeunce from the `g46214_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g46214`.
+ 3. For the tetraploid protein, input the nucleotide seqeunce from the `g46214_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g46214`).
 
- 4. For the reference protein, input the nucleotide seqeunce from the `g46214_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g46214`.
+ 4. For the reference protein, input the nucleotide seqeunce from the `g46214_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g46214`).
 
 ### g10577
 
@@ -143,10 +143,9 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
  2. For the diploid protein, input the nucleotide seqeunce from the `g10577_diploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>diploid_10577`).
 
- 3. For the tetraploid protein, input the nucleotide seqeunce from the `g10577_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g10577`.
+ 3. For the tetraploid protein, input the nucleotide seqeunce from the `g10577_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g10577`).
 
- 4. For the reference protein, input the nucleotide seqeunce from the `g10577_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`.
-
+ 4. For the reference protein, input the nucleotide seqeunce from the `g10577_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`).
 
 
 ## Homolog identification
@@ -166,9 +165,9 @@ To identify g46214 homologs:
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g46214_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g46214_homologs.fasta` in fasta format.
 
-The accession codes for the homologs used in subsequent steps of the analysis is outlined below:
+The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
 |  | KAJ0255869.1 |
@@ -183,7 +182,7 @@ The accession codes for the homologs used in subsequent steps of the analysis is
 
 ### g10577
 
-For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence.
+For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence. You should create a fasta file called `g10577_homologs.fasta` to store all homologs. 
 
 To identify g10577 homologs in other plant species we followed the steps below:
 
@@ -191,15 +190,15 @@ To identify g10577 homologs in other plant species we followed the steps below:
 
  2. Select `Protein BLAST` 
 
- 3. Input the protein sequence for the g10577 reference proteins sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the protein sequence for the g10577 reference protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their NCBI dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g10577_homologs.fasta` in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
 
-The accession codes for the homologs used in subsequent steps of the analysis is outlined below:
+The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
 ||CAA7027704.1|
@@ -216,7 +215,7 @@ The accession codes for the homologs used in subsequent steps of the analysis is
 
 
 ## Domain identification
-We have found out the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains.
+We have discovered the closest homologs for our proteins in different species so we can begin to start investigating our proteins function, and structural domains.
 
 ### g46214
 
@@ -224,9 +223,13 @@ To verify the functional domains within the g46214 proteins we followed these st
 
  1. Follow the link to the [InterPro website](https://www.ebi.ac.uk/interpro/)
 
- 2. Input the diploid and tetraploid protein sequences (in fasta format) for g46214 into the query field labelled `Enter your sequence` and choose `search`
+ 2. Input the diploid protein sequence (in fasta format) for g46214 into the query field labelled `Enter your sequence` and choose `search`
 
- 3. Manually insert the positions of the domains into a txt file called (i.e `g46214_tetraploid_domains.txt` and `g46214_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains into a txt file called `g46214_diploid_domains.txt` so we have the exact coordinates of the different domains in the protein
+ 
+ 4. Follow the link in step 1 to return to the Interpro home page. Input the tetraploid protein sequence (in fasta format) for g46214 into the query field labelled `Enter your sequence` and choose `search`
+
+ 5. Manually insert the positions of the domains into a txt file called `g46214_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
 
 Note: Using the domain information from following the steps above and this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the  domains and their position in the tetraploid/diploid protein found on interpro was adjusted. A final list of all the domains, motifs, and mutations in our protein are highlighted in the table below.
 
@@ -250,6 +253,10 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  3. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
 
+ 4. Input the diploid and tetraploid protein sequences (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
+
+ 5. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+    
 Note that domains and domain positions were introduced and adjusted based on information in these papers.
 (Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
 (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.).
