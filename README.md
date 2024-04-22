@@ -1,7 +1,7 @@
 # LIFE4136_Group1_Rotation2
 This repository contains all the scripts and lists of data files needed to reproduce results from group1 in rotation2 of the groupwork projects.
 
-Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 or Lukes Mac
+Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 
 
 ## What is the problem we have been presented with?
 We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy. Polyploids are individuals that arise from a whole genome duplication (WGD) event, a process that results in multiple sets of chromosomes within an individual. These polyploids evolve mechanisms to handle the hardships that come with WGD, such as meiotic instability and regulation of gene expression, as well as develop adaptations to tolerate the harsh environmental conditions that can sometimes lead to polyploidy. In this project we have been provided with two genes caught in the selection scan, g46214 and g10577, and we are to investigate each gene in diploids and tetraploids through studying the amino acid sequences and tetriary structures of their proteins to determine the consequence of any genetic variants.
@@ -107,9 +107,9 @@ With the `bio2` conda environemnt still active, we will now filter the vcfs we h
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
 ```
-The important output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. This file is used to manually insert the most common site a multitallelic site into the `g46214_diploid_coding_sequence.fasta`. 
+For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploids. 
 
-For g46214 tetraploids the most important files are `g46214_tetraploid_coding_sequence.fasta` and `final_multiallelic_tetraploid.vcf`. The most common allele at multiallelic sites in the `final_multiallelic_tetraploid.vcf`
+For g46214 tetraploids, the most important output files created are called `g46214_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_tetraploid_coding_sequence.fasta` file to get a final sequence for diploids.
 
 ### g10577
 For g10577 we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by following the steps below
@@ -118,7 +118,9 @@ For g10577 we will filter the vcfs we have to only include biallelic variants wi
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
-The script should produce output files in a directory called? are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
+For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploidss.
+
+For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploidss.
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
