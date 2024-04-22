@@ -92,7 +92,9 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 # THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
-This code needs to be ran on the HPC. The first thing we will do is get consensus sequences for the reference gene so it can then be used create a consensus sequence for the tetraploid and diploid. This can be accomplished by entering the command below into the command line.
+All code in this section to be ran on the cloud HPC. 
+
+The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis create a consensus sequence for the tetraploid and diploid. This can be accomplished by entering the command below into the command line.
 
 ```bash
 conda activate /shared/apps/conda/bio2
