@@ -447,7 +447,7 @@ To first load the tetraploid g46214 protein into PyMOL and colour the whole prot
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
-select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
+select tetraploid_g46214_bbox_domains, tetraploid_g46214 and resi 5-108
 
 run ~/g46214_modelling_output/colorh.py
 
@@ -476,7 +476,7 @@ To first load the diploid g46214 protein into PyMOL and colour the whole protein
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
-select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
+select diploid_g46214_bbox_domains, diploid_g46214 and resi 5-105
 
 run ~/g46214_modelling_output/colorh.py
 
@@ -512,7 +512,7 @@ This can be achieved by following the steps outlined below:
     ```bash
     load /path/to/your/reference/protein.pdb, reference_g10577
     ```
-2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, run these commands in the PyMOL command line to load them into PyMOL and we give them a different name within PyMOL so they are easily identifiable. . You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold. Because the exact fragments were not provided, only the code for fragment 1 is outlined below.
+2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, we want to load that bit of protein sequence into PyMOL and give the object generated a  name within PyMOL so that it is easily identifiable. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold. Because the exact fragments were not provided, only the code for fragment 1 is outlined below.
    
    ```bash
    load /path/to/your/tetraploid/tetraploid_framgment1_g10577.pdb, tetraploid_framgment1
@@ -524,10 +524,10 @@ This can be achieved by following the steps outlined below:
    allign tetraploid_fragment1, reference_g10577
    ```
 
-5. This step also requires needing to knwo the domain positions.  We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains like `domain1`.
+5. This step also requires needing to knwo the domain positions. With the domain positions We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains like `domain1`.
 
   ```bash
-   select resi x-x, integrase
+   select integrase, tetraploid_fragment1 and resi x-y`'
   ```
    
 6. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Look for the name of the reference protein which should be `reference_g10577`, select the `H` and then select `everything` from the drop down menu.
