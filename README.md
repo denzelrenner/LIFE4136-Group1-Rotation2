@@ -92,7 +92,7 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 # THE ANALYSIS
 
 ## Consensus Sequences (Nucleotide)
-This code needs to be ran on the HPC. The first thing we will do is get consensus sequences for the reference gene so it can then be used to extract the coding sequence of our genes. This can be accomplished by entering the command below into the command line.
+This code needs to be ran on the HPC. The first thing we will do is get consensus sequences for the reference gene so it can then be used create a consensus sequence for the tetraploid and diploid. This can be accomplished by entering the command below into the command line.
 
 ```bash
 conda activate /shared/apps/conda/bio2
@@ -100,7 +100,7 @@ bash ~/generate_reference_sequences.sh
 ```
 
 ### g46214
-We will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by following the steps below:
+With the conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by following the steps below:
 
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
@@ -116,7 +116,7 @@ bash ~/g10577_gatk_consensus_final.sh
 ```
 The script should produce output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
 
-Running these scripts will produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+Running these scripts will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Protein Sequences 
 Amongst the files produced from running the gatk consensus scripts there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
@@ -174,8 +174,7 @@ To identify g10577 homologs in other plant species we followed the steps below:
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format.
-Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so it was not we suspect it was not that.
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the homolog files in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
 
 The accession codes for the homologs used in subsequent steps of the analysis is outlined below:
 | Homolog | Accession Code | 
@@ -275,8 +274,6 @@ We will view the `.besttree` file using the ITOL website. To do this the steps b
   4. Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with its Genus and Species
 
   5. Capture the screen using CMD+SHIFT+4 and adjusting the size to have the whole phylogenetic tree inside it.
-
-Based on the results from the allignment and a [paper detailing different bbox proteins](Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), new domains were documented for the bbox proteins, and the positions for some of the interpro domains were altered. The exact residues are detailed in scripts mentioned below and as such will not be repeated in this statement.
 
 To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
 
