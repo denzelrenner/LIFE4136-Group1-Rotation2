@@ -15,7 +15,9 @@ Depending on the gene and given our understanding of the system, we expect to se
 # Prerequisites
 ## Required files and data
 All these files should be downloaded into the same directory before following the rest of this document.
+
 The vcf files contain variants at only the genomic regions we are interested in. The `UK_scan_dips.vcf` contains variants in diploids and `UK_scan_tets.vcf` contains variants in tetraploids
+
 The gff contains annotations for the reference genome, and the fasta is of the reference and has been indexed to produce a .fai compatible with many tools like samtools and GATK
 
 |Directory|Files|
