@@ -425,7 +425,7 @@ The alphafold output directory is named with unique identifiers such that the di
 
 ### g46214 Tetraploids
 
-To load the tetraploid g46214 protein into PyMOL and colour the whole protein by hydrophibicity you need to enter the commands below into the PyMOL command line.
+To first load the tetraploid g46214 protein into PyMOL and colour the whole protein by hydrophibicity you need to enter the commands below into the PyMOL command line.
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
@@ -446,9 +446,7 @@ Now that the tetraploid g46214 protein has been loaded into PyMOL, Using your mo
  
 NOTE: If you are using too much RAM on your machine the whole protein may be coloured white or only a few areas of your protein may be coloured by electrostatic potential. If that occurs close all other running applications on your device and rereun the steps, or restart your device and rereun the steps. Also you should not select or deselect any of the objects on the right hand side of the PyMOL window as this causes scripts that generate images to not function correctly.
 
-
-
-Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein and its electrostatic potential at 90 degree angles. In the pyMOL commmand line you can should enter the command below:
+Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py`  script to get your nice figures that show the protein with domains highlighted, coloured by hydrophobicity, and coloured by electrostatic potential at 90 degree angles. In the PyMOL commmand line you can should enter the command below:
 
 ```bash
 run ~/path/to/python/script/tetraploid_domain_highlight.py
@@ -456,7 +454,7 @@ run ~/path/to/python/script/tetraploid_domain_highlight.py
 
 ### g46214 Diploids
 
-To load the diploid g46214 protein into PyMOL and colour the whole protein by hydrophibicity you need to enter the commands below into the PyMOL command line.
+To first load the diploid g46214 protein into PyMOL and colour the whole protein by hydrophibicity you need to enter the commands below into the PyMOL command line.
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
