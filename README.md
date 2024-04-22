@@ -94,6 +94,8 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 ## Consensus Sequences (Nucleotide)
 All code in this section needs to be ran on the cloud HPC. 
 
+Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
+
 The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis. We knew the genomic positions for the different genes of interest by searching their gene names in the gff file. To create the consensus sequences for the reference gene you should enter the command below into the command line.
 
 ```bash
@@ -122,10 +124,8 @@ For g10577 diploids, the most important output files created are called `g10577_
 
 For g10577 tetraploids, the most important output files created are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
 
-Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
-
 ## Protein Sequences 
-Amongst the output files produced from running the gatk consensus scripts in the step above, there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
+Amongst the output files produced from running the gatk consensus scripts in the section above, there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
 ### g46214
 
@@ -151,7 +151,7 @@ Amongst the output files produced from running the gatk consensus scripts in the
 ## Homolog identification
 
 ### g46214
-Now that we have retrieved the sequences for our proteins, we want to figure out what they actually are, and what their closest homologs are in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
+Now that we have retrieved the sequences for our proteins, we want to figure out what they might be, and what their closest homologs are in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
 
 To identify g46214 homologs:
 
@@ -170,15 +170,15 @@ To identify g46214 homologs:
 The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
-|  | KAJ0255869.1 |
-| | XP_009106205.1 |
-| | XP_018447019.1 |
-|  | XP_013648757.1 |
-|  | NP_177686.1 |
-|  | KAG7659674.1 |
-|  | KAG7651806.1 |
-|  | XP_006390294.1 |
-|  | XP_006302550.1 |
+| Hirschfeldia incana | KAJ0255869.1 |
+| Brassica rapa | XP_009106205.1 |
+| Raphanus sativus | XP_018447019.1 |
+| Brassica napus | XP_013648757.1 |
+| Arabidopsis thaliana | NP_177686.1 |
+| Arabidopsis suecica | KAG7659674.1 |
+| Arabidopsis thaliana x Arabidopsis arenosa | KAG7651806.1 |
+| Eutrema salsugineum | XP_006390294.1 |
+| Capsella rubella | XP_006302550.1 |
 
 ### g10577
 
@@ -201,17 +201,17 @@ To identify g10577 homologs in other plant species we followed the steps below:
 The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
-||CAA7027704.1|
-||KAG7542151.1|
-||KAK2377062.1|
-||PNX95763.1|
-||RVW62496.1|
-||XP_033145473.1|
-||XP_042756658.2|
-||XP_021629864.2|
-||XP_022570911.2|
-||XP_022003179.2|
-||XP_027612870.1|
+|Microthiasmi erraticum|CAA7027704.1|
+|A thaliana x A arenosa|KAG7542151.1|
+|Trifolium repens|KAK2377062.1|
+|Trifolium pratense|PNX95763.1|
+|Vitis vinifera|RVW62496.1|
+|Brassica rapa|XP_033145473.1|
+|Lactuca sativa|XP_042756658.2|
+|Manihot esculenta|XP_021629864.2|
+|Brassica napa|XP_022570911.2|
+|Hellanthus annus|XP_022003179.2|
+|Sparassis crispa|XP_027612870.1|
 
 
 ## Domain identification
