@@ -501,7 +501,7 @@ run ~/path/to/python/script/diploid_domain_highlight.py
 
 ### g10577 Tetraploids
 
-Due to the limitations with alphafold's memory we have modelled sections of our g10577 proteins and not the whole protein.
+Due to the limitations with alphafold's memory we have modelled fragments of outhe tetraploid g10577 protein and not the whole protein.
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different fragments of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
 
@@ -512,26 +512,27 @@ This can be achieved by following the steps outlined below:
     ```bash
     load /path/to/your/reference/protein.pdb, reference_g10577
     ```
-2. For each fragment you have modelled in the Protein Structure Modelling step run these commands in the PyMOL command line to load them into PyMOL. The domain object is the name you want to call the object in PyMOL. We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold
+2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, run these commands in the PyMOL command line to load them into PyMOL and we give them a different name within PyMOL so they are easily identifiable. . You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold. Because the exact fragments were not provided, only the code for fragment 1 is outlined below.
+   
    ```bash
-   load /path/to/your/tetraploid/GAG_domain.pdb, GAG_domain
-   load /path/to/your/tetraploid/integrase_domain.pdb, integrase
-   load /path/to/your/tetraploid/protease_domain.pdb, protease
-   load /path/to/your/tetraploid/reverse_transcriptase_domain.pdb, reverse_transcriptase
-   load /path/to/your/tetraploid/rnaseh_domain.pdb, RNaseH
+   load /path/to/your/tetraploid/tetraploid_framgment1_g10577.pdb, tetraploid_framgment1
    ```
-3. Now we will allign each domain to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this step for each domain until they have all been alligned to the reference
+   
+4. Now we will allign each fragment to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. Repeat this command for each fragment until they have all been alligned to the reference
 
    ```bash
-   allign GAG_domain, reference_g10577
-   allign integrase, reference_g10577
-   allign protease, reference_g10577
-   allign reverse_transcriptase, reference_g10577
-   allign RNaseH, reference_g10577
+   allign tetraploid_fragment1, reference_g10577
    ```
-4. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Look for the name of the reference protein which should be `reference_g10577`, select the `H` and then select `everything` from the drop down menu.
 
-5. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
+5. This step also requires needing to knwo the domain positions.  We recommend using names such as `RNaseH_domain` which reflect the underlying biology, rather than using numbered domains like `domain1`.
+
+  ```bash
+   select resi x-x, integrase
+  ```
+   
+6. Hide the reference protein manually by navigating to the object list at the right hand side of the window. Look for the name of the reference protein which should be `reference_g10577`, select the `H` and then select `everything` from the drop down menu.
+
+7. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
    GAG_domain -> sky blue
    
@@ -543,15 +544,15 @@ This can be achieved by following the steps outlined below:
 
    RNaseH -> purple
 
-7. Manually rotate the protein based on personal preference and take a picture of the assembled protein using the command below in the PyMOL command line
+8. Manually rotate the protein based on personal preference and take a picture of the assembled protein using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
-8. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
+9. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
 
-9. Repeat step 7 for all the domains we have outlined in step 2.
+10. Repeat step 7 for all the domains we have outlined in step 2.
 
-10. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
+11. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
    ```bash
    png ~/path/to/ouput_image/directory/tetraploid_electrostatic_image.png, 3500, 3500, -1, ray=0, dpi=500
    ```
