@@ -257,7 +257,7 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  5. Manually insert the positions of the domains into a txt file `g10577_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
     
-Note that domains and domain positions were introduced and adjusted based on information in these papers.
+Note that domains and domain positions were introduced and adjusted based on information in these papers. However the final list of domain positions was not provided so only the final domain names are given.
 (Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
 (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.).
 (Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). 
@@ -368,17 +368,24 @@ mkdir -p ~/g46214_modelling_output/tetraploid_g46214_protein_images/movie
 mkdir -p ~/g46214_modelling_output/diploid_g46214_protein_images/movie
 ```
 
-To obtain 3D structure models for our proteins we followed the steps below:
+To obtain 3D structure models for our diploid and tetraploid proteins we followed the steps below:
  
  1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website 
  
- 2. Input the protein sequence for diploid,and tetraploid sequences into the `query sequence` field, and for a given candidate gene , the job name should have some identifier they all share (i.e `diploid_g46214`,`tetraploid_g46214`). It is very important that common identifiers are given due to naming requirements in subsequent commands. Only a single protein sequence can be modelled at a time.
+ 2. Input the protein sequence for the diploid sequences into the `query sequence` field, and for a given candidate gene , the job name should end with the identifier (`diploid_g46214`). It is very important that this identifier is given due to naming requirements in subsequent commands.
 
  3. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
  4. When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting `allow` will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this analysis.
 
- 5. Move the zip files from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
+ 5. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website or refresh the page.
+ 
+ 6. Input the protein sequence for the tetraploid sequences into the `query sequence` field, and the job name should end with the identifier (`tetraploid_g46214`). It is very important that this identifier is given due to naming requirements in subsequent commands. 
+
+ 7. Repeat steps 3 and 4
+
+ 8. Move all the zip files (including those from modelling the g46214 diploid protein) from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
+
 
 ```bash
 mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
@@ -387,28 +394,32 @@ for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 
 ### g10577
 
-We now want to visualise the three dimensional structure of the g10577 protein in diploids and tetraploids. We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
+We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
 mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images
 ```
 
-For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was broken up into pieces such that the sequence covered as much of the protein as poissible without cause issues with alphafold tto obtain 3D structure models for the different domains in our tetraploid and diploid proteins. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. The analysis can be performed by following the steps below:
+For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was fragmented into the longest possible segments that allowed alphafold to completely model that portion of sequence without issues. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
+
+Note: For this approach to be reproduceable you will need the exact coordinates of the fragments we are taking from the diploid or tetraploid (i.e if you should take residue 1-400, followed by 401-600 etc), however these are not provided and so is missing from the description of steps to follow.
+
+The analysis can be performed by following the steps below:
 
  1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website
 
- 2. Input the protein sequence for a given domain in the diploid and tetraploid sequences into the `query sequence` field, and the job name should have some identifier they all share (i.e `diploid_domain1_g10577`,`tetraploid_domain1_g10577`). It is very important that common identifiers are given due to naming requirements in subsequent commands. Only a single domain from a single protein can be modelled at a time, and alphafold collab can run out of memory, so you may need multiple google accounts or use a colleagues machine to get all the domains done.
+ 2. Input the first fragment for the diploid sequences into the `query sequence` field, and the job name entered should end with some identifier they all share (`diploid_framgment1_g10577`). It is very important that common identifiers are given due to naming requirements in subsequent commands. Only a single fragment can be modelled at a time, and alphafold collab can run out of memory, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains.  
 
- 3. Repeat step 2 for all other domains in g10577 that we idenetified in the domain identification step.  
+ 3. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
- 4. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
+ 4. When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
- 5. When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting 'allow' will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
+ 5. Repeat step 2-4 for the other fragments of the diploid g10577 protein. At step 2 you should change the job name to reflect which fragment is being modelled (i.e using `diploid_fragment2_g10577`) for the second fragment
+    
+ 7. Follow the link to the SWISS-MODEL website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format.
 
- 6. Follow the link to the SWISS-MODEL website, select `Start Modelling`, input the reference g10577 sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format.
-
- 7. Move the zip files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
+ 8. Move the zip files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
 
 ```bash
 mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
@@ -466,7 +477,7 @@ color_h diploid_g46214
 
 Now that the diploid g46214 protein has been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of the diploid protein to a position you are happy with. Follow the next few steps:
 
- 1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
+ 1. Navigate to the header of PyMOL and select the plugin tab, select APBS electrostatics.
 
  2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & diploid_g46214` depending on which protein you are investigating. This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
@@ -482,7 +493,7 @@ run ~/path/to/python/script/diploid_domain_highlight.py
 
 ### g10577 Tetraploids
 
-Due to the limitations with alphafold's memory we have modelled domains of our g10577 protein and not the whole protein.
+Due to the limitations with alphafold's memory we have modelled sections of our g10577 protein and not the whole protein.
 
 We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
 
