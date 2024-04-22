@@ -559,9 +559,7 @@ This can be achieved by following the steps outlined below:
 
    
 ### g10577 Diploids
-Due to the limitations with alphafold's memory we have modelled domains/chunks of our g10577 protein and not the whole protein.
-
-We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different domains of the diploid protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
+Due to the limitations with alphafold's memory we have modelled fragments of our diploid g10577 protein and not the whole protein. We will have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different fragments of the diploid protein and one-by-one these will be alligned to the reference protein to effectivey stitch together our original protein. 
 
 This can be achieved by following the steps outlined below:
 
