@@ -114,7 +114,7 @@ For g10577 we will filter the vcfs we have to only include biallelic variants wi
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
-The script should produce output files are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
+The script should produce output files in a directory caled? are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence and `final_multiallelic_diploid.vcf` which contains variants at multiallelic sites. The
 
 Running these scripts will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
@@ -129,7 +129,7 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
  3. For the tetraploid protein, input the nucleotide seqeunce from the `g46214_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g46214`.
 
- 4. For the reference protein, input the nucleotide seqeunce from the `g46214_reference_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g46214`.
+ 4. For the reference protein, input the nucleotide seqeunce from the `g46214_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g46214`.
 
 ### g10577
 
@@ -139,7 +139,7 @@ Amongst the files produced from running the gatk consensus scripts there should 
 
  3. For the tetraploid protein, input the nucleotide seqeunce from the `g10577_tetraploid_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>tetraploid_g10577`.
 
- 4. For the reference protein, input the nucleotide seqeunce from the `g10577_reference_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`.
+ 4. For the reference protein, input the nucleotide seqeunce from the `g10577_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`.
 
 
 
