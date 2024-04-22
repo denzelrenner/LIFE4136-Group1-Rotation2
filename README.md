@@ -249,13 +249,13 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  1. Follow the link to the [InterPro website](https://www.ebi.ac.uk/interpro/)
 
- 2. Input the diploid and tetraploid protein sequences (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
+ 2. Input the diploid protein sequences (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
 
- 3. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+ 3. Manually insert the positions of the domains into a txt file `g10577_diploid_domains.txt` so we have the exact coordinates of the different domains in the protein
 
- 4. Input the diploid and tetraploid protein sequences (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
+ 4. Follow the link in step 1 to return to the Interpro home page. Input the tetraploid protein sequence (in fasta format) for g10577 into the query field labelled `Enter your sequence` and choose `search`
 
- 5. Manually insert the positions of the domains into a txt file (i.e `g10577_tetraploid_domains.txt` and `g10577_diploid_domains.txt`) so we have the exact coordinates of the different domains in the protein
+ 5. Manually insert the positions of the domains into a txt file `g10577_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
     
 Note that domains and domain positions were introduced and adjusted based on information in these papers.
 (Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
@@ -274,6 +274,8 @@ Note that domains and domain positions were introduced and adjusted based on inf
 
 
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
+
+Code in this section should be ran on the cloud HPC
 
 This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid, tetraploid,and reference proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid have diverged from the diploids.
 
