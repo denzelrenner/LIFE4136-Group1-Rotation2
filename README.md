@@ -94,7 +94,7 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 ## Consensus Sequences (Nucleotide)
 All code in this section needs to be ran on the cloud HPC. 
 
-The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis. This can be accomplished by entering the command below into the command line.
+The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis. We knew the genomic positions for the different genes of interest by searching their gene names in the gff file. To create the consensus sequences for the reference gene you should enter the command below into the command line.
 
 ```bash
 conda activate /shared/apps/conda/bio2
@@ -118,9 +118,9 @@ For g10577 we will filter the vcfs we have to only include biallelic variants wi
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
-For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploidss.
+For g10577 diploids, the most important output files created are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploidss.
 
-For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploidss.
+For g10577 tetraploids, the most important output files created are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for diploidss.
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
