@@ -355,7 +355,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 
 ## Protein Structure Modelling
 
-Note:All code in this section should be ran ran from the command line on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
+Note:All code in this section should be ran from the command line on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
 
 We now want to visualise the three dimensional structure of our proteins. We will use protein visualisation tools and the files we are using are in the PDB format. PDB files contain information about the atoms in a protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
 
@@ -397,13 +397,12 @@ for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
-mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images
-mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images
+mkdir -p ~/g10577_modelling_output
 ```
 
 For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was fragmented into the longest possible segments that prevented alphafold from running out of time whilst modelling. We decided on this method as opposed to using an alternative modelling software like Phyre2 because we did not get biologically sensible output when those were used to model our proteins. 
 
-This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
+This approach to modelling also requires us to obtain a complete reference protein model using [SWISS-MODEL](https://swissmodel.expasy.org/interactive) so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
 
 Note: For the approach used in this stage of the analysis to be reproduceable you will need the exact coordinates of the fragments we are taking from the diploid or tetraploid protein(i.e if you should take residue 1-400, followed by 401-600 etc), however these were not provided and so although the steps outlined below are correct they are missing that bit of information.
 
@@ -427,9 +426,9 @@ The analysis can be performed by following the steps below:
 
  Now to get the reference protein we will need to rebuild the fragments we have just modelled:
     
- 10. Follow the link to the SWISS-MODEL website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format to your downloads folder.
+ 10. Follow the link to the [SWISS-MODEL](https://swissmodel.expasy.org/interactive) website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format to your downloads folder.
 
- 11. Move the zip files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures, and open the  files following the commands below:
+ 11. Move the `.zip` files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
 
 ```bash
 mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
@@ -438,6 +437,7 @@ for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
 ```
 
 Unzipping these files produces a directory which has all the alphafold output for the pdb files the models produced with the ranks
+
 ## Image Generation
 
 All the code in this section of the analysis is entered into the PyMOL command line.
