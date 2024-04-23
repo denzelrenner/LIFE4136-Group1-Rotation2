@@ -81,7 +81,7 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 | `generate_reference_sequences.sh` | produces a nucleotide sequence (in fasta format) for the g10577 and g46214 reference genes |
 | `g46214_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g46214 diploid and tetraploid genes |
 | `g10577_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g10577 diploid and tetraploid genes |
-| `colorh.py` | colours proteins by hydrophobicity. You need to create a file on your local machine called colorh.py and copy and paste the code from the [PyMOL wiki color h page](https://pymolwiki.org/index.php/Color_h) into the file|
+| `colorh.py` | colours proteins by hydrophobicity. This was retrieved from the [PyMOL wiki color h page](https://pymolwiki.org/index.php/Color_h) |
 | `tetraploid_domain_highlight.py`| produces a series of images (rotated by 90 degrees) of the tetraploid g46214 protein with its domains coloured and highlighted, the electrostatic potential of the whole protein, and the hydrophobicity of the whole protein |
 | `diploid_domain_highlight.py`| produces a series of images (rotated by 90 degrees) of the diploid g46214 protein with its domains coloured and highlighted, the electrostatic potential of the whole protein, and the hydrophobicity of the whole protein |
 | `tetraploid_temporary_image_generation.py` | prdocues a series of images rotated by 1 degree across 360 degrees for the tetraploid g46214 protein |
