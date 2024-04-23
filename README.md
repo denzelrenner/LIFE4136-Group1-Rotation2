@@ -49,7 +49,7 @@ These are all the tools that were used in our analysis with versions and links p
 |ffmpeg|version 6.1.1|NA|
 
 ## Tool intallation 
-The guidance below outlines the necessary scripts,steps or commands that need to be ran to install some of the tools necessary to reproduce our results.
+The guidance below outlines the necessary scripts,steps or commands that need to be ran to install some of the tools needed to reproduce our results.
 
 ### On the cloud HPC:
 To install raxml-ng run the script below in the command line.
