@@ -257,7 +257,7 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  5. Manually insert the positions of the domains into a txt file `g10577_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
     
-Note that domains and domain positions were introduced and adjusted based on information in these papers. However the final list of domain positions was not provided so only the final domain names are given.
+Note that domains were introduced and domain positions were adjusted based on information in these papers. The final list of domain positions was not provided so only the final domain names are given in a table below. 
 (Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
 (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.).
 (Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). 
