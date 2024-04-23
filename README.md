@@ -4,21 +4,21 @@ This repository contains all the scripts and lists of data files needed to repro
 Note: Unless on the cloud or stated otherwise, all command line code was ran on a Mac Intel i5 
 
 ## What is the problem we have been presented with?
-We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy. Polyploids are individuals that arise from a whole genome duplication (WGD) event, a process that results in multiple sets of chromosomes within an individual. These polyploids evolve mechanisms to handle the hardships that come with WGD, such as meiotic instability and regulation of gene expression, as well as develop adaptations to tolerate the harsh environmental conditions that can sometimes lead to polyploidy. In this project we have been provided with two genes caught in the selection scan, g46214 and g10577, and we are to investigate each gene in diploids and tetraploids through studying the amino acid sequences and tetriary structures of their proteins to determine the consequence of any genetic variants.
+We have been provided with some genes in Cochaleria that are under selection during the stabalisation of polyploidy. Polyploids are individuals that arise from a whole genome duplication (WGD) event, a process that results in multiple sets of chromosomes within an individual. These polyploids evolve mechanisms to handle the hardships that come with WGD, such as meiotic instability or regulation of gene expression, and also develop adaptations to tolerate the harsh environmental conditions that can sometimes lead to polyploidy. In this project we are focusing on two genes caught in the selection scan, g46214 and g10577. For each gene, we are to investigate the amino acid sequences and tetriary structures of their proteins in diploids and tetraploids to determine the consequence of any genetic variants.
 
 ## What are the aims of our analysis?
-We were aiming to translate the genes and investigate the primary sequences of the proteins in diploids and tetraploids to first identify important domains and predict the function of the protein. We also aimed to identify any mutations that might result in altered function of the protein (or a specific domain within the protein) in diploids or tetraploids by comparing the primary sequences with that of close homologs. Another objective of the analysis was to generate structural predictions for the diploid and tetraploid alleles for each of our candidate genes which would allow us to compare the tetriary structures of the proteins at the different ploidy levels, and observe the impact of the different mutations on the protein folding and protein properties like hydrophobicity or electric charge. 
+We were aiming to translate the genes and investigate the primary sequences of the proteins in diploids and tetraploids to first identify important domains and predict the function of the protein. We also aimed to identify any mutations that might result in altered function of the protein in diploids or tetraploids by comparing the primary sequences with that of close homologs. Another objective of the analysis was to generate structural predictions for the diploid and tetraploid alleles for each of our candidate genes which would allow us to compare the tetriary structures of the proteins at the different ploidy levels, and observe the impact of the different mutations on protein folding and other protein properties like hydrophobicity or electrostatic charge. 
 
 ## What are the expected outcomes?
-Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins relative to the diploid proteins that help stabilise the polyploids by helping to manage some of the stresses that come with polyploidy, such as controlling gene expression, as well as mutations that confer enhanced ecological tolerance. The altered function of the proteins could result from the mutation of a conserved, functional residue which enhances or reduces the interaction with other ions and proteins, whilst in some cases a mutation can be deleterious and remove an entire functional domain.
+Depending on the gene and given our understanding of the system, we expect to see mutations and amino acid changes in the tetraploid g46214 and g10577 proteins, relative to the diploid g46214 and g10577 proteins, that help stabilise the polyploids and confer a fitness advantage through enhanced ecological tolerance for example. The altered function of the proteins could result from the mutation of a conserved, functional residue which enhances or reduces the interaction with other ions and proteins, whilst in some cases a mutation can cause a truncation and remove an entire functional domain.
 
 # Prerequisites
 ## Required files and data
 All these files should be downloaded into the same directory before following the rest of this document.
 
-The vcf files contain variants at only the genomic regions we are interested in. The `UK_scan_dips.vcf` contains variants in diploids and `UK_scan_tets.vcf` contains variants in tetraploids
+The vcf files contain variants at only the genomic regions we are interested in. The `UK_scan_dips.vcf` contains variants in diploids and `UK_scan_tets.vcf` contains variants in tetraploids.
 
-The gff contains annotations for the reference genome (Cochlearia excelsa), and the fasta is of the reference and has been indexed to produce a .fai file. The `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format).
+The gff contains annotations for the reference genome (Cochlearia excelsa). The fasta file contains sequence information for the reference genome (Cochlearia excelsa) and has been indexed to produce a .fai file. The `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format).
 
 |Directory|Files|
 |---------|-----|
@@ -27,7 +27,7 @@ The gff contains annotations for the reference genome (Cochlearia excelsa), and 
 
 
 ## Tool versions and links
-These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tool's online help page.
+These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tool's online help page/documentation.
 
 | Tool | Version | Reference(Harvard Style) |
 |------|---------|-----------|
@@ -50,7 +50,7 @@ These are all the tools that were used in our analysis with versions and links p
 |ffmpeg|version 6.1.1|NA|
 
 ## Tool intallation 
-The guidance below outlines the necessary scripts,steps or commands that need to be ran to install some of the tools needed to reproduce our results.
+The guidance below outlines the scripts,steps or commands that have to be ran to install some of the tools needed to reproduce our results.
 
 ### On the cloud HPC:
 To install raxml-ng run the script below in the command line.
@@ -77,14 +77,14 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 | Script Name | Description |
 |-------------|-------------|
 | `raxml_install.sh` | installs raxml-ng |
-| `phylogenetic_tree_g46214.sh` | runs raxml-ng to build a maximum likelihood tree using the allignment for g46214 in tetraploid and diploid and the homologs |
+| `phylogenetic_tree_g46214.sh` | runs raxml-ng to build a maximum likelihood tree using the allignment for g46214 proteins in tetraploid and diploid and their homologs |
 | `generate_reference_sequences.sh` | produces a nucleotide sequence (in fasta format) for the g10577 and g46214 reference genes |
 | `g46214_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g46214 diploid and tetraploid genes |
 | `g10577_gatk_consensus_final.sh` | produces a consensus nucleotide sequence (in fasta format) for the g10577 diploid and tetraploid genes |
 | `colorh.py` | colours proteins by hydrophobicity. This was retrieved from the [PyMOL wiki color h page](https://pymolwiki.org/index.php/Color_h) |
 | `tetraploid_domain_highlight.py`| produces a series of images (rotated by 90 degrees) of the tetraploid g46214 protein with its domains coloured and highlighted, the electrostatic potential of the whole protein, and the hydrophobicity of the whole protein |
 | `diploid_domain_highlight.py`| produces a series of images (rotated by 90 degrees) of the diploid g46214 protein with its domains coloured and highlighted, the electrostatic potential of the whole protein, and the hydrophobicity of the whole protein |
-| `tetraploid_temporary_image_generation.py` | prdocues a series of images rotated by 1 degree across 360 degrees for the tetraploid g46214 protein |
+| `tetraploid_temporary_image_generation.py` | produces a series of images rotated by 1 degree across 360 degrees for the tetraploid g46214 protein |
 | `diploid_temporary_image_generation.py` | prdocues a series of images rotated by 1 degree across 360 degrees for the diploid g46214 protein |
 | `make_protein_rotation_movie.sh` | stitches together the 360 diploid and tetraploid g46214 protein images to make a short movie of the protein rotating and showing all domains/faces of the protein |
 
@@ -96,12 +96,14 @@ All code in this section needs to be ran on the cloud HPC.
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
-The first thing we will do is get consensus sequences for the reference gene so it can then be used in later stages of the analysis. We knew the genomic positions for the different genes of interest by searching their gene names in the gff file. To create the consensus sequences for the reference gene you should enter the command below into the command line.
+The first thing we will do is get consensus sequences for the reference g46214 and g10577 genes so it can then be used in later stages of the analysis. We knew the genomic positions for the different genes of interest by opening a text editor and manually searching their gene names in the gff file. To create the consensus sequences for the reference gene you should enter the command below into the command line.
 
 ```bash
 conda activate /shared/apps/conda/bio2
 bash ~/generate_reference_sequences.sh
 ```
+
+This should produce a directory called `reference_sequences` and within that directory there should be a filed called `g10577_coding_sequence.fasta` which has the g10577 reference consensus sequence and another file called `g46214_coding_sequence.fasta` which has the g46214 reference consensus sequence.
 
 ### g46214
 With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by running the script below:
@@ -151,7 +153,7 @@ Amongst the output files produced from running the gatk consensus scripts in the
 ## Homolog identification
 
 ### g46214
-Now that we have retrieved the sequences for our proteins, we want to figure out what they might be, and what their closest homologs are in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
+Now that we have retrieved the sequences for our proteins, we want to figure out what they might be, and one good way to do that is finding their closest homologs in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
 
 To identify g46214 homologs:
 
@@ -159,7 +161,7 @@ To identify g46214 homologs:
 
  2. Select `Protein BLAST` 
 
- 3. Input the protein sequence for the g46214 reference protein sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the protein sequence for the g46214 reference protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`).
 
@@ -180,9 +182,11 @@ The accession codes for the homologs identified in this step and used in subsequ
 | Eutrema salsugineum | XP_006390294.1 |
 | Capsella rubella | XP_006302550.1 |
 
+The closest homologs of g46214 are all bbx21 proteins in different plant species.
+
 ### g10577
 
-For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the reference protein sequence. You should create a fasta file called `g10577_homologs.fasta` to store all homologs. 
+For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the tetraploid protein sequence. You should create a fasta file called `g10577_homologs.fasta` to store all homologs. 
 
 To identify g10577 homologs in other plant species we followed the steps below:
 
@@ -213,9 +217,10 @@ The accession codes for the homologs used in subsequent steps of the analysis ar
 |Hellanthus annus|XP_022003179.2|
 |Sparassis crispa|XP_027612870.1|
 
+We identified the closest homolgs for g10577 as being retrotransposons.
 
 ## Domain identification
-We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains and function of our proteins.
+We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains in our proteins to get an idea of how they function.
 
 ### g46214
 
@@ -231,7 +236,7 @@ To verify the functional domains within the g46214 proteins we followed these st
 
  5. Manually insert the positions of the domains into a txt file called `g46214_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
 
-Note: Using the domain information we got from Interpro and reading this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the domains and their positions in the tetraploid/diploid protein were adjusted. A final list of all the domains, motifs, and relevant mutations in our protein are highlighted in the table below.
+Note: Using the domain information we got from Interpro and reading this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the domains and their positions in the tetraploid and diploid protein were adjusted. A final list of all the domains, motifs, and relevant mutations in our protein are highlighted in the table below.
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
@@ -257,11 +262,17 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  5. Manually insert the positions of the domains into a txt file `g10577_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
     
-Note that domains were introduced and domain positions were adjusted based on information in the research papers mentioned below. The final list of domain positions was not provided so only the final domain names are given in a table below. 
+Note that domains were introduced and domain positions were adjusted based on information in the research papers mentioned below. 
+
 (Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
+
 (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.).
+
 (Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). 
+
 (Heslop-Harrison, J.S., Schwarzacher, T. and Liu, Q., 2023. Polyploidy: its consequences and enabling role in plant diversification and evolution. Annals of Botany, 131(1), pp.1-10.)
+
+The final list of domain positions was not provided so only the final domain names are given in a table below. 
 
 | Domain |
 |--------|
@@ -284,7 +295,7 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
  1. Follow the link to the [uniprot](https://www.uniprot.org/align) website and navigate to the tab labelled `Align`
 
- 2. Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
+ 2. Copy and paste all the sequences from the `g46214_homologs.fasta` you generated above into the query field then click the `Run align` button
 
  3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
@@ -307,10 +318,20 @@ We will view the `.besttree` file using the ITOL website. To do this the steps b
 
   5. Take a picture of the screen using CMD+SHIFT+4 and manually adjust the size to have the whole phylogenetic tree inside it.
 
+Next, to be able to view and compare the primary sequence of the different homologs in the multiple sequence allignment, we used Jalview. The steps below should be followed:
+  
+  1. Open Jalview on your local machine. Select `file` in the toolbar, then select `Input Allignment` and finally choose `From File`
+
+  2. Using the mutations mentioned in the `Domain Identification` section of the analysis, manually search for the mutations in the allignment to determine if the residue is conserved across all homologs. To highlight residues in the allignment you should drag your cursor across that position in the different homologs (i.e the residue at position 50 in all the different homlogs). Right click on the highlighted box. Choose `selection`, then `Edit New Group`, then `Group Colour`, and choose the colour `Hydrophobicity`.
+
+  3. To make the allignment easier to understand when we create our images, we want to have the actual genus and species name for each sequence instead of the NCBI accession code. In Jalview, you have to right-click on the NCBI accession code and then select `Edit Name/Description` and use the table in the `Homolog Identification` step to insert the correct genus and species name.
+
+  4. Take a picture of the screen using CMD+SHIFT+4 and manually adjust the size to have the whole allignment in it.
+
 
 ### g10577
 
-Note: This is a written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were mostly written and explained by a group member, Luke. It was edited at certain steps for better clarity.
+Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were written and explained by a group member, Luke. It was then edited at certain steps for better clarity.
 
 The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships .
 
@@ -392,6 +413,8 @@ mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
 for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
 
+By unzipping the files, for each modelling job we did we will have a directory that contains the top 5 models that alphafold generated in pdb format. There should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. 
+
 ### g10577
 
 We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
@@ -426,7 +449,7 @@ The analysis can be performed by following the steps below:
 
  9. Repeat steps 2-4 for the other fragments of the tetraploid g10577 protein. At step 2 you should change the job name to reflect which fragment is being modelled (i.e using `tetraploid_fragment2_g10577` when modelling the second fragment)
  
- 10. Move the `.zip` files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
+ 10. Manualy move the `.zip` files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures. :
 
 ```bash
 mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
