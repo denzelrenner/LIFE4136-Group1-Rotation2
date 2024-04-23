@@ -520,13 +520,13 @@ This can be achieved by following the steps outlined below:
 load /path/to/your/tetraploid/fragment1/directory/your_rank_001_tetraploid_fragment1.pdb, tetraploid_framgment1
 ```
    
- 3. Now we will allign each fragment to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. The allign command in PyMOL first takes the name of the object you want to align, followed by what object you want to align it to. Like with the command above this one, because the exact fragments were not provided only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
+ 3. Now we will align each fragment to the reference SWISS-MODEL protein to try and map the domains and recreate a complete protein. The [align](https://pymolwiki.org/index.php/Align) command in PyMOL first takes the name of the object you want to align, followed by what object you want to align it to. Like with the command above this one, because the exact fragments were not provided only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
 
 ```bash
 align tetraploid_fragment1, reference_g10577
 ```
 
- 4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400 and the integrase domain would be from residue 200-330 of that fragment of the protein and the select command in PyMOL allows us to do that. The select command in PyMOL first takes the a name for that selection (the name of the actual domain), , the residues you are selecting (the positions of the domain within the protein) and the object you are selecting the residues from (the fragment with the domain). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
+ 4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400 and the integrase domain would be from residue 200-330 of that fragment of the protein and the select command in PyMOL allows us to do that. The [select](https://pymolwiki.org/index.php/Select) command in PyMOL first takes the name for the new object it will be creating (the name of the actual domain), then it takes the object you are selecting a given set of residues from (the fragment with the domain) and the residues you are selecting (the positions of the domain within the fragment). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
 
 ```bash
  select integrase, tetraploid_fragment1 and resi x-y`'
@@ -562,33 +562,33 @@ png ~/path/to/ouput_image/directory/tetraploid_electrostatic_image.png, 3500, 35
 ### g10577 Diploids
 Due to the limitations with alphafold's memory we have modelled fragments of the diploid g10577 protein and not the whole protein.
 
-We will first have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different fragments of the protein and one-by-one these will be alligned to the reference protein to effectively stitch together our original protein. 
+We will first have to load in the reference protein which was retrieved from SWISS-MODEL (uniprot ID Q9LPK1), then we will load in all the different fragments of the protein and one-by-one these will be aligned to the reference protein to effectively stitch together the original protein. 
 
 This can be achieved by following the steps outlined below:
 
  1. Open a new PyMOL window and load the reference SWISSMODEL protein into PyMOL using the commands below
 
-    ```bash
-    load /path/to/your/reference/protein.pdb, reference_g10577
-    ```
-2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, we want to load that bit of protein sequence into PyMOL and give the object a name within PyMOL so that it is easily identifiable. The load command takes the pdb file you want to load, then the name you want to assign to that object once its loaded into PyMOL. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold. Because the exact fragments were not provided, only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
+ ```bash
+ load /path/to/your/reference/protein.pdb, reference_g10577
+ ```
+ 2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, we want to load that bit of protein sequence into PyMOL and give the object a name within PyMOL so that it is easily identifiable. The load command takes the pdb file you want to load, then the name you want to assign to that object once its loaded into PyMOL. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold. Because the exact fragments were not provided, only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
    
-   ```bash
-   load /path/to/your/diploid/fragment1/directory/your_rank_001_diploid_fragment1.pdb, diploid_framgment1
-   ```
+```bash
+load /path/to/your/diploid/fragment1/directory/your_rank_001_diploid_fragment1.pdb, diploid_framgment1
+```
    
-4. Now we will allign each fragment to the reference SWISSMODEL protein to try and map the domains and recreate a complete protein. The allign command in PyMOL first takes the name of the object you want to align, followed by what object you want to align it to. Like with the command above this one, because the exact fragments were not provided only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
+ 3. Now we will align each fragment to the reference SWISS-MODEL protein to try and map the domains and recreate a complete protein. The [align](https://pymolwiki.org/index.php/Align) command in PyMOL first takes the name of the object you want to align, followed by what object you want to align it to. Like with the command above this one, because the exact fragments were not provided only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
 
-   ```bash
-   allign diploid_fragment1, reference_g10577
-   ```
+```bash
+align diploid_fragment1, reference_g10577
+```
 
-5. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400 and the integrase domain would be from residue 200-330 of that fragment of the protein and the select command in PyMOL allows us to do that. The select command in PyMOL first takes the a name for that selection (the name of the actual domain), , the residues you are selecting (the positions of the domain within the protein) and the object you are selecting the residues from (the fragment with the domain). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
+ 4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400 and the integrase domain would be from residue 200-330 of that fragment of the protein and the select command in PyMOL allows us to do that. The [select](https://pymolwiki.org/index.php/Select) command in PyMOL first takes the name for the new object it will be creating (the name of the actual domain), then it takes the object you are selecting a given set of residues from (the fragment with the domain) and the residues you are selecting (the positions of the domain within the fragment). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
 
-  ```bash
-   select integrase, diploid_fragment1 and resi x-y`'
-  ```
-6. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
+```bash
+ select integrase, diploid_fragment1 and resi x-y`'
+```
+5. Colour the different domains by navigating to the object list at the right hand side of the window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
    GAG_domain -> sky blue
    
@@ -600,20 +600,20 @@ This can be achieved by following the steps outlined below:
 
    RNaseH -> purple
 
-7. We want to only highlight the functional domains we have just coloured so we will first hide all protein models that have been loaded in. On the right hand side of the PyMOL window look for an object called `all`. Select the `H` and then select `everything`. This should hide all objects you have loaded into PyMOL so far. Then for each of the domains listed in step 6, they should have an object name on the right hand side of the PyMOL window. Select the `S` next to the object's name and then select `cartoon`. The PyMOL window will now only contain the domains of the protein.
+6. We want to only highlight the functional domains we have just coloured so we will first hide all protein models that have been loaded in. On the right hand side of the PyMOL window look for an object called `all`. Select the `H` and then select `everything`. This should hide all objects you have loaded into PyMOL so far. Each of the domains mentioned in step 5 should have an object on the right hand side of the PyMOL window. For each domain, select the `S` next to the object's name and then select `cartoon`. The PyMOL window will now only contain the domains of the protein.
 
-8. Manually rotate the protein based on personal preference and take a picture of the assembled protein using the command below in the PyMOL command line
-   ```bash
-   png ~/path/to/ouput_image/directory/diploid_image.png, 3500, 3500, -1, ray=0, dpi=500
-   ```
-9. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
+7. Manually rotate the protein based on personal preference and take a picture of the domains using the command below in the PyMOL command line.
+```bash
+png ~/path/to/ouput_image/directory/diploid_image.png, 3500, 3500, -1, ray=0, dpi=500
+```
+8. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
 
-10. Repeat step 9 for all the domains we have outlined in step 6.
+9. Repeat step 8 for all the domains we have outlined in step 5.
 
-11. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
-   ```bash
-   png ~/path/to/ouput_image/directory/diploid_electrostatic_image.png, 3500, 3500, -1, ray=0, dpi=500
-   ```
+10. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
+```bash
+png ~/path/to/ouput_image/directory/diploid_electrostatic_image.png, 3500, 3500, -1, ray=0, dpi=500
+```
 ## Movie Generation
 We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those individual images together will make a movie. This can be accomplished by running the scripts below: 
 
