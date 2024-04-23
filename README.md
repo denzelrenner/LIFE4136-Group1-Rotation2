@@ -405,7 +405,7 @@ To obtain 3D structure models for our diploid and tetraploid proteins we followe
 
  7. Repeat steps 3 and 4
 
- 8. Move all the zip files (including those from modelling the g46214 diploid protein) from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
+ 8. Move all the downloaded `.zip` files (including those from modelling the g46214 diploid protein) from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
 
 
 ```bash
@@ -431,8 +431,11 @@ Note: For the approach used in this stage of the analysis to be reproduceable yo
 
 The analysis can be performed by following the steps below:
     
- 1. We will first need to get the 3D structure for the reference protein. Follow the link to the [SWISS-MODEL](https://swissmodel.expasy.org/interactive) website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format to your downloads folder.
-
+ 1. We will first need to get the 3D structure for the reference protein. Follow the link to the [SWISS-MODEL](https://swissmodel.expasy.org/interactive) website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format to your downloads folder. The name of the reference model downloaded from SWISS-MODEL is `model_01.pdb` and that can be changed by following the command below.
+    
+```bash
+mv model_01.pdb reference_g10577.pdb
+```
  2. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website
 
  3. Input the first fragment for the diploid sequences into the `query sequence` field, and the job name entered should be `diploid_framgment1_g10577`. It is very important this job name is given due to naming requirements in subsequent commands.
@@ -449,15 +452,9 @@ The analysis can be performed by following the steps below:
 
  9. Repeat steps 2-4 for the other fragments of the tetraploid g10577 protein. At step 2 you should change the job name to reflect which fragment is being modelled (i.e using `tetraploid_fragment2_g10577` when modelling the second fragment)
  
- 10. Manualy move the `.zip` files, and reference pdb model from your `Downloads` folder to the directory we created earlier for protein structures. :
+ 10. Manualy move the downloaded `.zip` files, and reference pdb model from your `Downloads` folder to the directory we created earlier for g10577 protein structures.
 
-```bash
-mv ~/Downloads/*_g10577.zip ~/g10577_modelling_output
-mv ~/Downloads/model_01.pdb ~/g10577_modelling_output/reference_g10577.pdb
-for file in ~/g10577_modelling_output/*.zip; do unzip "$file"; done
-```
-
-Unzipping these files produces a directory which has all the alphafold output for the pdb files the models produced with the ranks
+By unzipping the files, for each modelling job we did we will have a directory that contains the top 5 models that alphafold generated in pdb format. There should be a directory for each of the g10577 diploid fragments and g10577 tetraploid fragments. 
 
 ## Image Generation
 
@@ -465,7 +462,7 @@ All the code in this section of the analysis is entered into the PyMOL command l
 
 We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will load the different pdb files into PyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
 
-The alphafold output directories are named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations, and take it as our best estimate of the true protein structure.
+The alphafold output directories are named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations, and we take it as our best estimate of the true protein structure.
 
 ### g46214 Tetraploids
 
@@ -480,9 +477,9 @@ run ~/g46214_modelling_output/colorh.py
 
 color_h tetraploid_g46214
 ```
-Now that the tetraploid g46214 protein has been loaded into PyMOL, Using your mouse or trackpad, manually adjust the orientation of the tetraploid protein to a position you are happy with. Follow the next few steps:
+Now that the tetraploid g46214 protein has been loaded into PyMOL, using your mouse or trackpad, manually adjust the orientation of the tetraploid protein to a position you are happy with. Follow the next few steps:
 
- 1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
+ 1. Navigate to the header of PyMOL and select the plugin tab, select APBS electrostatics.
 
  2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` depending on which protein you are investigating. This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
@@ -510,7 +507,7 @@ run ~/g46214_modelling_output/colorh.py
 color_h diploid_g46214
 ```
 
-Now that the diploid g46214 protein has been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of the diploid protein to a position you are happy with. Follow the next few steps:
+Now that the diploid g46214 protein has been loaded into PyMOL, Using your mouse or trackpad, manually adjust the orientation of the diploid protein to a position you are happy with. Follow the next few steps:
 
  1. Navigate to the header of PyMOL and select the plugin tab, select APBS electrostatics.
 
@@ -537,19 +534,19 @@ This can be achieved by following the steps outlined below:
  ```bash
  load /path/to/your/reference/protein.pdb, reference_g10577
  ```
- 2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, we want to load that bit of protein sequence into PyMOL and give the object a name within PyMOL so that it is easily identifiable. The load command takes the pdb file you want to load, then the name you want to assign to that object once its loaded into PyMOL. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure modelled by alphafold. Because the exact fragments were not provided, only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
+ 2. For each fragment you have modelled in the `Protein Structure Modelling` section of this analysis, we want to load that bit of protein sequence into PyMOL and give the object a name within PyMOL so that it is easily identifiable. The [load command](https://pymolwiki.org/index.php/Load) takes the pdb file you want to load, then the name you want to assign to that object once it is loaded into PyMOL. You will again be choosing the rank 001 model from the alphafold output because it gives us the best estimate at the actual protein structure. Because the exact fragments were not provided, only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
    
 ```bash
 load /path/to/your/tetraploid/fragment1/directory/your_rank_001_tetraploid_fragment1.pdb, tetraploid_framgment1
 ```
    
- 3. Now we will align each fragment to the reference SWISS-MODEL protein to try and map the domains and recreate a complete protein. The [align](https://pymolwiki.org/index.php/Align) command in PyMOL first takes the name of the object you want to align, followed by what object you want to align it to. Like with the command above this one, because the exact fragments were not provided only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was loaded in.
+ 3. Now we will align each fragment to the reference SWISS-MODEL protein to try and map the domains and recreate a complete protein. The [align](https://pymolwiki.org/index.php/Align) command in PyMOL first takes the name of the object you want to align, followed by what object you want to align it to. Like with the command above this one, because the exact fragments were not provided only the code for fragment 1 is outlined below, but ideally you would repeat this step for each fragment that was modelled and change the name of the object to reflect the fragment that was being aligned.
 
 ```bash
 align tetraploid_fragment1, reference_g10577
 ```
 
- 4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400 and the integrase domain would be from residue 200-330 of that fragment of the protein and the select command in PyMOL allows us to do that. The [select](https://pymolwiki.org/index.php/Select) command in PyMOL first takes the name for the new object it will be creating (the name of the actual domain), then it takes the object you are selecting a given set of residues from (the fragment with the domain) and the residues you are selecting (the positions of the domain within the fragment). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
+ 4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400, the integrase domain might only be from residue 200-330 of that fragment of the protein. The select command in PyMOL allows us to specify a specific set of residues to highlight. The [select](https://pymolwiki.org/index.php/Select) command in PyMOL first takes the name for the new object it will be creating (the name of the actual domain), then it takes the object you are selecting a given set of residues from (the fragment with the domain within it) and the residues you are selecting (the positions of the domain within the fragment). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
 
 ```bash
  select integrase, tetraploid_fragment1 and resi x-y`'
@@ -574,7 +571,7 @@ png ~/path/to/ouput_image/directory/tetraploid_image.png, 3500, 3500, -1, ray=0,
 ```
 8. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
 
-9. Repeat step 8 for all the domains we have outlined in step 5.
+9. Repeat step 8 for all the domains we have outlined in step 5 to colour all the domains by electrostatic potential.
 
 10. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
 ```bash
@@ -631,7 +628,7 @@ png ~/path/to/ouput_image/directory/diploid_image.png, 3500, 3500, -1, ray=0, dp
 ```
 8. To get the electrostatic potential for all the domains navigate to the header of PyMOL and select the plugin tab, and then select APBS electrostatics. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & <domain name>`. This will produce an object in PyMOL showing the electrostatic potential across the given domain. When that has completed close the pop-up that comes afterwards.
 
-9. Repeat step 8 for all the domains we have outlined in step 5.
+9. Repeat step 8 for all the domains we have outlined in step 5 to colour all the domains by electrostatic potential.
 
 10. Manually rotate the protein (now coloured by electrostatic potential) based on personal preference and take a picture using the command below in the PyMOL command line
 ```bash
@@ -680,7 +677,7 @@ run ~/g46214_modelling_output/colorh.py
 color_h diploid_g46214
 ```
 
-Now that the diploid g46214 protein has been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of the tetraploid protein to a position you are happy with. Follow the next few steps:
+Now that the diploid g46214 protein has been loaded into pymol, Using your mouse or trackpad, manually adjust the orientation of the diploid protein to a position you are happy with. Follow the next few steps:
 
  1. Navigate to the header of pymol and select the plugin tab, select APBS electrostatics.
 
