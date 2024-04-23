@@ -44,6 +44,7 @@ These are all the tools that were used in our analysis with versions and links p
 |[GATK](https://github.com/broadinstitute/gatk) (HTSJDK,Picard)|version 4.2.2.0 (version 2.24.1,version 2.25.4)|Van der Auwera GA & O'Connor BD. (2020). Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1st Edition). O'Reilly Media.|
 |[samtools](https://github.com/samtools/samtools/blob/develop/README.md) (htslib)|version 1.19.2 (version 1.19.1)|Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth, G., Abecasis, G., Durbin, R. and 1000 Genome Project Data Processing Subgroup, 2009. The sequence alignment/map format and SAMtools. bioinformatics, 25(16), pp.2078-2079.|
 |[RAxML-NG](https://github.com/amkozlov/raxml-ng)|version 0.9.0|Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.|
+|[SWISS-MODEL](https://swissmodel.expasy.org/interactive)|NA|Waterhouse, A., Bertoni, M., Bienert, S., Studer, G., Tauriello, G., Gumienny, R., Heer, F.T., de Beer, T.A.P., Rempfer, C., Bordoli, L. and Lepore, R., 2018. SWISS-MODEL: homology modelling of protein structures and complexes. Nucleic acids research, 46(W1), pp.W296-W303.|
 |[Conda](https://github.com/conda/conda)|version 23.5.2|NA|
 |[Homebrew](https://brew.sh/)|version 4.2.10|NA|
 |ffmpeg|version 6.1.1|NA|
@@ -103,18 +104,17 @@ bash ~/generate_reference_sequences.sh
 ```
 
 ### g46214
-With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by following the steps below:
+With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by running the script below:
 
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
 ```
 For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploids. 
 
-For g46214 tetraploids, the most important output files created are called `g46214_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_tetraploid_coding_sequence.fasta` file to get a final sequence for diploids.
+For g46214 tetraploids, the most important output files created are called `g46214_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the tetraploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_tetraploid_coding_sequence.fasta` file to get a final sequence for the tetraploids.
 
 ### g10577
-For g10577 we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by following the steps below
-
+With the `bio2` conda environemnt still active, we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by running the script below:
 
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
@@ -147,6 +147,7 @@ Amongst the output files produced from running the gatk consensus scripts in the
  4. For the reference protein, input the nucleotide seqeunce from the `g10577_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`).
 
 
+
 ## Homolog identification
 
 ### g46214
@@ -160,13 +161,13 @@ To identify g46214 homologs:
 
  3. Input the protein sequence for the g46214 reference protein sequences into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
- 4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`) in the blastp results page
+ 4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`).
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g46214_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g46214_homologs.fasta` in fasta format.
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g46214_homologs.fasta` file in fasta format.
 
-The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
+The accession codes for the homologs identified in this step and used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
 |--------|------------------|
 | Hirschfeldia incana | KAJ0255869.1 |
@@ -189,13 +190,13 @@ To identify g10577 homologs in other plant species we followed the steps below:
 
  2. Select `Protein BLAST` 
 
- 3. Input the protein sequence for the g10577 reference protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the protein sequence for the g10577 tetraploid protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their NCBI dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g10577_homologs.fasta` in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
+ 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g10577_homologs.fasta` file in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
 
 The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
@@ -226,11 +227,11 @@ To verify the functional domains within the g46214 proteins we followed these st
 
  3. Manually insert the positions of the domains into a txt file called `g46214_diploid_domains.txt` so we have the exact coordinates of the different domains in the protein
  
- 4. Follow the link in step 1 to return to the Interpro home page. Input the tetraploid protein sequence (in fasta format) for g46214 into the query field labelled `Enter your sequence` and choose `search`
+ 4. Follow the link in step 1 to return to the Interpro home page. Input the tetraploid protein sequence for g46214 into the query field labelled `Enter your sequence` and choose `search`
 
  5. Manually insert the positions of the domains into a txt file called `g46214_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
 
-Note: Using the domain information from following the steps above and this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the domains and their position in the tetraploid/diploid protein found on interpro was adjusted. A final list of all the domains, motifs, and relevant mutations in our protein are highlighted in the table below.
+Note: Using the domain information we got from Interpro and reading this paper on bbox proteins (Crocco, C.D. and Botto, J.F., 2013. BBX proteins in green plants: insights into their evolution, structure, feature and functional diversification. Gene, 531(1), pp.44-52.), the domains and their positions in the tetraploid/diploid protein were adjusted. A final list of all the domains, motifs, and relevant mutations in our protein are highlighted in the table below.
 
 | Domain | Diploid Position | Tetraploid Position |
 |--------|------------------|---------------------|
@@ -256,7 +257,7 @@ To verify the functional domains within the g10577 proteins we followed these st
 
  5. Manually insert the positions of the domains into a txt file `g10577_tetraploid_domains.txt` so we have the exact coordinates of the different domains in the protein
     
-Note that domains were introduced and domain positions were adjusted based on information in these papers. The final list of domain positions was not provided so only the final domain names are given in a table below. 
+Note that domains were introduced and domain positions were adjusted based on information in the research papers mentioned below. The final list of domain positions was not provided so only the final domain names are given in a table below. 
 (Papolu, P.K., Ramakrishnan, M., Mullasseri, S., Kalendar, R., Wei, Q., Zou, L.H., Ahmad, Z., Vinod, K.K., Yang, P. and Zhou, M., 2022. Retrotransposons: How the continuous evolutionary front shapes plant genomes for response to heat stress. Frontiers in plant science, 13, p.1064847.). 
 (Peterson-Burch, B.D. and Voytas, D.F., 2002. Genes of the Pseudoviridae (Ty1/copia retrotransposons). Molecular biology and evolution, 19(11), pp.1832-1845.).
 (Systematic survey of plant LTR-retrotransposons elucidates phylogenetic relationships of their polyprotein domains and provides a reference for element classification). 
@@ -271,24 +272,24 @@ Note that domains were introduced and domain positions were adjusted based on in
 | Protease | 
 
 
-
 ## Multiple Sequence Allignments and Phylogenetic Tree Building 
 
-Code in this section should be ran on the cloud HPC
+Code in this section should be ran on the cloud HPC.
 
-This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid and tetraploid proteins, by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid have diverged from the diploids.
+This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid and tetraploid proteins by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid protein has diverged from the diploid protein.
 
 ### g46214
  
 By following the steps below, a multiple sequence allignment of the protein sequences was generated.
 
- 1. Follow the link to the uniprot website and navigate to the tab labelled `Align`
+ 1. Follow the link to the [uniprot](https://www.uniprot.org/align) website and navigate to the tab labelled `Align`
 
  2. Copy and paste all the sequences from the fasta file you generated above into the query field then click the `Run align` button
 
  3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
- 4. To build a phylogenetic tree from this allignment we will use raxml by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree.
+ 4. To build a phylogenetic tree from this allignment we will use raxml by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree. To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or have a look on the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
+
 
 ```bash
 sbatch ~/phylogenetic_tree_g46214.sh
@@ -302,23 +303,23 @@ We will view the `.besttree` file using the ITOL website. To do this the steps b
 
   3. Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
 
-  4. Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with its Genus and Species
+  4. Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with the correct genus and species. You can find the correct genus and species for the accession code in the `Homolog Identification` stages of this analysis 
 
-  5. Capture the screen using CMD+SHIFT+4 and adjusting the size to have the whole phylogenetic tree inside it.
+  5. Take a picture of the screen using CMD+SHIFT+4 and manually adjust the size to have the whole phylogenetic tree inside it.
 
-To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
 
 ### g10577
 
-Note: This step was written and explained by a group member, Luke.
+Note: This is a written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were mostly written and explained by a group member, Luke. It was edited at certain steps for better clarity.
 
-1. Made a new fasta file of a multiple sequence alignment using the top BLASTp hits with the g10577_tetraploid_GATK_>0.6 amino acid sequence
+The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships .
 
-2. Uploaded the fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
-3. Produced a multiple sequence alignment by navigating to the tool bar and selecting Alignment: Alignment -> Align by ClustalW -> select all -> used default parameters except for Delay Divergent Cutoff (%) and selected 45%.
+1. Upload the g10577 homolog fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
-4. Next, selected Data -> Phylogenetic Analysis from the tool bar then produced a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameterss
+2. Produce a multiple sequence alignment by navigating to the tool bar and selecting Alignment: Alignment -> Align by ClustalW -> select all -> used default parameters except for Delay Divergent Cutoff (%) and selected 45%.
+
+3. Next, selected Data -> Phylogenetic Analysis from the tool bar then produced a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameters.
 
 ```  
 1. Test of Phylogeny: Bootstrap method
@@ -340,23 +341,23 @@ Note: This step was written and explained by a group member, Luke.
 9. Number of Threads: 3
 ```
 
-5. This produced an NJ tree with default layout – I customised the tree with the following
+5. This produced an NJ tree with default layout which was customised with the following
 
 ```
 1.Taxon names -> Font -> Arial -> Bold Italic -> 10
     
 2.Layout -> Toggle Scaling of the Tree + Auto-size Tree
     
-3.I customised the length and the width of the tree to make it more aesthetic
+3.Manually customise the length and the width of the tree to make it more aesthetic
 ```
 
-6. To save a PNG file of the tree I selected Image from the toolbar: Image -> Save a PNG file, then gave the file path to my Desktop with an appropriate file name.
+6. To save a PNG file of the tree, select Image from the toolbar: Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
 
 ## Protein Structure Modelling
 
-All code in this section should be ran ran from the command line on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
+Note:All code in this section should be ran ran from the command line on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
 
-We now want to visualise the three dimensional structure of our proteins. The proteins will be loaded into visualisation tools and the files are in the PDB format. PDB files contain information about the atoms in the protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
+We now want to visualise the three dimensional structure of our proteins. We will use protein visualisation tools and the files we are using are in the PDB format. PDB files contain information about the atoms in a protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
 
 ### g46214
 
@@ -400,9 +401,11 @@ mkdir -p ~/g10577_modelling_output/tetraploid_g10577_protein_images
 mkdir -p ~/g10577_modelling_output/diploid_g10577_protein_images
 ```
 
-For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was fragmented into the longest possible segments that prevented alphafold from running out of time whilst modelling. We decided on this method as opposed to using an alternative modelling software because we did not get biologically sensible output using software like Phyre2. This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
+For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was fragmented into the longest possible segments that prevented alphafold from running out of time whilst modelling. We decided on this method as opposed to using an alternative modelling software like Phyre2 because we did not get biologically sensible output when those were used to model our proteins. 
 
-Note: For this approach to be reproduceable you will need the exact coordinates of the fragments we are taking from the diploid or tetraploid protein(i.e if you should take residue 1-400, followed by 401-600 etc), however these are not provided and so is missing from the steps to follow outlined below.
+This approach to modelling also requires us to obtain a complete reference protein model using swissmodel so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
+
+Note: For the approach used in this stage of the analysis to be reproduceable you will need the exact coordinates of the fragments we are taking from the diploid or tetraploid protein(i.e if you should take residue 1-400, followed by 401-600 etc), however these were not provided and so although the steps outlined below are correct they are missing that bit of information.
 
 The analysis can be performed by following the steps below:
 
