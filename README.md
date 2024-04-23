@@ -91,7 +91,7 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 
 # THE ANALYSIS
 
-## Consensus Sequences (Nucleotide)
+## Step1 - Consensus Sequences (Nucleotide)
 All code in this section needs to be ran on the cloud HPC. 
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
@@ -125,7 +125,7 @@ For g10577 diploids, the most important output files created are called `g10577_
 
 For g10577 tetraploids, the most important output files created are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
 
-## Protein Sequences 
+## Step2 -Protein Sequences 
 Amongst the output files produced from running the gatk consensus scripts in the section above, there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
 ### g46214
@@ -149,8 +149,7 @@ Amongst the output files produced from running the gatk consensus scripts in the
  4. For the reference protein, input the nucleotide seqeunce from the `g10577_coding_sequence.fasta` file into the query seqeunce field and submit the job. On the output page, copy and paste the amino acid seqeuence for ORF1 (the longest open reading frame) into a new fasta file with any identifiable headers you prefer (i.e `>reference_g10577`).
 
 
-
-## Homolog identification
+## Step3 - Homolog identification
 
 ### g46214
 Now that we have retrieved the sequences for our proteins, we want to figure out what they might be, and one good way to do that is finding their closest homologs in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
@@ -219,7 +218,7 @@ The accession codes for the homologs used in subsequent steps of the analysis ar
 
 We identified the closest homolgs for g10577 as being retrotransposons.
 
-## Domain identification
+## Step4 - Domain identification
 We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains in our proteins to get an idea of how they function.
 
 ### g46214
@@ -283,7 +282,7 @@ The final list of domain positions was not provided so only the final domain nam
 | Protease | 
 
 
-## Multiple Sequence Allignments and Phylogenetic Tree Building 
+## Step5 - Multiple Sequence Allignments and Phylogenetic Tree Building 
 
 Code in this section should be ran on the cloud HPC.
 
@@ -374,7 +373,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 
 6. To save a PNG file of the tree, select Image from the toolbar: Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
 
-## Protein Structure Modelling
+## Step6 - Protein Structure Modelling
 
 Note:All code in this section should be ran from the command line on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
 
@@ -456,7 +455,7 @@ mv model_01.pdb reference_g10577.pdb
 
 By unzipping the files, for each modelling job we did we will have a directory that contains the top 5 models that alphafold generated in pdb format. There should be a directory for each of the g10577 diploid fragments and g10577 tetraploid fragments. 
 
-## Image Generation
+## Step7 - Image Generation
 
 All the code in this section of the analysis is entered into the PyMOL command line.
 
@@ -634,7 +633,7 @@ png ~/path/to/ouput_image/directory/diploid_image.png, 3500, 3500, -1, ray=0, dp
 ```bash
 png ~/path/to/ouput_image/directory/diploid_electrostatic_image.png, 3500, 3500, -1, ray=0, dpi=500
 ```
-## Movie Generation
+## Step7 - Movie Generation
 We also want to have a short video showing some of our protein molecules rotating over time. The logic behind this is the same as with a flipbook. Over 360 degrees, we will rotate the protein molecule by 1 degree across a given axis, and take a picture after each rotation. Combining those individual images together will make a movie. This can be accomplished by running the scripts below: 
 
 ### g46214 Tetraploids
