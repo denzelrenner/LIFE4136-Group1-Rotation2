@@ -484,7 +484,7 @@ Now that the tetraploid g46214 protein has been loaded into PyMOL, using your mo
 
  3. Repeat steps 1 and 2 but select `polymer & tetraploid_g46214_bbox_domains` in the selection entry field. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to manually zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on. You should not select or deselect any of the objects on the right hand side of the PyMOL window as this causes the scripts that generate images to not function correctly.
 
-Now we have everything we need to produce our images and you can run the `tetraploid_domain_highlight.py` script to get your nice figures that show the tetraploid g46214 protein with domains highlighted, coloured by hydrophobicity, and coloured by electrostatic potential at 90 degree angles. The images will be located in the `~/g10577_modelling_output/tetraploid_g10577_protein_images` directory. In the PyMOL commmand line you can should enter the command below:
+Now we have everything we need to produce our images and you can run the `tetraploid_domain_highlight.py` script to get your nice figures that show the tetraploid g46214 protein with domains highlighted, coloured by hydrophobicity, and coloured by electrostatic potential at 90 degree angles. The images will be located in the `~/g46214_modelling_output/tetraploid_g46214_protein_images` directory. In the PyMOL commmand line you can should enter the command below:
 
 ```bash
 run ~/path/to/python/script/tetraploid_domain_highlight.py
