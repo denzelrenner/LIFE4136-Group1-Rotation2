@@ -677,7 +677,9 @@ bash make_protein_rotation_movie.sh
 ```
 
 # Conclusion
-From our analysis, we found a truncation in the C-terminus of the tetraploid g10577 which might impair its' function. Given the genomic instability polyploids are faced with it might be better to not have this transposon function
+By following the steps outlined in this analysis, we were able to identify g46214 as showing strong similarity to bbox21 proteins from the bbox family, and g10577 showed strong similarity to retrotransposons.
+
+In our analysis, we found a truncation in the C-terminus of the tetraploid g10577 which might impair its' function. Given the genomic instability polyploids are faced with it might be better to not have this transposon function
 
 With regards to g46214, we found mutations that increased the hydrophobicity of a motif that might be necessary for protein-protein interactions. These results still need to be experimentally validated.
 
