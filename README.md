@@ -18,14 +18,13 @@ All these files should be downloaded into the same directory before following th
 
 The vcf files contain variants at only the genomic regions we are interested in. The `UK_scan_dips.vcf` contains variants in diploids and `UK_scan_tets.vcf` contains variants in tetraploids
 
-The gff contains annotations for the reference genome, and the fasta is of the reference and has been indexed to produce a .fai compatible with many tools like samtools and GATK
+The gff contains annotations for the reference genome (Cochlearia excelsa), and the fasta is of the reference and has been indexed to produce a .fai file. The `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format).
 
 |Directory|Files|
 |---------|-----|
 |VCFs|UK_scan_dips.vcf<br>UK_scan_tets.vcf|
 |Reference_Genome|C_excelsa_V5_braker2_wRseq.gff3<br>C_excelsa_V5.fasta<br>C_excelsa_V5.fasta.fai|
 
-The `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
 ## Tool versions and links
 These are all the tools that were used in our analysis with versions and links provided where applicable. Dependencies for certain packages, and their versions, are placed in parentheses. Some references were chosen based on what was recommended on the tool's online help page.
