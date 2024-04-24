@@ -338,13 +338,11 @@ Next, to be able to view and compare the primary sequence of the different homol
 
 The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as a neighbour joining tree showing genetic relationships. Arrows represent a subsequent selection from a drop down menu (i.e when you select `align` a drop down menu would appear from which you select `Edit/Build Alignment`). 
 
-Note: I acknowledge that the details on how to do the g10577 multiple sequence allignment and phylogenetic tree building were provided by a group member Luke.
-
 1. Upload the g10577 homolog fasta file into MEGA11 by selecting Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
 2. Produce a multiple sequence alignment by navigating to the tool bar and selecting Alignment -> Align by ClustalW -> select all -> use default parameters except for Delay Divergent Cutoff (%) and selected 45%.
 
-3. Next, from the tool bar select Data -> Phylogenetic Analysis. Then select Phylogeny -> Construct/Test Neighbour-Joining Tree and input the following parameters:
+3. Next, from the tool bar select Data -> Phylogenetic Analysis. Then select Phylogeny -> Construct/Test Neighbour-Joining Tree and the following parameters were used:
 
 ```  
 1. Test of Phylogeny: Bootstrap method
@@ -366,14 +364,14 @@ Note: I acknowledge that the details on how to do the g10577 multiple sequence a
 9. Number of Threads: 3
 ```
 
-4. This will produce a neighbour joining tree with default layout which was customised with the following:
+4. This will produce a neighbour joining tree with the default layout which was customised with the following:
 
 ```
 1.Taxon names -> Font -> Arial -> Bold Italic -> 10
     
 2.Layout -> Toggle Scaling of the Tree + Auto-size Tree
     
-3.Manually customise the length and the width of the tree to make it more aesthetic
+3.Manually customise the length and the width of the tree to your preference
 ```
 
 5. To save a PNG file of the tree, select Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
