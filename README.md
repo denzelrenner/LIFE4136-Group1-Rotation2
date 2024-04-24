@@ -18,7 +18,7 @@ All these files should be downloaded into the same directory before following th
 
 The vcf files contain variants at only the genomic regions we are interested in. The `UK_scan_dips.vcf` contains variants in diploids and `UK_scan_tets.vcf` contains variants in tetraploids.
 
-The `C_excelsa_V5_braker2_wRseq.gff3` contains annotations for the reference genome (Cochlearia excelsa). The `C_excelsa_V5.fasta` file contains sequence information for the reference genome (Cochlearia excelsa) and has been indexed to produce a .fai file. The `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format).
+The `C_excelsa_V5_braker2_wRseq.gff3` contains annotations for the reference genome (Cochlearia excelsa). The `C_excelsa_V5.fasta` file contains sequence information for the reference genome (Cochlearia excelsa) and has been indexed to produce a .fai file. The `C_excelsa_V5.fasta.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the `C_excelsa_V5.fasta` file. You can read more about it on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format).
 
 |Directory|Files|
 |---------|-----|
