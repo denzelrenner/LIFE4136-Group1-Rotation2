@@ -300,7 +300,7 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
  1. Follow the link to the [uniprot](https://www.uniprot.org/align) website and navigate to the tab labelled `Align`
 
- 2. Copy and paste all the sequences from the `g46214_homologs.fasta` you generated in Part3 of the anlysis into the query field then click the `Run align` button
+ 2. Copy and paste all the sequences from the `g46214_homologs.fasta` you generated in Part3 of the analysis into the query field then click the `Run align` button
 
  3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
@@ -336,7 +336,7 @@ Next, to be able to view and compare the primary sequence of the different homol
 
 ### g10577
 
-Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were initially written and explained by a group member, Luke. It was edited for improved clarity on the Github page
+Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were initially written and explained by a group member, Luke. It was then edited for improved clarity on the Github page.
 
 The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships.
 
@@ -344,7 +344,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 
 2. Produce a multiple sequence alignment by navigating to the tool bar and selecting Alignment -> Align by ClustalW -> select all -> use default parameters except for Delay Divergent Cutoff (%) and selected 45%.
 
-3. Next, select Data -> Phylogenetic Analysis from the tool bar. Produce a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameters:
+3. Next, from the tool bar select Data -> Phylogenetic Analysis.  Produce a phylogenetic tree by selecting Phylogeny  -> Construct/Test Neighbour-Joining Tree with the following parameters:
 
 ```  
 1. Test of Phylogeny: Bootstrap method
@@ -366,7 +366,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 9. Number of Threads: 3
 ```
 
-4. This produced a neighbour joining tree with default layout which was customised with the following:
+4. This will produce a neighbour joining tree with default layout which was customised with the following:
 
 ```
 1.Taxon names -> Font -> Arial -> Bold Italic -> 10
