@@ -336,7 +336,7 @@ Next, to be able to view and compare the primary sequence of the different homol
 
 ### g10577
 
-Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were  written and explained by a group member, Luke. File nomenclature in Steps 1 and 6 were edited for increased clarity.
+Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were  written and explained by a group member, Luke. 
 
 The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships .
 
