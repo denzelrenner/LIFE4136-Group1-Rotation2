@@ -126,12 +126,12 @@ bash ~/g10577_gatk_consensus_final.sh
 ```
 This script produces a directory called `g10577_gatk_output` with sub-directories for diploid output (`diploid_output`) and tetraploid output (`tetraploid_output`).
 
-For g10577 diploids, the most important output files in the `diploid_output` directory are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploids.
+For g10577 diploids, the most important output files in the `diploid_output` directory are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.6, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploids.
 
-For g10577 tetraploids, the most important output files in the `tetraploid_output` directory are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
+For g10577 tetraploids, the most important output files in the `tetraploid_output` directory are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.6, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
 
-## Step2 -Protein Sequences 
-Amongst the output files produced from running the gatk consensus scripts in the section above, there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
+## Step2 - Protein Sequences 
+Now that we have the nucleotide sequences for g46214 and g10577 in our diploids, tetraploids, and reference, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
 
 ### g46214
 
@@ -155,9 +155,10 @@ Amongst the output files produced from running the gatk consensus scripts in the
 
 
 ## Step3 - Homolog identification
+We have now retrieved the sequences for our proteins, so we want to figure out what they might actually be. One good way to do that is finding their closest homologs in other plant or animal species which can also give you an idea on how the protein may function.
 
 ### g46214
-Now that we have retrieved the sequences for our proteins, we want to figure out what they might be, and one good way to do that is finding their closest homologs in other plant or animal species. You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
+You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
 
 To identify g46214 homologs:
 
@@ -165,13 +166,13 @@ To identify g46214 homologs:
 
  2. Select `Protein BLAST` 
 
- 3. Input the protein sequence for the g46214 reference protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the g46214 reference protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their ncbi dataset accession code (i.e `XP_018447019.1`).
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g46214_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g46214_homologs.fasta` file in fasta format.
+ 6. The protein sequences for the reference, diploid and tetraploid should also be added to the `g46214_homologs.fasta` file in fasta format.
 
 The accession codes for the homologs identified in this step and used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
@@ -198,13 +199,13 @@ To identify g10577 homologs in other plant species we followed the steps below:
 
  2. Select `Protein BLAST` 
 
- 3. Input the protein sequence for the g10577 tetraploid protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
+ 3. Input the g10577 tetraploid protein sequence into the `Enter Query Sequence` field, and select `BLAST` at the bottom of the page
 
  4. Manually retrieve the protein sequence of the homologs from the blastp results page by selecting their NCBI dataset accession code (i.e `XP_018447019.1`) in the blastp results page
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
- 6. The consensus protein sequences for the reference, diploid and tetraploid protein sequences should also be added to the `g10577_homologs.fasta` file in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
+ 6. The reference, diploid and tetraploid protein sequences should also be added to the `g10577_homologs.fasta` file in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
 
 The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
