@@ -172,7 +172,7 @@ To identify g46214 homologs:
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g46214_homologs.fasta` fasta file
 
- 6. The protein sequences for the reference, diploid and tetraploid should also be added to the `g46214_homologs.fasta` file in fasta format.
+ 6. The protein sequences for the reference, diploid and tetraploid generated in Part2 of the analysis should also be added to the `g46214_homologs.fasta` file in fasta format.
 
 The accession codes for the homologs identified in this step and used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
@@ -187,7 +187,7 @@ The accession codes for the homologs identified in this step and used in subsequ
 | Eutrema salsugineum | XP_006390294.1 |
 | Capsella rubella | XP_006302550.1 |
 
-The closest homologs of g46214 are all bbx21 proteins in different plant species.
+The closest homologs of g46214 were bbx21 proteins in different plant species.
 
 ### g10577
 
@@ -205,7 +205,7 @@ To identify g10577 homologs in other plant species we followed the steps below:
 
  5. Select the `FASTA` option at the top of the page, and finally copy and paste the protein sequence into the `g10577_homologs.fasta` fasta file
 
- 6. The reference, diploid and tetraploid protein sequences should also be added to the `g10577_homologs.fasta` file in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
+ 6. The reference, diploid and tetraploid protein sequences generated in Part2 of the analysis should also be added to the `g10577_homologs.fasta` file in fasta format. Note that we also searched for homologs in the model species Arabidopsis thaliana on the TAIR website, but for g10577 the identified homolog did not make biological sense when investigated further through multiple sequence allignments and the literature cited in the `Domain Identification` section of this analysis so we did not include that protein as a homolog.
 
 The accession codes for the homologs used in subsequent steps of the analysis are outlined below:
 | Homolog | Accession Code | 
@@ -222,7 +222,7 @@ The accession codes for the homologs used in subsequent steps of the analysis ar
 |Hellanthus annus|XP_022003179.2|
 |Sparassis crispa|XP_027612870.1|
 
-We identified the closest homolgs for g10577 as being retrotransposons.
+The closest homologs for g10577 were retrotransposons.
 
 ## Part4 - Domain identification
 We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains in our proteins to get an idea of how they function.
@@ -292,7 +292,7 @@ The final list of domain positions was not provided so only the final domain nam
 
 Code in this section should be ran on the cloud HPC.
 
-This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid and tetraploid proteins by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid protein has diverged from the diploid protein.
+This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid and tetraploid proteins by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid protein might have diverged from the diploid protein.
 
 ### g46214
  
@@ -300,11 +300,11 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
  1. Follow the link to the [uniprot](https://www.uniprot.org/align) website and navigate to the tab labelled `Align`
 
- 2. Copy and paste all the sequences from the `g46214_homologs.fasta` you generated above into the query field then click the `Run align` button
+ 2. Copy and paste all the sequences from the `g46214_homologs.fasta` you generated in Part3 of the anlysis into the query field then click the `Run align` button
 
  3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
- 4. To build a phylogenetic tree from this allignment we will use raxml by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree. To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or have a look on the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
+ 4. To build a phylogenetic tree from this allignment we will use RAxML-NG by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree. To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or have a look on the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
 
 
 ```bash
@@ -319,27 +319,26 @@ We will view the `.besttree` file using the ITOL website. To do this the steps b
 
   3. Navigate to the `Tree file` field and select the `choose file` option. Search through your files to locate the raxml file with the `.besttree` extension and upload it.
 
-  4. Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with the correct genus and species. You can find the correct genus and species for the accession code in the `Homolog Identification` stages of this analysis 
+  4. Replace the accession code names at the tip of the tree by clicking on the accession code (i.e XP_009106205.1), navigating to `label`, then select `edit label` and replace it with the correct genus and species. You can find the correct genus and species for the accession code within a table formed in Part3 of this analysis 
 
   5. Take a picture of the screen using CMD+SHIFT+4 and manually adjust the size to have the whole phylogenetic tree inside it.
 
 Next, to be able to view and compare the primary sequence of the different homologs in the multiple sequence allignment, we used Jalview. The steps below should be followed:
   
-  1. Open Jalview on your local machine. Select `file` in the toolbar, then select `Input Allignment` and finally choose `From File`
+  1. Open Jalview on your local machine. Select `file` in the toolbar, then select `Input Allignment` and finally choose `From File`. Navigate to your `g46214_allignment.fasta` and load it in.
 
-  2. Using the mutations mentioned in the `Domain Identification` section of the analysis, manually search for the mutations in the allignment to determine if the residue is conserved across all homologs. To highlight residues in the allignment you should drag your cursor across that position in the different homologs (i.e the residue at position 50 in all the different homlogs). Right click on the highlighted box. Choose `selection`, then `Edit New Group`, then `Group Colour`, and choose the colour `Hydrophobicity`.
+  2. Using the positions of the mutations mentioned in the `Domain Identification` section of the analysis, manually search for the mutations in the allignment to determine if the residue is conserved across all homologs. To highlight residues in the allignment you should drag your cursor across that position in the allignment (i.e the residue at position 50 in all the different homlogs). Right click on the highlighted box. Choose `selection`, then `Edit New Group`, then `Group Colour`, and choose the colour `Hydrophobicity`.
 
-  3. To make the allignment easier to understand when we create our images, we want to have the actual genus and species name for each sequence instead of the NCBI accession code. In Jalview, you have to right-click on the NCBI accession code and then select `Edit Name/Description` and use the table in the `Homolog Identification` step to insert the correct genus and species name.
+  3. To make the allignment easier to understand when we create our images, we want to have the actual genus and species name for each homolog instead of the NCBI accession code. In Jalview, you have to right-click on the NCBI accession code and then select `Edit Name/Description` and use the table in the `Homolog Identification` section of the analysis to insert the correct genus and species name.
 
   4. Take a picture of the screen using CMD+SHIFT+4 and manually adjust the size to have the whole allignment in it.
 
 
 ### g10577
 
-Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were written and explained by a group member, Luke. It was then edited at certain steps for better clarity.
+Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were  written and explained by a group member, Luke. Step 1 was edited for better clarity.
 
 The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships .
-
 
 1. Upload the g10577 homolog fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
@@ -377,7 +376,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 3.Manually customise the length and the width of the tree to make it more aesthetic
 ```
 
-6. To save a PNG file of the tree, select Image from the toolbar: Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
+6. To save a PNG file of the tree, select Image from the toolbar: Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
 
 ## Part6 - Protein Structure Modelling
 
@@ -398,7 +397,7 @@ To obtain 3D structure models for our diploid and tetraploid proteins we followe
  
  1. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website 
  
- 2. Input the diploid protein sequence into the `query sequence` field. The job name entered should be `diploid_g46214`. It is very important that this name is given due to naming requirements in subsequent commands.
+ 2. Input the diploid protein sequence into the `query sequence` field. The job name entered should be `diploid_g46214`.
 
  3. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
@@ -406,7 +405,7 @@ To obtain 3D structure models for our diploid and tetraploid proteins we followe
 
  5. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website or refresh the page.
  
- 6. Input the tetraploid protein sequence into the `query sequence` field, and the job name should be `tetraploid_g46214`.
+ 6. Input the tetraploid protein sequence into the `query sequence` field, and the job name entered should be `tetraploid_g46214`.
 
  7. Repeat steps 3 and 4
 
@@ -414,7 +413,7 @@ To obtain 3D structure models for our diploid and tetraploid proteins we followe
 
 
 ```bash
-mv ~/Downloads/*_g46214.zip ~/g46214_modelling_output
+mv ~/Downloads/*g46214*.zip ~/g46214_modelling_output
 for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
 
