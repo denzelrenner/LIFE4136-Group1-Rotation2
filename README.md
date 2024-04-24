@@ -224,7 +224,7 @@ The accession codes for the homologs used in subsequent steps of the analysis ar
 |Hellanthus annus|XP_022003179.2|
 |Sparassis crispa|XP_027612870.1|
 
-The closest homologs for g10577 were retrotransposons.
+Some of the closest homologs for g10577 were retrotransposons.
 
 ## Part4 - Domain identification
 We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains in our proteins. This will help us to predict function of the protein and confirm the domains our proteins share with their close homologs.
