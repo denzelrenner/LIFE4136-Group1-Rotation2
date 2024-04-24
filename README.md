@@ -306,7 +306,7 @@ By following the steps below, a multiple sequence allignment of the protein sequ
 
  3. On the results page, click on the `download` option and choose `FASTA` format from the drop-down menu before downloading the allignment. When prompted to enter a file name, enter `g46214_allignment.fasta`
 
- 4. To build a phylogenetic tree from this allignment we will use RAxML-NG by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree. To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or have a look on the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
+ 4. To build a phylogenetic tree from this allignment we will use RAxML-NG by running the command below. This will produce a file with the extension `.besttree` which is the unrooted best maximum likelihood tree. The file name should be `g46214_phylogeny_output.raxml.bestTree` and it will be in a directory called `raxml_output`. To find out more about the `.besttree` extension, you can read through this paper (Kozlov, A.M., Darriba, D., Flouri, T., Morel, B. and Stamatakis, A., 2019. RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference. Bioinformatics, 35(21), pp.4453-4455.) or have a look on the [RAxML-NG github page](https://github.com/amkozlov/raxml-ng/wiki/Output:-files-and-settings#output-prefix)
 
 
 ```bash
