@@ -55,7 +55,7 @@ The guidance below outlines the scripts,steps or commands that have to be ran to
 ### On the cloud HPC:
 To install raxml-ng run the script below in the command line.
 ```bash
-bash ~/raxml_install.sh
+sbatch ~/raxml_install.sh
 ```
 
 To install [GATK](https://github.com/broadinstitute/gatk), [samtools](https://github.com/samtools/samtools/blob/develop/README.md), and [Conda](https://github.com/conda/conda) follow the guidance on their respective github pages as those tools were installed by a bioinformatics technician and code to install them was not generated from scratch in our analysis. 
