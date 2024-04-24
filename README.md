@@ -417,7 +417,7 @@ mv ~/Downloads/*g46214*.zip ~/g46214_modelling_output
 for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
 
-By unzipping the files,there should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. The name of the directory should start with `tetraploid_g46214` or `diploid_g46214` , but alphafold assigns a random string of characters to the end of the directory name (i.e erk453). Each directory will contain the top 5 models that alphafold generated in pdb format for that modelling job. 
+By unzipping the files,there should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. The name of the directory should start with `tetraploid_g46214` or `diploid_g46214` , but alphafold assigns a random string of characters to the end of the directory name (i.e erk453). Each directory will contain the top 5 models that alphafold generated in pdb format for that specific modelling job. 
 
 ### g10577
 
@@ -452,7 +452,7 @@ mv model_01.pdb reference_g10577.pdb
  
  10. Manualy move the downloaded `.zip` files, and reference pdb model from your `Downloads` folder to a directory of your choosing. Unzip all of the alphafold `.zip` files.
 
-By unzipping the files,there should be a directory with modelling output for each of the diploid g10577 fragments and the tetraploid g10577 fragments. The name of the directory should start with `tetraploid_fragment` or `diploid_fragment` , but alphafold assigns a random string of characters to the end of the directory name (i.e mhy429). Each directory will contain the top 5 models that alphafold generated in pdb format for that modelling job. 
+By unzipping the files,there should be a directory with modelling output for each of the diploid g10577 fragments and the tetraploid g10577 fragments. The name of the directory should start with `tetraploid_fragment` or `diploid_fragment` , but alphafold assigns a random string of characters to the end of the directory name (i.e mhy429). Each directory will contain the top 5 models that alphafold generated in pdb format for that specific modelling job. 
 
 ## Part7 - Image Generation
 
