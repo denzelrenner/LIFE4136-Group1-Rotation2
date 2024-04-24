@@ -409,7 +409,7 @@ To obtain 3D structure models for our diploid and tetraploid proteins we followe
 
  7. Repeat steps 3 and 4
 
- 8. Move all the downloaded `.zip` files (including those from modelling the g46214 diploid protein) from your `Downloads` folder to the directory we created earlier for protein structures, and open the files following the commands below:
+ 8. Move all the downloaded `.zip` files (including those from modelling the g46214 diploid protein) from your `Downloads` folder to the directory we created earlier for protein structures. Now, move and open the `.zip` files following the commands below:
 
 
 ```bash
@@ -417,7 +417,7 @@ mv ~/Downloads/*g46214*.zip ~/g46214_modelling_output
 for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
 
-By unzipping the files,there should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. The name of the directory should start with `tetraploid_g46214` or `diploid_g46214` , but alphafold assigns a random string of characters to the end of the directory name (i.e erk453). Each directory will contain the top 5 models that alphafold generated in pdb format for that specific modelling job. 
+By unzipping the files,there should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. The name of the directory should start with `tetraploid_g46214` or `diploid_g46214` , but alphafold assigns a random string of characters to the end of the directory name (i.e erk453). Each directory will contain the top 5 models that alphafold generated in pdb format for that specific modelling job. The directories for the g46214 modelling jobs are now all within this parent directory `~/g46214_modelling_output`
 
 ### g10577
 
