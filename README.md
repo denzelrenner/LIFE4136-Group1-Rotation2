@@ -547,7 +547,7 @@ align tetraploid_fragment1, reference_g10577
  4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400, the integrase domain might only be from residue 200-330 of that fragment in the full-length protein. The select command in PyMOL allows us to specify a specific set of residues to highlight. The [select](https://pymolwiki.org/index.php/Select) command in PyMOL first takes the name for the new object it will be creating (the name of the actual domain), then it takes the object you are selecting the residues from (the fragment with the domain within it) and finally the residues you are selecting (the positions of the domain within the fragment). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
 
 ```bash
- select integrase, tetraploid_fragment1 and resi x-y`'
+ select integrase, tetraploid_fragment1 and resi x-y
 ```
 5. If the fragments were given we would have created objects for each domain within PyMOL. To colour the different domains you woild navigate to the object list at the right hand side of the PyMOL window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
@@ -604,7 +604,7 @@ align diploid_fragment1, reference_g10577
  4. We want to create an object for the different domains within our newly assembled protein so they can be highlighted different colours in our images. The protein fragments that we have modelled contain the different protein domains within them so for each fragment we have to take into account the position of the domain within the full protein. For example if fragment 1 spans from residue 1-400 and the integrase domain would be from residue 200-330 of that fragment of the protein and the select command in PyMOL allows us to do that. The [select](https://pymolwiki.org/index.php/Select) command in PyMOL first takes the name for the new object it will be creating (the name of the actual domain), then it takes the object you are selecting the residues from (the fragment with the domain) and finally the residues you are selecting (the positions of the domain within the fragment). Following the code below would allow you to to select a given domain within a given fragment. x and y represent the start and stop position for the domain.
 
 ```bash
- select integrase, diploid_fragment1 and resi x-y`'
+ select integrase, diploid_fragment1 and resi x-y
 ```
 5. If the fragments were given we would have created objects for each domain within PyMOL. To colour the different domains you woild navigate to the object list at the right hand side of the PyMOL window. Look for the name of the domain of interest, select the `C` and then select the colour based on the colour scheme outlined blow.
 
@@ -639,7 +639,7 @@ We also want to have a short video showing some of our protein molecules rotatin
 
 You will have to open a new PyMOL window and then run the commands below in the PyMOL command line
 ```bash
-load ~/g46214_modelling_output/gatk_04AF_tetraploid_b50ff/gatk_04AF_tetraploid_b50ff_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb, tetraploid_g46214
+load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
 select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
 
@@ -666,7 +666,7 @@ run ~/tetraploid_temporary_image_generation.py
 You will have to open a new PyMOL window and then run the commands below in the PyMOL command line
 
 ```bash
-load ~/g46214_modelling_output/gatk_04AF_dip_29144/gatk_04AF_dip_29144_unrelaxed_rank_001_alphafold2_ptm_model_2_seed_000.pdb, diploid_g46214
+load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
 select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
 
@@ -683,21 +683,18 @@ Now that the diploid g46214 protein has been loaded into pymol, Using your mouse
 
 Now rotate molecule to choose a good starting position that will show everything you want when it rotates. It will be rotating up to down and this can be accomplished running the script below to produce a series of images after every rotation
 
-In the pymol command line run the code below to produce a directory with a collection of diploid g46214 images
+In the PyMOL command line run the code below to produce a directory with a collection of diploid g46214 images
 ```bash
 run ~/diploid_temporary_image_generation.py 
 ```
 
-The series of images produced for the diploid protein only and the tetraploid protein only will be stitched together to produce a movie file for the diploid protein rotating and a movie file for the tetraploid protein rotating. This can be accomplished by running the script below in the command line
+The series of images produced for the diploid protein only and the tetraploid protein only will be stitched together to produce a movie file for the diploid protein rotating and a movie file for the tetraploid protein rotating. This can be accomplished by running the script below in the regular command line on your local machine.
 
 ```bash
 bash make_protein_rotation_movie.sh
 ```
 
 # Conclusion
-By following the steps outlined in this analysis, we were able to identify g46214 as showing strong similarity to bbox21 proteins from the bbox family, and g10577 showed strong similarity to retrotransposons.
 
-In our analysis, we found a truncation in the C-terminus of the tetraploid g10577 which might impair its' function. Given the genomic instability polyploids are faced with it might be better to not have this transposon function
-
-With regards to g46214, we found mutations that increased the hydrophobicity of a motif that might be necessary for protein-protein interactions. These results still need to be experimentally validated.
+We were able to model our g46214 and g10577 proteins in diploids and tetraploids. For g10577 you should observe a truncation at the C-terminus in the tetraploid relative to the diploid and this protein might be  retrotransposon. For g46214 there was a single mutation that led to a more hydrophobic residue in tetraploids relative to diploids at a possible protein-protein interaction motif. g46214 showed strong similarity to bbx21 proteins in other plant species.
 
