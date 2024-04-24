@@ -106,7 +106,7 @@ bash ~/generate_reference_sequences.sh
 This should produce a directory called `reference_sequences` and within that directory there should be a file called `g10577_coding_sequence.fasta` which has the g10577 reference consensus sequence and another file called `g46214_coding_sequence.fasta` which has the g46214 reference consensus sequence.
 
 ### g46214
-With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by running the script below:
+With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in diploids and tetraploids. This is accomplished by running the script below:
 
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
