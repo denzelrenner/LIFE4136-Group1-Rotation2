@@ -187,7 +187,7 @@ The accession codes for the homologs identified in this step and used in subsequ
 | Eutrema salsugineum | XP_006390294.1 |
 | Capsella rubella | XP_006302550.1 |
 
-The closest homologs of g46214 were bbx21 proteins in different plant species.
+The closest homologs of g46214 were bbox proteins in different plant species.
 
 ### g10577
 
@@ -225,7 +225,7 @@ The accession codes for the homologs used in subsequent steps of the analysis ar
 The closest homologs for g10577 were retrotransposons.
 
 ## Part4 - Domain identification
-We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains in our proteins to get an idea of how they function.
+We have discovered the closest homologs for our proteins in different species so we can begin investigating the structural domains in our proteins. This will help us to predict function of the protein and confirm the domains our proteins share with their close homologs.
 
 ### g46214
 
