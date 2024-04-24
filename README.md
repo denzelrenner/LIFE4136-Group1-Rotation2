@@ -158,7 +158,7 @@ Now that we have the nucleotide sequences for g46214 and g10577 in our diploids,
 We have now retrieved the sequences for our proteins, so we want to figure out what they might actually be. One good way to do that is finding their closest homologs in other plant or animal species which can also give you an idea on how the protein may function.
 
 ### g46214
-You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence. 
+You should create a fasta file called `g46214_homologs.fasta` to store all homologs. Homologous proteins were selected based on having 100% query cover and >60% percentage identity to the reference protein sequence on the blastp results page. 
 
 To identify g46214 homologs:
 
@@ -191,7 +191,7 @@ The closest homologs of g46214 were bbx21 proteins in different plant species.
 
 ### g10577
 
-For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the tetraploid protein sequence. You should create a fasta file called `g10577_homologs.fasta` to store all homologs. 
+For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the tetraploid protein sequence on the blastp results page. You should create a fasta file called `g10577_homologs.fasta` to store all homologs. 
 
 To identify g10577 homologs in other plant species we followed the steps below:
 
