@@ -130,7 +130,7 @@ For g10577 diploids, the most important output file in the `diploid_output` dire
 
 For g10577 tetraploids, the most important output file in the `tetraploid_output` directory is called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the tetraploid
 
-Although a `final_multiallelic_diploid.vcf` and `final_multiallelic_tetraploid.vcf` file were produced, these were not used to adjust the coding sequences for the diploid or tetraploid.
+Although `final_multiallelic_diploid.vcf` and `final_multiallelic_tetraploid.vcf` files were produced, these were not used to adjust the coding sequences for the diploid or tetraploid.
 
 ## Part2 - Protein Sequences 
 Now that we have the nucleotide sequences for g46214 and g10577 in our diploids, tetraploids, and reference, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
