@@ -103,7 +103,7 @@ conda activate /shared/apps/conda/bio2
 bash ~/generate_reference_sequences.sh
 ```
 
-This should produce a directory called `reference_sequences` and within that directory there should be a filed called `g10577_coding_sequence.fasta` which has the g10577 reference consensus sequence and another file called `g46214_coding_sequence.fasta` which has the g46214 reference consensus sequence.
+This should produce a directory called `reference_sequences` and within that directory there should be a file called `g10577_coding_sequence.fasta` which has the g10577 reference consensus sequence and another file called `g46214_coding_sequence.fasta` which has the g46214 reference consensus sequence.
 
 ### g46214
 With the `bio2` conda environemnt still active, we will now filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.49 (to include allele frequencies of 0.5). The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the diploid and tetraploid. This is accomplished by running the script below:
@@ -111,9 +111,12 @@ With the `bio2` conda environemnt still active, we will now filter the vcfs we h
 ```bash
 bash ~/g46214_gatk_consensus_final.sh
 ```
-For g46214 diploids, the most important output files created are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploids. 
 
-For g46214 tetraploids, the most important output files created are called `g46214_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the tetraploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_tetraploid_coding_sequence.fasta` file to get a final sequence for the tetraploids.
+This script produces a directory called `g46214_gatk_output` with sub-directories for diploid output (`diploid_output`) and tetraploid output (`tetraploid_output`).
+
+For g46214 diploids, the most important output files in the `diploid_output` directory are called `g46214_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_diploid_coding_sequence.fasta` file to get a final sequence for diploids. 
+
+For g46214 tetraploids, the most important output files in the `tetraploid_output` directory are called `g46214_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the tetraploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g46214_tetraploid_coding_sequence.fasta` file to get a final sequence for the tetraploids.
 
 ### g10577
 With the `bio2` conda environemnt still active, we will filter the vcfs we have to only include biallelic variants with an allele frequency greater than 0.6. The resulting filtered vcfs will then be used, along with the reference fasta and gff, to produce our consensus sequences for the genes of interest in the tetraploid and diploid. This is accomplished by running the script below:
@@ -121,9 +124,11 @@ With the `bio2` conda environemnt still active, we will filter the vcfs we have 
 ```bash
 bash ~/g10577_gatk_consensus_final.sh
 ```
-For g10577 diploids, the most important output files created are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploids.
+This script produces a directory called `g10577_gatk_output` with sub-directories for diploid output (`diploid_output`) and tetraploid output (`tetraploid_output`).
 
-For g10577 tetraploids, the most important output files created are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
+For g10577 diploids, the most important output files in the `diploid_output` directory are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploids.
+
+For g10577 tetraploids, the most important output files in the `tetraploid_output` directory are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.5, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
 
 ## Step2 -Protein Sequences 
 Amongst the output files produced from running the gatk consensus scripts in the section above, there should be fasta files containing the entire consensus coding sequence for g46214 and g10577 in our diploids, tetraploids, and reference. Now that we have the nucleotide sequences, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
