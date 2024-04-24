@@ -683,7 +683,8 @@ Now that the diploid g46214 protein has been loaded into pymol, Using your mouse
 
 Now rotate molecule to choose a good starting position that will show everything you want when it rotates. It will be rotating up to down and this can be accomplished running the script below to produce a series of images after every rotation
 
-In the PyMOL command line run the code below to produce a directory with a collection of diploid g46214 images
+In the pymol command line run the code below to produce a directory with a collection of tetraploid g46214 images:
+
 ```bash
 run ~/diploid_temporary_image_generation.py 
 ```
@@ -693,6 +694,8 @@ The series of images produced for the diploid protein only and the tetraploid pr
 ```bash
 bash make_protein_rotation_movie.sh
 ```
+
+The `tetraploid_g46214_rotation_clip.mp4` file produced of the tetraploid protein rotating will be in this directory `~/g46214_modelling_output/tetraploid_g46214_protein_images/movie` and the `diploid_g46214_rotation_clip.mp4` file of the diploid protein rotating will be in this directory `~/g46214_modelling_output/diploid_g46214_protein_images/movie`
 
 # Conclusion
 
