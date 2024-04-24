@@ -336,15 +336,15 @@ Next, to be able to view and compare the primary sequence of the different homol
 
 ### g10577
 
-Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were  written and explained by a group member, Luke. 
+Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were initially written and explained by a group member, Luke. It was edited for improved clarity on the Github page
 
-The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships .
+The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships.
 
-1. Upload the g10577 homolog fasta file into MEGA11: Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
+1. Upload the g10577 homolog fasta file into MEGA11 by selecting Align -> Edit/Build Alignment -> Retrieve sequences from a file -> `g10577_homologs.fasta`
 
-2. Produce a multiple sequence alignment by navigating to the tool bar and selecting Alignment: Alignment -> Align by ClustalW -> select all -> used default parameters except for Delay Divergent Cutoff (%) and selected 45%.
+2. Produce a multiple sequence alignment by navigating to the tool bar and selecting Alignment -> Align by ClustalW -> select all -> use default parameters except for Delay Divergent Cutoff (%) and selected 45%.
 
-3. Next, selected Data -> Phylogenetic Analysis from the tool bar then produced a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameters.
+3. Next, select Data -> Phylogenetic Analysis from the tool bar. Produce a phylogenetic tree by selecting Phylogeny from the toolbar -> Construct/Test Neighbour-Joining Tree with the following parameters:
 
 ```  
 1. Test of Phylogeny: Bootstrap method
@@ -366,7 +366,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 9. Number of Threads: 3
 ```
 
-5. This produced an NJ tree with default layout which was customised with the following
+4. This produced a neighbour joining tree with default layout which was customised with the following:
 
 ```
 1.Taxon names -> Font -> Arial -> Bold Italic -> 10
@@ -376,7 +376,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 3.Manually customise the length and the width of the tree to make it more aesthetic
 ```
 
-6. To save a PNG file of the tree, select Image from the toolbar: Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
+5. To save a PNG file of the tree, select Image from the toolbar: Image -> Save a PNG file, then give the file path to your Desktop with an appropriate file name such as `g10577_phylogenetic_tree.png`.
 
 ## Part6 - Protein Structure Modelling
 
