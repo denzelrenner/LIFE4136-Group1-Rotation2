@@ -193,7 +193,7 @@ The closest homologs of g46214 were bbox proteins in different plant species.
 
 ### g10577
 
-For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the tetraploid protein sequence on the blastp results page. You should create a fasta file called `g10577_homologs.fasta` to store all homologs. 
+You should create a fasta file called `g10577_homologs.fasta` to store all homologs. For g10577, homologous proteins were selected based on >70% query cover and >40% percentage identity to the tetraploid protein sequence on the blastp results page. 
 
 To identify g10577 homologs in other plant species we followed the steps below:
 
