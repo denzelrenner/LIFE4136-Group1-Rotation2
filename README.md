@@ -96,7 +96,7 @@ All code in this section needs to be ran on the cloud HPC.
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
-The first thing we will do is get consensus sequences for the reference g46214 and g10577 genes so it can then be used in later stages of the analysis. We knew the genomic positions for the different genes of interest by opening a text editor and manually searching their gene names in the gff file. To create the consensus sequences for the reference gene you should enter the command below into the command line.
+The first thing we will do is get consensus sequences for the reference g46214 and g10577 genes so it can then be used in later stages of the analysis. We knew the genomic positions for the different genes of interest by opening the `C_excelsa_V5_braker2_wRseq.gff3` file in a text editor and manually searching for the gene names. To create the consensus sequences for the reference gene you should enter the command below into the command line.
 
 ```bash
 conda activate /shared/apps/conda/bio2
