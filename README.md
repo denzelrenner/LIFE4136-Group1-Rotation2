@@ -92,7 +92,7 @@ To install the [Jalview](https://www.jalview.org/),[PyMOL](https://pymol.org/),a
 # THE ANALYSIS
 
 ## Part1 - Consensus Sequences (Nucleotide)
-All code in this section needs to be ran on the cloud HPC. 
+All command line code in Part1 needs to be ran on the cloud HPC. 
 
 Running all the scripts in this `consensus sequence(Nucleotide)` section will also produce `C_excelsa_V5.dict` and `C_excelsa_V5.fasta.fai` files which are required by GATK tools to access specified regions of the reference fasta. The `.dict` file describes the contents of our fasta file, and as mentioned before the `.fai` file is a fasta index file which allows us to find a particular nucelotide at specific genomic coordinates in the FASTA file. You can read more about these file formats on the [GATK website](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format)
 
@@ -292,7 +292,7 @@ The final list of domain positions was not provided so only the final domain nam
 
 ## Part5 - Multiple Sequence Allignments and Phylogenetic Tree Building 
 
-Code in this section should be ran on the cloud HPC.
+All command line code in Part5 of the analysis should be ran on the cloud HPC.
 
 This is the last step where we remain at the primary sequence level. We have sucessfully determined the important domains in our proteins, as well as their homlogs across different species. The next step is to identify conserved residues in our proteins and determine any important mutations between our diploid and tetraploid proteins by comparing the sequences of our proteins with their close homologs. We will also build phylogenetic trees as another form of visualising and representing how much the proteins in Cochalearia have diverged from their homologs, and also how much the tetraploid protein might have diverged from the diploid protein.
 
@@ -380,7 +380,7 @@ The steps below will allow you to create a multiple sequence allignment for the 
 
 ## Part6 - Protein Structure Modelling
 
-Note:All code in this section should be ran from the command line on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
+Note:All command line code in Part6 of the analysis should be ran on your local machine. It is also important to note that alphafold collab has a limit to how much modelling you can do within a given time frame, so you may need multiple google accounts or a colleagues machine to complete modelling for all the domains and proteins in this step.  
 
 We now want to visualise the three dimensional structure of our proteins. We will use protein visualisation tools and the files we are using are in the PDB format. PDB files contain information about the atoms in a protein and their coordinates. You can read more about this file type on the [rcsb website](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction#:~:text=A%20typical%20PDB%20formatted%20file,the%20atoms%20and%20their%20coordinates.)
 
@@ -456,7 +456,7 @@ By unzipping the files,there should be a directory with modelling output for eac
 
 ## Part7 - Image Generation
 
-All the code in this section of the analysis is entered into the PyMOL command line.
+All the code in Part7 of the analysis is entered into the PyMOL command line.
 
 Before beginning this section of the analysis you need to ensure the colorh.py script is in this directory `~/g46214_modelling_output`
 
@@ -658,7 +658,7 @@ Now that the tetraploid g46214 protein has been loaded into pymol, Using your mo
 
 Now rotate molecule to choose a good starting position that will show everything you want when it rotates. It will be rotating up to down and this can be accomplished running the script below to produce a series of images after every rotation
 
-In the pymol command line run the code below to produce a collection of tetraploid g46214 images.
+In the PyMOL command line run the code below to produce a collection of tetraploid g46214 images.
 ```bash
 run ~/tetraploid_temporary_image_generation.py 
 ```
@@ -701,5 +701,5 @@ The `tetraploid_g46214_rotation_clip.mp4` file produced of the tetraploid protei
 
 # Conclusion
 
-We were able to model our g46214 and g10577 proteins in diploids and tetraploids. For g10577 you should observe a truncation at the C-terminus in the tetraploid relative to the diploid and this protein is likely a retrotransposon. For g46214 there was a single mutation that led to a more hydrophobic residue in tetraploids relative to diploids at a possible protein-protein interaction motif. g46214 showed strong similarity to bbx21 proteins in other plant species.
+We were able to model our g46214 and g10577 proteins in diploids and tetraploids. The g10577 protein is likely a retrotransposon and for g10577 you should observe a truncation at the C-terminus in the tetraploid protein relative to the diploid which might reduce/impair function in the tetraploid. The g46214 protein showed strong similarity to bbx21 proteins in other plant species. For g46214 there was a single mutation that led to a more hydrophobic residue in tetraploids relative to diploids at a possible protein-protein interaction motif. This mutation might cause stronger interactions with the binding partners of g46214. 
 
