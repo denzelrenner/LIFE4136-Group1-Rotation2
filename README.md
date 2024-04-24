@@ -458,6 +458,8 @@ By unzipping the files,there should be a directory with modelling output for eac
 
 All the code in this section of the analysis is entered into the PyMOL command line.
 
+Before beginning this section of the analysis you need to ensure the colorh.py script is in this directory `~/g46214_modelling_output`
+
 We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create images to be used in our papers/presentations. We will load the different pdb files into PyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
 
 As mentioned before, the alphafold output directories are named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations, and we take it as our best estimate of the true protein structure.
@@ -641,7 +643,7 @@ You will have to open a new PyMOL window and then run the commands below in the 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
 
-select tetraploid_g46214_bbox_domains,tetraploid_g46214 and resi 5-108
+select tetraploid_g46214_bbox_domains, tetraploid_g46214 and resi 5-108
 
 run ~/g46214_modelling_output/colorh.py
 
@@ -656,7 +658,7 @@ Now that the tetraploid g46214 protein has been loaded into pymol, Using your mo
 
 Now rotate molecule to choose a good starting position that will show everything you want when it rotates. It will be rotating up to down and this can be accomplished running the script below to produce a series of images after every rotation
 
-In the pymol command line run the code below to produce a directory with a collection of tetraploid g46214 images.
+In the pymol command line run the code below to produce a collection of tetraploid g46214 images.
 ```bash
 run ~/tetraploid_temporary_image_generation.py 
 ```
@@ -668,7 +670,7 @@ You will have to open a new PyMOL window and then run the commands below in the 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_diploid_output_directory/your_rank_001_diploid.pdb, diploid_g46214
 
-select diploid_g46214_bbox_domains,diploid_g46214 and resi 5-105
+select diploid_g46214_bbox_domains, diploid_g46214 and resi 5-105
 
 run ~/g46214_modelling_output/colorh.py
 
@@ -683,13 +685,13 @@ Now that the diploid g46214 protein has been loaded into pymol, Using your mouse
 
 Now rotate molecule to choose a good starting position that will show everything you want when it rotates. It will be rotating up to down and this can be accomplished running the script below to produce a series of images after every rotation
 
-In the pymol command line run the code below to produce a directory with a collection of tetraploid g46214 images:
+In the PyMOL command line run the code below to produce a collection of tetraploid g46214 images:
 
 ```bash
 run ~/diploid_temporary_image_generation.py 
 ```
 
-The series of images produced for the diploid protein only and the tetraploid protein only will be stitched together to produce a movie file for the diploid protein rotating and a movie file for the tetraploid protein rotating. This can be accomplished by running the script below in the regular command line on your local machine.
+The series of images produced for the diploid protein only and the tetraploid protein only will be stitched together to produce a movie file for the diploid protein rotating and a movie file for the tetraploid protein rotating. Once the images have been stitched together they will be removed to conserve space and reduce clutter. This can be accomplished by running the script below in the regular command line on your local machine.
 
 ```bash
 bash make_protein_rotation_movie.sh
@@ -699,5 +701,5 @@ The `tetraploid_g46214_rotation_clip.mp4` file produced of the tetraploid protei
 
 # Conclusion
 
-We were able to model our g46214 and g10577 proteins in diploids and tetraploids. For g10577 you should observe a truncation at the C-terminus in the tetraploid relative to the diploid and this protein might be  retrotransposon. For g46214 there was a single mutation that led to a more hydrophobic residue in tetraploids relative to diploids at a possible protein-protein interaction motif. g46214 showed strong similarity to bbx21 proteins in other plant species.
+We were able to model our g46214 and g10577 proteins in diploids and tetraploids. For g10577 you should observe a truncation at the C-terminus in the tetraploid relative to the diploid and this protein is likely a retrotransposon. For g46214 there was a single mutation that led to a more hydrophobic residue in tetraploids relative to diploids at a possible protein-protein interaction motif. g46214 showed strong similarity to bbx21 proteins in other plant species.
 
