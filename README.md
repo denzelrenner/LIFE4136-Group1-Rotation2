@@ -14,7 +14,7 @@ Depending on the gene and given our understanding of the system, we expect to se
 
 # Prerequisites
 ## Required files and data
-All these files should be downloaded into the home directory on the HPC cloud before following the rest of this document. The path to the VCFs directory should be `~/VCFs` and the path to the Reference genome directory should be `~/Reference_Genome`
+All the directories in the table below should be downloaded into the home directory on the HPC cloud before following the rest of this document. The path to the VCFs directory should be `~/VCFs` and the path to the Reference genome directory should be `~/Reference_Genome`. These directories should contain the files listed in the table below.
 
 The vcf files contain variants at only the genomic regions we are interested in. The `UK_scan_dips.vcf` contains variants in diploids and `UK_scan_tets.vcf` contains variants in tetraploids.
 
