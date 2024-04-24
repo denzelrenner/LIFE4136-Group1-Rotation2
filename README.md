@@ -336,7 +336,7 @@ Next, to be able to view and compare the primary sequence of the different homol
 
 ### g10577
 
-Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were  written and explained by a group member, Luke. Step 1 was edited for better clarity.
+Note: This is written acknowledgement that these steps detailing the multiple sequence allignment and tree building for g10577 were  written and explained by a group member, Luke. File nomenclature in Steps 1 and 6 were edited for increased clarity.
 
 The steps below will allow you to create a multiple sequence allignment for the g10577 proteins and their closest homologs, as well as neighbour joining tree showing genetic relationships .
 
@@ -417,60 +417,60 @@ mv ~/Downloads/*g46214*.zip ~/g46214_modelling_output
 for file in ~/g46214_modelling_output/*.zip; do unzip "$file"; done
 ```
 
-By unzipping the files, for each modelling job we did we will have a directory that contains the top 5 models that alphafold generated in pdb format. There should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. 
+By unzipping the files,there should be a directory for the g46214 diploid protein modelling output and the g46214 tetraploid protein modelling output. The name of the directory should start with `tetraploid_g46214` or `diploid_g46214` , but alphafold assigns a random string of characters to the end of the directory name (i.e erk453). Each directory will contain the top 5 models that alphafold generated in pdb format for that modelling job. 
 
 ### g10577
 
-We will first create a directory in our home directory to host all the protein stuctures and any modelling related output by following the command below:
+We will first create a directory to host all the protein stuctures and any modelling related output by following the command below:
 
 ```bash
-mkdir -p ~/g10577_modelling_output
+mkdir ~/g10577_modelling_output
 ```
 
-For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was fragmented into the longest possible segments that prevented alphafold from running out of time whilst modelling. We decided on this method as opposed to using an alternative modelling software like Phyre2 because we did not get biologically sensible output when those were used to model our proteins. 
+For g10577 we had to use a different approach to model the proteins due to limitations with alphafold's memory and being unable to model the whole 1000+ amino acid long protein. Instead of putting the whole tetraploid or diploid sequence into alphafold, the protein was fragmented into the longest possible segments that would avoid alphafold from running out of time whilst modelling. We decided on this method as opposed to using an alternative modelling software like Phyre2 because we did not get biologically sensible output when those were used to model our proteins. 
 
-This approach to modelling also requires us to obtain a complete reference protein model using [SWISS-MODEL](https://swissmodel.expasy.org/interactive) so we can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
+This approach to modelling also requires you to obtain a complete reference protein model using [SWISS-MODEL](https://swissmodel.expasy.org/interactive) so you can essentially 'map' the protein fragments onto the reference protein to re-build our diploid and tetraploid proteins. The protein we chose for our reference had the uniprot ID `Q9LPK1` and we settled on that as a reference because of its high coverage and sequence identity (74.62%) to our reference g10577 protein sequence. 
 
-Note: For the approach used in this stage of the analysis to be reproduceable you will need the exact coordinates of the fragments we are taking from the diploid or tetraploid protein(i.e if you should take residue 1-400, followed by 401-600 etc), however these were not provided and so although the steps outlined below are correct they are missing that bit of information.
+Note: For the approach used in this stage of the analysis to be reproduceable you will need the exact coordinates of the fragments we are taking from the diploid or tetraploid protein(i.e if you should take residue 1-400, followed by 401-600 etc), however these were not provided and so although the steps outlined below are what was done, they are missing that bit of information.
 
 The analysis can be performed by following the steps below:
     
- 1. We will first need to get the 3D structure for the reference protein. Follow the link to the [SWISS-MODEL](https://swissmodel.expasy.org/interactive) website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format to your downloads folder. The name of the reference model downloaded from SWISS-MODEL is `model_01.pdb` and that can be changed by following the command below.
+ 1. We will first need to get the 3D structure for the reference protein. Follow the link to the [SWISS-MODEL](https://swissmodel.expasy.org/interactive) website, select `Start Modelling`, input the g10577 reference protein sequence into the `Target Sequence` field and select `Build Model`. Identify the model with template `Q9LPK1.1.A`, and download the model in PDB format to your downloads folder. The name of the reference model downloaded from SWISS-MODEL is `model_01.pdb` and that can be changed by navigating to the directory with the `model_01.pdb` and following the command below.
     
 ```bash
 mv model_01.pdb reference_g10577.pdb
 ```
  2. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website
 
- 3. Input the first fragment for the diploid sequences into the `query sequence` field, and the job name entered should be `diploid_framgment1_g10577`. It is very important this job name is given due to naming requirements in subsequent commands.
+ 3. Input the first fragment for the diploid sequences into the `query sequence` field, and the job name entered should be `diploid_framgment1_g10577`. 
 
  4. Navigate to the options at the top of the page, select `Runtime` and choose `Run all`
 
  5. When the modelling has been completed, on the Safari web browser (version 15.6) you will be prompted to allow the resulting file to be downloaded and selecting `allow` will download a zip file into your downloads folder (Mac). Note if you have selected a different directory as your default directory for downloads to be sent to, you will have to change it back to the `Downloads` folder for the purpose of following this anaysis.
 
- 6. Repeat steps 2-4 for the other fragments of the diploid g10577 protein. At step 2 you should change the job name to reflect which fragment is being modelled (i.e using `diploid_fragment2_g10577` when modelling the second fragment)
+ 6. Repeat steps 2-5 for the other fragments of the diploid g10577 protein. At step 3 you should change the job name to reflect which fragment is being modelled (i.e using `diploid_fragment2_g10577` when modelling the second fragment)
 
  7. Follow the link to the [alphafold collab](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb) website or refresh the page
 
  8. Input the first fragment for the tetraploid g10577 protein sequence into the `query sequence` field, and the job name entered should be `tetraploid_framgment1_g10577`.
 
- 9. Repeat steps 2-4 for the other fragments of the tetraploid g10577 protein. At step 2 you should change the job name to reflect which fragment is being modelled (i.e using `tetraploid_fragment2_g10577` when modelling the second fragment)
+ 9. Repeat steps 2-5 for the other fragments of the tetraploid g10577 protein. At step 3 you should change the job name to reflect which fragment is being modelled (i.e using `tetraploid_fragment2_g10577` when modelling the second fragment)
  
  10. Manualy move the downloaded `.zip` files, and reference pdb model from your `Downloads` folder to the directory we created earlier for g10577 protein structures.
 
-By unzipping the files, for each modelling job we did we will have a directory that contains the top 5 models that alphafold generated in pdb format. There should be a directory for each of the g10577 diploid fragments and g10577 tetraploid fragments. 
+By unzipping the files,there should be a directory for each of the diploid g10577 fragment protein modelling output and the tetraploid g10577 fragment protein modelling output. The name of the directory should start with `tetraploid_fragment` or `diploid_fragment` , but alphafold assigns a random string of characters to the end of the directory name (i.e mhy429). Each directory will contain the top 5 models that alphafold generated in pdb format for that modelling job. 
 
 ## Part7 - Image Generation
 
 All the code in this section of the analysis is entered into the PyMOL command line.
 
-We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create good quality images to be used in our papers/presentations. We will load the different pdb files into PyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
+We have successfully modelled our proteins and now want to actually investigate the mutations in three dimensional space and create images to be used in our papers/presentations. We will load the different pdb files into PyMOL, highlight domains or motifs of interest, and take snapshots of our proteins. 
 
-The alphafold output directories are named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations, and we take it as our best estimate of the true protein structure.
+As mentioned before, the alphafold output directories are named with unique identifiers such that the directory name for the modelling job is always different every time you run it. As such the paths given in our commands are generic to not cause any confusion. The output directory for each modelling job should have a number of different models ranked from 001 to 005. We will always be using the rank 001 model for the purposes of investigating our protein structure and mutations, and we take it as our best estimate of the true protein structure.
 
 ### g46214 Tetraploids
 
-To get good images for the g46214 tetraploid protein, we first load the protein into PyMOL and colour it by hydrophibicity. To do this you need to enter the commands below into the PyMOL command line:
+To get images for the g46214 tetraploid protein, we first load the protein into PyMOL and colour it by hydrophibicity. To do this you need to enter the commands below into the PyMOL command line:
 
 ```bash
 load ~/g46214_modelling_output/your_alphafold_tetraploid_output_directory/your_rank_001_tetraploid.pdb, tetraploid_g46214
@@ -487,9 +487,9 @@ Now that the tetraploid g46214 protein has been loaded into PyMOL, using your mo
 
  2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & tetraploid_g46214` depending on which protein you are investigating. This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
- 3. Repeat steps 1 and 2 but select `polymer & tetraploid_g46214_bbox_domains` in the selection entry field. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to manually zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on. You should not select or deselect any of the objects on the right hand side of the PyMOL window as this causes the scripts that generate images to not function correctly.
+ 3. Repeat steps 1 and 2 but select `polymer & tetraploid_g46214_bbox_domains` in the selection entry field. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to manually zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on. You should not select or deselect any of the objects named on the right hand side of the PyMOL window as this causes the scripts that generate images to not function correctly.
 
-Now we have everything we need to produce our images and you can run the `tetraploid_domain_highlight.py` script to get your nice figures that show the tetraploid g46214 protein with domains highlighted, coloured by hydrophobicity, and coloured by electrostatic potential at 90 degree angles. The images will be located in the `~/g46214_modelling_output/tetraploid_g46214_protein_images` directory. In the PyMOL commmand line you can should enter the command below:
+Now we have everything we need to produce our images and you can run the `tetraploid_domain_highlight.py` script to get your figures that show the tetraploid g46214 protein with domains highlighted, coloured by hydrophobicity, and coloured by electrostatic potential at 90 degree angles. The images will be located in the `~/g46214_modelling_output/tetraploid_g46214_protein_images` directory and are clearly named based on if that frame was coloured by hydrophobicity for example. In the PyMOL commmand line you can should enter the command below:
 
 ```bash
 run ~/path/to/python/script/tetraploid_domain_highlight.py
@@ -517,7 +517,7 @@ Now that the diploid g46214 protein has been loaded into PyMOL, Using your mouse
 
  2. Select the drop down menu in the selection entry field (selection:[       ]) and select `polymer & diploid_g46214` depending on which protein you are investigating. This will produce an object in PyMOL showing the electrostatic potential across the whole protein. When that has completed close the pop-up that comes afterwards.
 
- 3. Repeat steps 1 and 2 but select `polymer & diploid_g46214_bbox_domains`. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on.
+ 3. Repeat steps 1 and 2 but select `polymer & diploid_g46214_bbox_domains`. This will produce an object showing the electrostatic potential across the bbox domains only. Once this is completed you might have to zoom out so your whole protein is showing on the screen and the bbox domain is not being focused on. You should not select or deselect any of the objects named on the right hand side of the PyMOL window as this causes the scripts that generate images to not function correctly.
 
 Now we have everything we need to produce our images and you can run the `diploid_domain_highlight.py` script to get your nice figures that show the diploid g46214 protein with domains highlighted, coloured by hydrophobicity, and coloured by electrostatic potential at 90 degree angles. The images will be located in the `~/g46214_modelling_output/diploid_g46214_protein_images` directory. In the PyMOL commmand line you should enter the command below:
 
