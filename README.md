@@ -329,7 +329,7 @@ Next, to be able to view and compare the primary sequence of the different homol
   
   1. Open Jalview on your local machine. Select `file` in the toolbar, then select `Input Allignment` and finally choose `From File`. Navigate to your `g46214_allignment.fasta` and load it in.
 
-  2. Using the positions of the mutations mentioned in the `Domain Identification` section of the analysis, manually search for the mutations in the allignment to determine if the residue is conserved across all homologs. To highlight residues in the allignment you should drag your cursor across that position in the allignment (i.e the residue at position 50 in all the different homlogs). Right click on the highlighted box. Choose `selection`, then `Edit New Group`, then `Group Colour`, and choose the colour `Hydrophobicity`.
+  2. Using the positions of the mutations mentioned in the `Domain Identification` section of the analysis, manually search for the mutations in the allignment to determine if the residue is conserved across all homologs. To highlight residues in the allignment you should left-click, hold, and drag your cursor down that column in the allignment (i.e the residues at position 150 in the allignment). Right click on the highlighted box. Choose `selection`, then `Edit New Group`, then `Group Colour`, and choose the colour `Hydrophobicity`.
 
   3. To make the allignment easier to understand when we create our images, we want to have the actual genus and species name for each homolog instead of the NCBI accession code. In Jalview, you have to right-click on the NCBI accession code and then select `Edit Name/Description` and use the table in the `Homolog Identification` section of the analysis to insert the correct genus and species name.
 
