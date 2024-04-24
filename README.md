@@ -126,9 +126,11 @@ bash ~/g10577_gatk_consensus_final.sh
 ```
 This script produces a directory called `g10577_gatk_output` with sub-directories for diploid output (`diploid_output`) and tetraploid output (`tetraploid_output`).
 
-For g10577 diploids, the most important output files in the `diploid_output` directory are called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_diploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_diploid.vcf` file that have an allele frequency greater than 0.6, and then insert them into the `g10577_diploid_coding_sequence.fasta` file to get a final sequence for diploids.
+For g10577 diploids, the most important output file in the `diploid_output` directory is called `g10577_diploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid.
 
-For g10577 tetraploids, the most important output files in the `tetraploid_output` directory are called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the diploid, and `final_multiallelic_tetraploid.vcf` which contains multiallelic variants. You have to manually identify and extract alleles in the `final_multiallelic_tetraploid.vcf` file that have an allele frequency greater than 0.6, and then insert them into the `g10577_tetraploid_coding_sequence.fasta` file to get a final sequence for tetraploids.
+For g10577 tetraploids, the most important output file in the `tetraploid_output` directory is called `g10577_tetraploid_coding_sequence.fasta` which contains the nucleotide consensus sequence for the tetraploid
+
+Although a `final_multiallelic_diploid.vcf` and `final_multiallelic_tetraploid.vcf` file were produced, these were not used to adjust the coding sequences for the diploid or tetraploid.
 
 ## Part2 - Protein Sequences 
 Now that we have the nucleotide sequences for g46214 and g10577 in our diploids, tetraploids, and reference, we can translate them to get our protein sequences. This can be accomplished by following the steps below.
